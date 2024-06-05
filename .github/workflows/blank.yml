@@ -35,15 +35,6 @@ jobs:
 
       - name: Build AAB for release
         run: ./gradlew bundleuatRelease
-        
-      - name: Check subcontents
-        run: ls -R
-
-      - name: Upload Aab-bundle as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Uat-app-bundle
-          path: ./app/build/outputs/bundle/uatRelease
 
       - name: Send AAB to Slack
         env:
