@@ -39,6 +39,33 @@ jobs:
           ./gradlew bundleuatRelease
           mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab ./app/build/outputs/bundle/uatRelease/app-uat-release-${IST_DATE}.aab
 
+      - name: Upload AAB to Teams
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "New AAB file generated!",
+            "attachments": [
+              {
+                "title": "AAB File",
+                "text": "The AAB file has been uploaded.",
+                "color": "#0078D7",
+                "actions": [
+                  {
+                    "name": "Download",
+                    "type": "openUrl",
+                    "targets": [
+                      {
+                        "os": "default",
+                        "uri": "https://example.com/path/to/aab_file.aab"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }' ${{ secrets.TEAMS_WEBHOOK_URL }}
+        env:
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
