@@ -44,3 +44,9 @@ jobs:
         with:
           name: Uat-app-bundle
           path: ./app/build/outputs/bundle/uatRelease
+
+      - name: Send AAB to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # Or your Slack access token
+        run: |
+          curl -X POST -F file=@./app/build/outputs/bundle/uatRelease -F channels=C0769JXDSJ2 -F token=$SLACK_WEBHOOK_URL https://slack.com/api/files.upload  
