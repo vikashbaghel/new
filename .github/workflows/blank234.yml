@@ -26,15 +26,31 @@ jobs:
           name: my-file
           path: /tmp
 
-      - name: Upload to S3
-        uses: jakejarvis/s3-sync-action@v0.5.1
-        with:
-          args: --acl public-read --follow-symlinks --delete
+      - name: Upload AAB to Teams
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "New AAB file generated!",
+            "attachments": [
+              {
+                "title": "AAB File",
+                "text": "The AAB file has been uploaded.",
+                "color": "#0078D7",
+                "actions": [
+                  {
+                    "name": "Download",
+                    "type": "openUrl",
+                    "targets": [
+                      {
+                        "os": "default",
+                        "uri": "https://example.com/path/to/aab_file.aab"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }' ${{ secrets.TEAMS_WEBHOOK_URL }}
         env:
-          SOURCE_DIR: '/tmp'  # Adjust this to your build output directory
-          AWS_REGION: 'ap-southeast-2'  # Adjust to your S3 bucket region
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}  # Add your bucket name to GitHub Secrets
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
 
 
