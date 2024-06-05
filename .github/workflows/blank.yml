@@ -38,7 +38,7 @@ jobs:
 
       - name: Upload AAB to Slack
         run: |
-          curl -F file=@./app/build/outputs/apk/uat/release/app-uat-release.aab \
+          curl -F file=@./app/build/outputs/bundle/uatRelease/app-uat-release.aab \
                -F channels=C0769K07NNS \
                -F token=$SLACK_TOKEN \
                https://slack.com/api/files.upload
