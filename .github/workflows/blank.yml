@@ -36,20 +36,11 @@ jobs:
       - name: Build AAB for release
         run: ./gradlew bundleuatRelease
 
-      - name: my-app-aab
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-app-aab
-          path: ./app/build/outputs/bundle/uatRelease
-
-      - name: Download AAB artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: my-app-aab
-          path: /tmp/aab
-
-      - name: Send AAB to Slack
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # Or your Slack access token
+      - name: Upload AAB to Slack
         run: |
-          curl -X POST -F file=@/tmp/aab/app-uat-release.aab -F channels=C0769JXDSJ2 -F token=$SLACK_WEBHOOK_URL https://slack.com/api/files.upload  
+          curl -F file=@./app/build/outputs/apk/uat/release/app-uat-release.aab \
+               -F channels=C0769K07NNS \
+               -F token=$SLACK_TOKEN \
+               https://slack.com/api/files.upload
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
