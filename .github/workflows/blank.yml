@@ -39,6 +39,18 @@ jobs:
           ./gradlew bundleuatRelease
           mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab ./app/build/outputs/bundle/uatRelease/app-uat-release-${IST_DATE}.aab
 
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: buildfile
+          path: ./app/build/outputs/bundle/uatRelease/
+
+      - name: Send build file to Teams
+        run: |
+          curl -H "Content-Type: application/json" \
+            -d '{"text": "Build file attached.", "attachments": [{"contentType": "application/octet-stream", "contentUrl": "data:application/octet-stream;base64,'$(base64 -w 0 buildfile.txt)'", "name": "buildfile.txt"}]}' \
+            ${{ secrets.TEAMS_WEBHOOK_URL }}
+
       - name: Send AAB to Teams
         run: |
           # Define OneDrive sharing link obtained from step 2
