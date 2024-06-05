@@ -35,14 +35,14 @@ jobs:
 
       - name: Build AAB for release
         run: |
-          DATE=$(date '+%Y%m%d')
+          TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
           ./gradlew bundleuatRelease
-          mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab ./app/build/outputs/bundle/uatRelease/app-uat-release-${DATE}.aab
+          mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab ./app/build/outputs/bundle/uatRelease/app-uat-release-${TIMESTAMP}.aab
 
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
-          args: --acl public-read --follow-symlinks --delete
+          args: --acl public-read --follow-symlinks
         env:
           SOURCE_DIR: './app/build/outputs/bundle/uatRelease' 
           AWS_REGION: 'ap-southeast-2' 
