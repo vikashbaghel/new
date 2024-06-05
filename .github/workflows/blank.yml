@@ -34,7 +34,10 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build AAB for release
-        run: ./gradlew bundleuatRelease
+        run: |
+          DATE=$(date '+%Y%m%d')
+          ./gradlew bundleuatRelease
+          mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab ./app/build/outputs/bundle/uatRelease/app-uat-release-${DATE}.aab
 
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
