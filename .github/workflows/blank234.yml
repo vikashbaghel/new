@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Create File
+        run: sudo apt install curl
+        
       - name: Create File
         run: echo "Hello, world!" > test.txt
 
