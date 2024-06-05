@@ -1,4 +1,4 @@
-name:FileMove
+name: FileMove
 on:
   workflow_dispatch:
 
