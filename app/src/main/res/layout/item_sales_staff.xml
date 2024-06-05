@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="13.5dp"
+    android:background="@drawable/white_border_linear_gradient">
+
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_more"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:textSize="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_18sp"
+        android:layout_marginEnd="@dimen/size_10sp"
+        android:src="@drawable/ic_icon_ionic_ios_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_role"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="21dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_call"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/product_category_color"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_id"
+        app:layout_constraintTop_toBottomOf="@+id/tv_id" />
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_call"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/sales_text_color_rupees_blue"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_role"
+        app:layout_constraintTop_toBottomOf="@+id/tv_role" />
+
+
+    <ImageView
+        android:id="@+id/iv_whats_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:paddingTop="@dimen/size_15sp"
+        android:paddingBottom="@dimen/size_15sp"
+        android:paddingEnd="@dimen/dimen_20dp"
+        android:paddingStart="@dimen/dimen_8dp"
+        android:src="@drawable/ic_order_whats_app"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:paddingTop="@dimen/size_15sp"
+        android:paddingBottom="@dimen/size_15sp"
+        android:paddingStart="@dimen/dimen_20dp"
+        android:paddingEnd="@dimen/dimen_8dp"
+        android:src="@drawable/ic_order_call"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_whats_app"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

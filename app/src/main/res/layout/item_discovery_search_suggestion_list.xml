@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_suggestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/dimen_8dp"
+        android:layout_marginEnd="@dimen/dimen_12dp"
+        android:layout_marginStart="@dimen/dimen_12dp"
+        android:drawableStart="@drawable/ic_retry"
+        android:textSize="@dimen/size_14sp"
+        android:text="sjkdngks"
+        android:drawablePadding="@dimen/dimen_20dp"
+        android:textColor="@color/text_color_light_gray"
+        android:fontFamily="@font/open_sans_bold"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_bg"
+    tools:context=".sales.login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:src="@mipmap/ic_rupyz_logo_header"
+        app:layout_constraintBottom_toTopOf="@+id/cl_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cl_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:layout_marginBottom="@dimen/dimen_50dp"
+        android:elevation="@dimen/dimen_10dp"
+        app:cardCornerRadius="@dimen/dimen_10dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/white_border_linear_rounded_gradient"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <TextView
+                android:id="@+id/txt_we_will_hep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/sign_in"
+                android:textAlignment="center"
+                android:textColor="@color/theme_purple"
+                android:textSize="@dimen/size_20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_login_choice"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:background="@drawable/toggle_right_round_white"
+                android:padding="@dimen/dimen_2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_we_will_hep">
+
+                <TextView
+                    android:id="@+id/tv_staff"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_gredient"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center|center_vertical"
+                    android:padding="@dimen/dimen_8dp"
+                    android:text="@string/staff"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_admin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_admin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/admin"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_staff"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/txt_mobile_number"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/size_20sp"
+                android:background="@drawable/edit_text_white_with_stroke_background"
+                android:digits="0123456789"
+                android:fontFamily="@font/poppins_medium"
+                android:foregroundTint="@color/white"
+                android:gravity="center_vertical"
+                android:inputType="phone"
+                android:maxEms="10"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:minLines="1"
+                android:paddingStart="80dp"
+                android:paddingTop="@dimen/dimen_4dp"
+                android:paddingEnd="@dimen/dimen_20dp"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/size_16sp"
+                app:layout_constraintTop_toBottomOf="@+id/cl_login_choice" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_flag"
+                android:layout_width="@dimen/dimen_30dp"
+                android:layout_height="@dimen/dimen_30dp"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_india"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_mobile_number"
+                app:layout_constraintStart_toStartOf="@+id/txt_mobile_number"
+                app:layout_constraintTop_toTopOf="@+id/txt_mobile_number"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent.5dpInset" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_6dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="+91"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_mobile_number"
+                app:layout_constraintStart_toEndOf="@+id/iv_flag"
+                app:layout_constraintTop_toTopOf="@+id/txt_mobile_number" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/txt_mobile_number">
+
+                <CheckBox
+                    android:id="@+id/chb_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/theme_purple"
+                    android:textSize="@dimen/size_12sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/terms"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_terms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/rupyz_terms"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_2dp"
+                            android:layout_marginRight="@dimen/dimen_2dp"
+                            android:background="@android:color/transparent"
+                            android:text=","
+                            android:textAllCaps="false"
+                            android:textColor="@color/black" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_policy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/rupyz_policy"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_12sp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/btn_gredient"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/str_continue"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_terms" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/ll_whats_app_consent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/cl_main"
+        app:layout_constraintStart_toStartOf="@+id/cl_main"
+        app:layout_constraintTop_toBottomOf="@+id/cl_main">
+
+        <CheckBox
+            android:id="@+id/chb_whatsapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:fontFamily="@font/poppins_regular" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center|left"
+                android:text="@string/get_whatsap"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_10sp" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/dimen_25dp"
+            android:layout_height="@dimen/dimen_25dp"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:src="@mipmap/ic_whatsapp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

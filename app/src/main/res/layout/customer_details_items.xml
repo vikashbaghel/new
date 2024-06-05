@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_border_linear_gradient_without_stroke"
+    android:elevation="5dp">
+
+
+    <com.app.rupyz.generic.custom.VerticalTextView
+        android:id="@+id/tv_customer_level"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/business_banner_background"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="@dimen/dimen_5dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_11sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_customer"
+        android:layout_width="@dimen/dimen_50dp"
+        android:layout_height="@dimen/dimen_50dp"
+        android:layout_marginStart="@dimen/dimen_12dp"
+        android:layout_marginTop="@dimen/dimen_12dp"
+        android:background="@color/white"
+        android:src="@mipmap/ic_no_customer_found"
+        app:layout_constraintStart_toEndOf="@+id/tv_customer_level"
+        app:layout_constraintTop_toBottomOf="@+id/tv_location"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent.5dpInset" />
+
+    <TextView
+        android:id="@+id/tv_customer_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_13sp"
+        android:layout_marginTop="11dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_more"
+        app:layout_constraintStart_toEndOf="@+id/tv_customer_level"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="@dimen/size_14sp" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/size_18sp"
+        android:paddingTop="@dimen/dimen_20dp"
+        android:paddingEnd="@dimen/size_18sp"
+        android:paddingBottom="@dimen/dimen_20dp"
+        android:src="@drawable/ic_icon_ionic_ios_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_14sp"
+        android:layout_marginTop="7dp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:lines="1"
+        android:textColor="@color/sales_text_color_location"
+        android:textSize="@dimen/size_12sp"
+        android:visibility="gone"
+        app:drawableStartCompat="@drawable/ic_sales_order_location"
+        app:layout_constraintEnd_toStartOf="@+id/iv_more"
+        app:layout_constraintStart_toEndOf="@+id/tv_customer_level"
+        app:layout_constraintTop_toBottomOf="@+id/tv_customer_name"
+        app:layout_goneMarginEnd="@dimen/size_14sp" />
+
+    <TextView
+        android:id="@+id/tv_authorize_person_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10sp"
+        android:layout_marginEnd="@dimen/size_12sp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tv_parent_customer_name"
+        app:layout_constraintEnd_toStartOf="@+id/iv_phone_call"
+        app:layout_constraintStart_toEndOf="@+id/iv_customer"
+        app:layout_constraintTop_toTopOf="@+id/iv_customer" />
+
+
+    <ImageView
+        android:id="@+id/iv_whats_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_14sp"
+        android:src="@drawable/ic_order_whats_app"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_customer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_customer" />
+
+    <ImageView
+        android:id="@+id/iv_phone_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_10dp"
+        android:src="@drawable/ic_order_call"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_whats_call"
+        app:layout_constraintEnd_toStartOf="@+id/iv_whats_call"
+        app:layout_constraintTop_toTopOf="@+id/iv_whats_call" />
+
+
+    <TextView
+        android:id="@+id/tv_parent_customer_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10sp"
+        android:layout_marginTop="@dimen/size_10sp"
+        android:layout_marginEnd="@dimen/size_12sp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:lines="1"
+        android:textColor="@color/parent_customer_name_color"
+        android:textSize="@dimen/size_12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_customer"
+        app:layout_constraintEnd_toStartOf="@+id/iv_phone_call"
+        app:layout_constraintStart_toEndOf="@+id/iv_customer"
+        app:layout_constraintTop_toBottomOf="@+id/tv_authorize_person_name" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="@dimen/dimen_15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="@dimen/dimen_15dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_customer_level"
+        app:layout_constraintTop_toBottomOf="@+id/iv_customer" />
+
+
+    <TextView
+        android:id="@+id/tv_new_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_15sp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginEnd="@dimen/size_16sp"
+        android:layout_marginBottom="@dimen/dimen_8dp"
+        android:background="@drawable/new_order_button_background"
+        android:drawablePadding="@dimen/size_10sp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center_vertical"
+        android:lines="2"
+        android:paddingStart="@dimen/size_20sp"
+        android:paddingTop="@dimen/dimen_2dp"
+        android:paddingEnd="@dimen/size_24sp"
+        android:paddingBottom="@dimen/dimen_2dp"
+        android:text="@string/new_order"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_12sp"
+        app:drawableStartCompat="@drawable/ic_customer_new_order"
+        app:drawableTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+    <TextView
+        android:id="@+id/tv_record_activity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10sp"
+        android:layout_marginEnd="@dimen/size_10sp"
+        android:background="@color/transparent"
+        android:drawablePadding="@dimen/dimen_8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center_vertical"
+        android:lines="2"
+        android:paddingStart="@dimen/dimen_8dp"
+        android:paddingEnd="@dimen/dimen_8dp"
+        android:text="@string/activity"
+        android:textColor="@color/toogle_color"
+        android:textSize="@dimen/size_12sp"
+        app:drawableStartCompat="@drawable/ic_record_activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_customer_level"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+    <TextView
+        android:id="@+id/tv_record_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10sp"
+        android:layout_marginEnd="@dimen/size_10sp"
+        android:background="@color/transparent"
+        android:drawablePadding="@dimen/dimen_8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:lines="2"
+        android:paddingStart="@dimen/dimen_8dp"
+        android:paddingEnd="@dimen/dimen_8dp"
+        android:text="@string/payment"
+        android:textColor="@color/toogle_color"
+        android:textSize="@dimen/size_12sp"
+        app:drawableStartCompat="@drawable/ic_customer_record_payment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_new_order"
+        app:layout_constraintStart_toEndOf="@+id/tv_record_activity"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

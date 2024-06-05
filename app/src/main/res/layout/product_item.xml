@@ -1,0 +1,324 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_4dp"
+    android:layout_marginTop="@dimen/size_12sp"
+    android:layout_marginEnd="@dimen/dimen_4dp"
+    app:cardCornerRadius="@dimen/dimen_10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_product"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/dimen_12dp"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:layout_marginBottom="@dimen/dimen_12dp"
+            android:background="@color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent.5dpInset" />
+
+        <TextView
+            android:id="@+id/tv_out_of_stock"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:background="@color/white_70_transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:textSize="@dimen/size_12sp"
+            android:padding="@dimen/size_12sp"
+            android:text="@string/out_of_stock"
+            android:textColor="@color/out_of_stock_red"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_product"
+            app:layout_constraintEnd_toEndOf="@+id/iv_product"
+            app:layout_constraintStart_toStartOf="@+id/iv_product"
+            app:layout_constraintTop_toTopOf="@+id/iv_product" />
+
+        <TextView
+            android:id="@+id/tv_product_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/size_10sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_menu"
+            app:layout_constraintStart_toEndOf="@+id/iv_product"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="50dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_baseline_more_horiz_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_3dp"
+            android:layout_marginEnd="15dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:lines="2"
+            android:maxLines="2"
+            android:textColor="@color/theme_purple"
+            android:textSize="@dimen/size_13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_product"
+            app:layout_constraintTop_toBottomOf="@+id/tv_product_code" />
+
+        <TextView
+            android:id="@+id/tv_mrp_unit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_6dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginEnd="@dimen/size_15sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/chart_grid_color"
+            android:textSize="@dimen/size_10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_product_mrp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_product_mrp"
+            app:layout_constraintTop_toTopOf="@+id/tv_product_mrp" />
+
+        <TextView
+            android:id="@+id/tv_product_mrp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_12sp"
+            app:layout_constraintStart_toEndOf="@+id/iv_product"
+            app:layout_constraintTop_toBottomOf="@+id/tv_product_name" />
+
+        <TextView
+            android:id="@+id/tv_product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:layout_marginEnd="@dimen/dimen_15dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/theme_purple"
+            android:textSize="@dimen/size_16sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_gst"
+            app:layout_constraintStart_toEndOf="@+id/iv_product" />
+
+        <TextView
+            android:id="@+id/tv_buyers_unit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_6dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginEnd="@dimen/size_15sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/chart_grid_color"
+            android:textSize="@dimen/size_10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_product_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_product_price"
+            app:layout_constraintTop_toTopOf="@+id/tv_product_price" />
+
+        <TextView
+            android:id="@+id/tv_gst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginEnd="@dimen/dimen_15dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/red"
+            android:textSize="@dimen/dimen_8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_product"
+            app:layout_constraintStart_toEndOf="@+id/iv_product" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_price_slab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dimen_20dp"
+            android:paddingEnd="@dimen/dimen_20dp"
+            android:paddingBottom="@dimen/dimen_10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_product_price">
+
+            <TextView
+                android:id="@+id/tv_price_slab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:layout_marginEnd="@dimen/dimen_15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/price_slab"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:src="@drawable/ic_info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_price_slab"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:background="@color/separator_color"
+            app:layout_constraintTop_toBottomOf="@+id/iv_product" />
+
+        <TextView
+            android:id="@+id/tv_order_qty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_18sp"
+            android:layout_marginTop="@dimen/size_18sp"
+            android:layout_marginEnd="@dimen/dimen_20dp"
+            android:layout_marginBottom="@dimen/size_18sp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_12sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ll_add_to_cart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <TextView
+            android:id="@+id/tv_packaging_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_18sp"
+            android:layout_marginEnd="@dimen/dimen_20dp"
+            android:drawablePadding="@dimen/size_10sp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:maxLines="1"
+            android:paddingStart="@dimen/size_10sp"
+            android:paddingTop="@dimen/size_18sp"
+            android:paddingEnd="@dimen/dimen_40dp"
+            android:paddingBottom="@dimen/size_18sp"
+            android:text="Pkg Level (3)"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_12sp"
+            android:visibility="gone"
+            app:drawableEndCompat="@drawable/ic_info"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+
+        <TextView
+            android:id="@+id/tv_add_to_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_22sp"
+            android:background="@drawable/add_to_cart_button_bg"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="33dp"
+            android:paddingTop="@dimen/size_10sp"
+            android:paddingEnd="33dp"
+            android:paddingBottom="@dimen/size_10sp"
+            android:text="@string/add"
+            android:textAllCaps="true"
+            android:textColor="@color/theme_purple"
+            android:textSize="@dimen/size_14sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_order_qty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_order_qty" />
+
+        <LinearLayout
+            android:id="@+id/ll_add_to_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view1">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_incremental_qty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:digits="0123456789."
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:inputType="numberDecimal|textNoSuggestions"
+                android:maxLength="5"
+                android:minWidth="@dimen/dimen_50dp"
+                android:textColor="@color/black"
+                android:textColorLink="@color/black"
+                android:textSize="@dimen/size_16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tv_product_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/size_18sp"
+                android:background="@drawable/edit_text_white_with_stroke_background"
+                android:fontFamily="@font/poppins_regular"
+                android:maxLength="120"
+                android:paddingStart="@dimen/size_12sp"
+                android:paddingTop="@dimen/dimen_8dp"
+                android:paddingEnd="@dimen/dimen_12dp"
+                android:paddingBottom="@dimen/dimen_8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_12sp"
+                android:visibility="visible" />
+
+            <Spinner
+                android:id="@+id/spinner_packaging_level"
+                style="@style/SpinnerTheme"
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/dimen_20dp"
+                android:paddingStart="@dimen/dimen_8dp"
+                android:paddingEnd="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/size_16sp" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

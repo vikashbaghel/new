@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/size_12sp"
+    android:background="@drawable/cart_item_bg"
+    android:paddingStart="@dimen/size_22sp"
+    android:paddingBottom="@dimen/size_12sp"
+    android:paddingEnd="@dimen/size_22sp">
+
+
+    <TextView
+        android:id="@+id/tv_order_nano_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="SKU15344A"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/chart_grid_color"
+        android:textSize="@dimen/size_10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_order_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="26dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_order_total_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_nano_id" />
+
+    <TextView
+        android:id="@+id/tv_order_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="18000"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_order_name" />
+
+    <TextView
+        android:id="@+id/tv_order_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="26dp"
+        android:text="Category"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/product_category_color"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_name" />
+
+    <TextView
+        android:id="@+id/hd_order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/buyers_price"
+        android:textColor="@color/sales_text_color_dark_gray"
+        android:textSize="@dimen/size_13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_category" />
+
+    <TextView
+        android:id="@+id/tv_order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hd_order_price"
+        app:layout_constraintStart_toEndOf="@+id/hd_order_price"
+        app:layout_constraintTop_toTopOf="@+id/hd_order_price" />
+
+    <TextView
+        android:id="@+id/tv_order_discounted_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/cart_item_discounted_price"
+        android:textSize="@dimen/size_11sp"
+        android:layout_marginStart="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_order_price"
+        app:layout_constraintStart_toEndOf="@+id/tv_order_price"
+        app:layout_constraintTop_toTopOf="@+id/tv_order_price" />
+
+    <View
+        android:id="@+id/view_discount"
+        android:layout_width="0dp"
+        android:layout_height="1.5dp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="-5dp"
+        android:background="@color/cart_item_discounted_price"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_order_discounted_price"
+        app:layout_constraintEnd_toEndOf="@+id/tv_order_discounted_price"
+        app:layout_constraintStart_toStartOf="@+id/tv_order_discounted_price"
+        app:layout_constraintTop_toTopOf="@+id/tv_order_discounted_price" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_discounted_price_after_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tv_order_discounted_price, view_discount"
+        app:layout_constraintBottom_toBottomOf="@+id/hd_order_price"
+        app:layout_constraintStart_toEndOf="@+id/hd_order_price"
+        app:layout_constraintTop_toTopOf="@+id/hd_order_price" />
+
+
+    <TextView
+        android:id="@+id/hd_order_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.5dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/qty"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hd_order_price" />
+
+    <TextView
+        android:id="@+id/tv_order_qty"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ordered_unit"
+        android:layout_marginEnd="@dimen/dimen_12dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_5dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_13sp"
+        app:layout_constraintStart_toEndOf="@+id/hd_order_qty"
+        app:layout_constraintTop_toTopOf="@+id/hd_order_qty" />
+
+
+    <TextView
+        android:id="@+id/tv_discount_applied"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ordered_unit"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_14sp"
+        android:layout_marginEnd="@dimen/size_12sp"
+        android:visibility="gone"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/discount_applied_with_rupee_symbol"
+        android:textColor="@color/discount_applied_yellow"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_qty"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/hd_shipment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/shipment"
+        android:textColor="@color/black"
+        android:textSize="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_shipment_unit"
+        app:layout_constraintEnd_toEndOf="@+id/et_shipment_unit"
+        app:layout_constraintStart_toStartOf="@+id/et_shipment_unit" />
+
+    <TextView
+        android:id="@+id/et_shipment_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:background="@drawable/gray_rectangle_bg"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:minWidth="60dp"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_discount_applied"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/hd_ordered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/ordered"
+        android:textColor="@color/black"
+        android:textSize="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_ordered_unit"
+        app:layout_constraintEnd_toEndOf="@+id/tv_ordered_unit"
+        app:layout_constraintStart_toStartOf="@+id/tv_ordered_unit" />
+
+    <TextView
+        android:id="@+id/tv_ordered_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginEnd="@dimen/size_12sp"
+        android:background="@color/ordered_unit_background"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:minWidth="60dp"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_discount_applied"
+        app:layout_constraintEnd_toStartOf="@+id/et_shipment_unit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

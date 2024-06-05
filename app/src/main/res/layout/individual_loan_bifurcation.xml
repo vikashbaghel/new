@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_10dp"
+    tools:context=".ui.overview.OverViewActivity">
+
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:scrollbars="none">
+
+
+
+        <LinearLayout
+            android:id="@+id/table"
+            android:padding="@dimen/dimen_5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:background="@drawable/home_card_round_background">
+
+            <!-- <TableRow
+                 android:id="@+id/tableRowCollege"
+                 android:layout_width="fill_parent"
+                 android:layout_height="match_parent">-->
+
+            <TextView
+                android:id="@+id/textView11"
+                android:text="Particular"
+                android:padding="5dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/black" />
+
+            <!--<LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent">
+
+                <View style="@style/Divider" />
+            </LinearLayout>-->
+
+            <TextView
+                android:id="@+id/atvSchoolOne"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="#"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/white" />
+
+            <!--<LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent">
+
+                <View style="@style/Divider" />
+            </LinearLayout>-->
+
+            <TextView
+                android:id="@+id/collegeTwo"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="Sanction"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/white" />
+
+            <!-- <LinearLayout
+                 android:layout_width="1dp"
+                 android:layout_height="match_parent">
+
+                 <View style="@style/Divider" />
+             </LinearLayout>-->
+
+            <TextView
+                android:id="@+id/collegeThree"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:text="Paid   "
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/white" />
+
+            <!--<LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent">
+
+                <View style="@style/Divider" />
+            </LinearLayout>-->
+
+            <TextView
+                android:id="@+id/collegeFour"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="Balance"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/white" />
+            <!--                </TableRow>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="1dp">-->
+
+            <!--                    <View style="@style/Divider" />-->
+            <!--                </LinearLayout>-->
+
+        </LinearLayout>
+        <!--        Score Insights-->
+
+
+
+
+    </HorizontalScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

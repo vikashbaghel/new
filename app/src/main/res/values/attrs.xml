@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="verticaltextview">
+        <attr name="direction">
+            <enum name="uptodown" value="0" />
+            <enum name="downtoup" value="1" />
+            <enum name="lefttoright" value="2" />
+            <enum name="righttoleft" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircularProgressBar">
+        <attr name="cpb_hasShadow" format="boolean" />
+        <attr name="cpb_progressColor" format="string" />
+        <attr name="cpb_backgroundColor" format="string" />
+        <attr name="cpb_title" format="string" />
+        <attr name="cpb_titleColor" format="string" />
+        <attr name="cpb_subtitle" format="string" />
+        <attr name="cpb_subtitleColor" format="string" />
+        <attr name="cpb_strokeWidth" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomRatingBar">
+        <attr name="isIndicator" format="boolean" />
+        <attr name="rating" format="float" />
+        <attr name="ratingCount" format="integer" />
+        <attr name="ratingEmpty" format="reference" />
+        <attr name="ratingHalf" format="reference" />
+        <attr name="ratingFilled" format="reference" />
+        <attr name="ratingSize" format="dimension"/>
+        <attr name="ratingMargin" format="dimension" />
+    </declare-styleable>
+
+</resources>

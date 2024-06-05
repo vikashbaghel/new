@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_4dp"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_marginEnd="@dimen/dimen_4dp"
+        android:layout_marginBottom="@dimen/dimen_10dp"
+        app:cardCornerRadius="@dimen/dimen_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_product"
+                android:layout_width="100dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="@dimen/dimen_12dp"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:layout_marginBottom="@dimen/dimen_12dp"
+                android:background="@color/black"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_product_code"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:background="@color/order_gray"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/size_10sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_product"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_3dp"
+                android:layout_marginEnd="15dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_medium"
+                android:lines="2"
+                android:maxLines="2"
+                android:textColor="@color/theme_purple"
+                android:textSize="@dimen/size_13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_product"
+                app:layout_constraintTop_toBottomOf="@+id/tv_product_code" />
+
+            <TextView
+                android:id="@+id/tv_mrp_unit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_6dp"
+                android:layout_marginEnd="@dimen/size_15sp"
+                android:background="@color/order_gray"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/chart_grid_color"
+                android:textSize="@dimen/size_10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_product_mrp"
+                app:layout_constraintStart_toEndOf="@+id/tv_product_mrp"
+                app:layout_constraintTop_toTopOf="@+id/tv_product_mrp" />
+
+            <TextView
+                android:id="@+id/tv_product_mrp"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:background="@color/order_gray"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_12sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_product"
+                app:layout_constraintTop_toBottomOf="@+id/tv_product_name" />
+
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:layout_marginEnd="@dimen/dimen_15dp"
+                android:background="@color/order_gray"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/theme_purple"
+                android:textSize="@dimen/size_15sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_gst"
+                app:layout_constraintStart_toEndOf="@+id/iv_product" />
+
+            <TextView
+                android:id="@+id/tv_buyers_unit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_6dp"
+                android:layout_marginEnd="@dimen/size_15sp"
+                android:background="@color/order_gray"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/chart_grid_color"
+                android:textSize="@dimen/size_10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_product_price"
+                app:layout_constraintStart_toEndOf="@+id/tv_product_price"
+                app:layout_constraintTop_toTopOf="@+id/tv_product_price" />
+
+            <TextView
+                android:id="@+id/tv_gst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginEnd="@dimen/dimen_15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/red"
+                android:textSize="@dimen/dimen_8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_product"
+                app:layout_constraintStart_toEndOf="@+id/iv_product" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:background="@color/separator_color"
+                app:layout_constraintTop_toBottomOf="@+id/iv_product" />
+
+            <TextView
+                android:id="@+id/tv_order_qty"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_18sp"
+                android:layout_marginTop="@dimen/size_18sp"
+                android:layout_marginEnd="@dimen/dimen_20dp"
+                android:layout_marginBottom="@dimen/size_18sp"
+                android:background="@color/order_gray"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_medium"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

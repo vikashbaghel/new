@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_bg"
+    tools:context=".sales.orders.OrderPaymentDetailsActivity">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="@dimen/size_12sp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_toolbar_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:shadowColor="@color/analytics_view_drop_shadow_color"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/order_details"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_back"
+        app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+    <TextView
+        android:id="@+id/tv_order_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/order_details"
+        android:textColor="@color/order_date_color"
+        android:textSize="@dimen/size_10sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_toolbar_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_toolbar_title" />
+
+
+    <TextView
+        android:id="@+id/tv_store_front_view_slash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_5dp"
+        android:layout_marginEnd="@dimen/size_22sp"
+        android:drawablePadding="@dimen/dimen_4dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/slash"
+        android:textColor="@color/tab_un_selected_color"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_order_date"
+        app:layout_constraintStart_toEndOf="@+id/tv_order_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_order_date" />
+
+    <TextView
+        android:id="@+id/tv_store_front_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_5dp"
+        android:layout_marginEnd="@dimen/size_22sp"
+        android:drawablePadding="@dimen/dimen_4dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/storefront"
+        android:textColor="@color/tab_un_selected_color"
+        android:textSize="@dimen/size_12sp"
+        app:drawableStartCompat="@drawable/ic_store_front"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_order_date"
+        app:layout_constraintStart_toEndOf="@+id/tv_store_front_view_slash"
+        app:layout_constraintTop_toTopOf="@+id/tv_order_date" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_store_front"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tv_store_front_view, tv_store_front_view_slash" />
+
+
+    <TextView
+        android:id="@+id/hd_order_no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/order_number"
+        android:textColor="@color/leve_text_color"
+        android:textSize="@dimen/size_13sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_order_no"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_date" />
+
+    <TextView
+        android:id="@+id/tv_order_no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_12sp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_vertical"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hd_order_no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toEndOf="@+id/hd_order_no"
+        app:layout_constraintTop_toTopOf="@+id/hd_order_no" />
+
+
+    <TextView
+        android:id="@+id/hd_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/size_16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/payment_amount"
+        android:textColor="@color/leve_text_color"
+        android:textSize="@dimen/size_13sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_payment_amount"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hd_order_no" />
+
+    <TextView
+        android:id="@+id/tv_payment_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_12sp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_vertical"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hd_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toEndOf="@+id/hd_amount"
+        app:layout_constraintTop_toTopOf="@+id/hd_amount" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_payment_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="hd_amount, tv_payment_amount"
+        app:layout_constraintTop_toBottomOf="@+id/hd_order_no" />
+
+    <TextView
+        android:id="@+id/hd_payment_mode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/size_16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/payment_mode"
+        android:textColor="@color/leve_text_color"
+        android:textSize="@dimen/size_13sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_payment_mode"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hd_amount" />
+
+    <TextView
+        android:id="@+id/tv_payment_mode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_12sp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_vertical"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hd_payment_mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toEndOf="@+id/hd_payment_mode"
+        app:layout_constraintTop_toTopOf="@+id/hd_payment_mode" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_payment_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="hd_payment_mode, tv_payment_mode"
+        app:layout_constraintTop_toBottomOf="@+id/hd_amount" />
+
+    <TextView
+        android:id="@+id/hd_ref_no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/size_16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/transection_ref_no"
+        android:textColor="@color/leve_text_color"
+        android:textSize="@dimen/size_13sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_transaction_ref"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hd_payment_mode" />
+
+    <TextView
+        android:id="@+id/tv_transaction_ref"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_12sp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_vertical"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hd_ref_no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toEndOf="@+id/hd_ref_no"
+        app:layout_constraintTop_toTopOf="@+id/hd_ref_no" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_ref_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="hd_ref_no, tv_transaction_ref"
+        app:layout_constraintTop_toBottomOf="@+id/hd_payment_mode" />
+
+
+    <TextView
+        android:id="@+id/hd_remaining_days"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/size_16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/remaing_payment"
+        android:textColor="@color/leve_text_color"
+        android:textSize="@dimen/size_13sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_remaining_days"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hd_ref_no" />
+
+    <TextView
+        android:id="@+id/tv_remaining_days"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_12sp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_vertical"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hd_remaining_days"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toEndOf="@+id/hd_remaining_days"
+        app:layout_constraintTop_toTopOf="@+id/hd_remaining_days" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_remaining_days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="hd_remaining_days, tv_remaining_days"
+        app:layout_constraintTop_toBottomOf="@+id/hd_ref_no" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

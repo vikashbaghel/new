@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="13.5dp"
+    android:background="@drawable/white_border_linear_rounded_gradient"
+    android:elevation="5dp"
+    android:paddingBottom="@dimen/size_16sp">
+
+    <TextView
+        android:id="@+id/tv_activity_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/sales_heading_blue"
+        android:textSize="@dimen/size_18sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/leve_text_color"
+        android:textSize="@dimen/size_10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_activity_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_activity_name" />
+
+
+    <TextView
+        android:id="@+id/tv_sub_module_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="@dimen/size_18sp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/sales_text_color_rupees_blue"
+        android:textSize="@dimen/size_14sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_activity_name" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="@dimen/size_18sp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/lead_location_gray"
+        android:textSize="@dimen/size_12sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sub_module_type"
+        app:layout_constraintEnd_toStartOf="@+id/iv_map_location"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_image_exist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_10sp"
+        android:src="@drawable/ic_activity_contains_image"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_map_location"
+        app:layout_constraintEnd_toStartOf="@+id/iv_map_location"
+        app:layout_constraintTop_toTopOf="@+id/iv_map_location" />
+
+    <ImageView
+        android:id="@+id/iv_map_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_18sp"
+        android:src="@drawable/ic_lead_location"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_location" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

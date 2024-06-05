@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_bg"
+    tools:context=".sales.analytics.TopProductSalesActivity">
+
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_10sp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:shadowColor="@color/analytics_view_drop_shadow_color"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/customer_wise_sales"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+        app:layout_constraintStart_toEndOf="@+id/iv_back"
+        app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_filter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_16sp"
+        android:layout_marginTop="@dimen/size_22sp"
+        android:layout_marginEnd="@dimen/size_16sp"
+        android:background="@drawable/price_seekbar"
+        app:layout_constraintEnd_toStartOf="@+id/cl_download_report"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_back">
+
+        <ImageView
+            android:id="@+id/iv_calender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20dp"
+            android:src="@drawable/ic_doj_calender"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_filter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_10sp"
+            android:layout_marginTop="@dimen/size_10sp"
+            android:layout_marginBottom="@dimen/size_10sp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:shadowColor="@color/analytics_view_drop_shadow_color"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="5"
+            android:text="Current Year"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_drop_arrow"
+            app:layout_constraintStart_toEndOf="@+id/iv_calender"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_drop_arrow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:src="@drawable/ic_arrow_drop_down_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_download_report"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_8dp"
+        android:layout_marginTop="@dimen/size_22sp"
+        android:layout_marginEnd="@dimen/size_16sp"
+        android:background="@drawable/price_seekbar"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cl_filter"
+        app:layout_constraintTop_toBottomOf="@+id/iv_back">
+
+        <ImageView
+            android:id="@+id/iv_download_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_10sp"
+            android:src="@drawable/ic_baseline_download"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_download"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#00A93E" />
+
+        <TextView
+            android:id="@+id/tv_download"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_16sp"
+            android:layout_marginTop="@dimen/size_10sp"
+            android:layout_marginEnd="@dimen/size_16sp"
+            android:layout_marginBottom="@dimen/size_10sp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:shadowColor="@color/analytics_view_drop_shadow_color"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="5"
+            android:text="@string/download_report"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/iv_download_pdf"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_customer_wise_sales"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/size_16sp"
+        android:layout_marginBottom="@dimen/size_16sp"
+        android:background="@drawable/white_border_linear_gradient"
+        android:elevation="@dimen/dimen_12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_filter">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_category_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/hd_name1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_12sp"
+                android:layout_marginTop="@dimen/size_16sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingStart="@dimen/size_12sp"
+                android:paddingEnd="@dimen/dimen_4dp"
+                android:shadowColor="@color/analytics_view_drop_shadow_color"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/name_without_star"
+                android:textColor="@color/sale_overview_heading"
+                android:textSize="9sp"
+                app:layout_constraintEnd_toStartOf="@+id/hd_amount1"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_weight="0.7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hd_amount1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:paddingStart="@dimen/dimen_4dp"
+                android:paddingEnd="@dimen/dimen_4dp"
+                android:shadowColor="@color/analytics_view_drop_shadow_color"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/orders"
+                android:textColor="@color/sale_overview_heading"
+                android:textSize="9sp"
+                app:layout_constraintEnd_toStartOf="@+id/hd_sale_percentage1"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/hd_name1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hd_sale_percentage1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16sp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="end"
+                android:paddingStart="@dimen/dimen_4dp"
+                android:paddingEnd="@dimen/size_12sp"
+                android:shadowColor="@color/analytics_view_drop_shadow_color"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/sales_perc"
+                android:textColor="@color/sale_overview_heading"
+                android:textSize="9sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_weight="0.5"
+                app:layout_constraintStart_toEndOf="@+id/hd_amount1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_product_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/hd_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_12sp"
+                android:layout_marginTop="@dimen/size_16sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingStart="@dimen/size_12sp"
+                android:paddingEnd="@dimen/dimen_4dp"
+                android:shadowColor="@color/analytics_view_drop_shadow_color"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/name_without_star"
+                android:textColor="@color/sale_overview_heading"
+                android:textSize="9sp"
+                app:layout_constraintEnd_toStartOf="@+id/hd_quantity"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_weight="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hd_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingStart="@dimen/size_12sp"
+                android:paddingEnd="@dimen/dimen_4dp"
+                android:shadowColor="@color/analytics_view_drop_shadow_color"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/quantity"
+                android:textColor="@color/sale_overview_heading"
+                android:textSize="9sp"
+                app:layout_constraintEnd_toStartOf="@+id/hd_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_weight="0.5"
+                app:layout_constraintStart_toEndOf="@+id/hd_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hd_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:paddingStart="@dimen/dimen_4dp"
+                android:paddingEnd="@dimen/dimen_4dp"
+                android:shadowColor="@color/analytics_view_drop_shadow_color"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/amount"
+                android:textColor="@color/sale_overview_heading"
+                android:textSize="9sp"
+                app:layout_constraintEnd_toStartOf="@+id/hd_sale_percentage"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/hd_quantity"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hd_sale_percentage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16sp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="end"
+                android:paddingStart="@dimen/dimen_4dp"
+                android:paddingEnd="@dimen/size_12sp"
+                android:shadowColor="@color/analytics_view_drop_shadow_color"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/sales_perc"
+                android:textColor="@color/sale_overview_heading"
+                android:textSize="9sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_weight="0.4"
+                app:layout_constraintStart_toEndOf="@+id/hd_amount"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/size_10sp"
+            android:background="#E4E2F7"
+            app:layout_constraintTop_toBottomOf="@+id/cl_category_info" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_top_products"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="@dimen/dimen_20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1"
+            tools:listitem="@layout/item_top_category" />
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_top_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view1"
+            app:shimmer_auto_start="true"
+            app:shimmer_direction="left_to_right"
+            app:shimmer_repeat_mode="restart">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer_item_top_product" />
+
+                <include layout="@layout/shimmer_item_top_product" />
+
+                <include layout="@layout/shimmer_item_top_product" />
+
+                <include layout="@layout/shimmer_item_top_product" />
+
+                <include layout="@layout/shimmer_item_top_product" />
+
+                <include layout="@layout/shimmer_item_top_product" />
+
+                <include layout="@layout/shimmer_item_top_product" />
+
+                <include layout="@layout/shimmer_item_top_product" />
+
+                <include layout="@layout/shimmer_item_top_product" />
+
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

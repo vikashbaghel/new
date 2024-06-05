@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/size_14sp"
+    android:elevation="2dp">
+
+
+    <TextView
+        android:id="@+id/tv_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_4dp"
+        android:background="@drawable/primary_address_background"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="@dimen/size_16sp"
+        android:paddingTop="@dimen/dimen_2dp"
+        android:paddingEnd="@dimen/size_16sp"
+        android:paddingBottom="@dimen/dimen_2dp"
+        android:text="@string/primary"
+        android:textColor="@color/cart_item_text"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_4dp"
+        android:layout_marginEnd="@dimen/dimen_4dp"
+        android:background="@drawable/white_background_10dp_corner_for_primary"
+        android:paddingTop="@dimen/dimen_4dp"
+        android:paddingBottom="@dimen/dimen_10dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_primary">
+
+        <ImageView
+            android:id="@+id/iv_radio_button"
+            android:layout_width="@dimen/size_12sp"
+            android:layout_height="@dimen/size_12sp"
+            android:layout_marginStart="@dimen/size_14sp"
+            android:layout_marginTop="@dimen/size_14sp"
+            android:layout_marginEnd="@dimen/dimen_15dp"
+            android:src="@drawable/ic_radio_button_not_selected"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_company_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_9dp"
+            android:layout_marginEnd="@dimen/size_10sp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Company name for address"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_radio_button"
+            app:layout_constraintEnd_toStartOf="@+id/iv_edit"
+            app:layout_constraintStart_toEndOf="@+id/iv_radio_button"
+            app:layout_constraintTop_toTopOf="@+id/iv_radio_button" />
+
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_9dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/size_14sp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="full adress for order in respect to the choice of their residence"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_radio_button"
+            app:layout_constraintTop_toBottomOf="@+id/tv_company_name" />
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_14sp"
+            android:layout_marginEnd="@dimen/dimen_6dp"
+            android:padding="@dimen/dimen_8dp"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

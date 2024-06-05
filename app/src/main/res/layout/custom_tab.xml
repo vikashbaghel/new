@@ -1,0 +1,10 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:textColor="@color/theme_light_purple"
+    android:textSize="@dimen/size_16sp"
+    android:padding="@dimen/dimen_6dp"
+    android:drawablePadding="@dimen/dimen_8dp"
+    android:textStyle="bold" />

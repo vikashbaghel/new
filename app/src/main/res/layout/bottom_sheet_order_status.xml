@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/dimen_50dp"
+        android:layout_height="@dimen/dimen_50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        android:padding="@dimen/size_16sp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/hd_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/update_order_status"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:background="#E5E5E5"
+        app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tv_order_status_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:paddingBottom="@dimen/dimen_12dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+    <TextView
+        android:id="@+id/tv_error_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:minHeight="100dp"
+        android:padding="@dimen/dimen_20dp"
+        android:text="@string/you_dont_have_permission_to_update_order"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_14sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_proceed"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:background="@color/filter_proceed_green"
+        android:elevation="@dimen/size_10sp"
+        android:text="@string/proceed"
+        android:textSize="@dimen/size_16sp"
+        android:visibility="visible"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_status_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

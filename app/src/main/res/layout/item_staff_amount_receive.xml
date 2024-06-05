@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="13.5dp"
+    android:paddingBottom="@dimen/size_14sp"
+    android:background="@drawable/white_border_linear_gradient"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/hd_mount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_30dp"
+        android:layout_marginTop="@dimen/size_18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/amount"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_30dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="22-jan-2022"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_30dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="1200"
+        android:textColor="@color/theme_purple"
+        android:textSize="@dimen/size_15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hd_mount" />
+
+
+    <TextView
+        android:id="@+id/hd_mode_of_payment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_30dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/customer"
+        android:textColor="@color/text_color_grey"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/hd_collected_by"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_amount" />
+
+
+    <TextView
+        android:id="@+id/tv_customer_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_30dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="1200"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintEnd_toEndOf="@+id/hd_mode_of_payment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hd_mode_of_payment" />
+
+
+    <TextView
+        android:id="@+id/hd_collected_by"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/mode_of_payment"
+        android:textColor="@color/text_color_grey"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hd_mode_of_payment"
+        app:layout_constraintTop_toBottomOf="@+id/tv_amount" />
+
+
+    <TextView
+        android:id="@+id/tv_mode_of_payment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Net Banking"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/hd_collected_by"
+        app:layout_constraintTop_toBottomOf="@+id/hd_mode_of_payment" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
