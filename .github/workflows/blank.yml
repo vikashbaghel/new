@@ -2,8 +2,8 @@ name: AndroidDemoForUATOnly
 
 on:
   workflow_dispatch:
-  push:
-    branches:
+ ## push:
+   ## branches:
       - master
 
 jobs:
