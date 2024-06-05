@@ -36,10 +36,10 @@ jobs:
       - name: Build AAB for release
         run: ./gradlew bundleuatRelease
 
-      - name: Upload Aab-bundle as artifact
+      - name: my-app-aab
         uses: actions/upload-artifact@v2
         with:
-          name: app-bundle
+          name: my-app-aab
           path: ./app/build/outputs/bundle/uatRelease
 
       - name: Download AAB artifact
