@@ -34,10 +34,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build AAB for release
-        run: |
-          IST_DATE=$(TZ="Asia/Kolkata" date '+%Y%m%d_%H%M%S')
-          ./gradlew bundleuatRelease
-          mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab ./app/build/outputs/bundle/uatRelease/app-uat-release-${IST_DATE}.aab
+        run: ./gradlew bundleuatRelease
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
@@ -48,7 +45,7 @@ jobs:
       - name: Send build file to Teams
         run: |
           curl -H "Content-Type: application/json" \
-            -d '{"text": "Build file attached.", "attachments": [{"contentType": "application/octet-stream", "contentUrl": "data:application/octet-stream;base64,'$(base64 -w 0 buildfile.txt)'", "name": "buildfile.txt"}]}' \
+            -d '{"text": "Build file attached.", "attachments": [{"contentType": "application/octet-stream", "contentUrl": "data:application/octet-stream;base64,'$(base64 -w 0 app-uat-release.aab)'", "name": "app-uat-release.aab"}]}' \
             ${{ secrets.TEAMS_WEBHOOK_URL }}
 
       - name: Send AAB to Teams
