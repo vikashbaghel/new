@@ -39,13 +39,17 @@ jobs:
           ./gradlew bundleuatRelease
           mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab ./app/build/outputs/bundle/uatRelease/app-uat-release-${IST_DATE}.aab
 
-      - name: Upload AAB to Teams
+      - name: Send AAB to Teams
         run: |
+          # Define OneDrive sharing link obtained from step 2
+          AAB_URI="https://rupyz-my.sharepoint.com/:f:/p/vikramsingh_rathor/EsQ3kPEzJedNkxEDFff7YwYBFFei-i0zJDltILP13A_DcA?email=vikramsingh.rathor%40rupyz.com&e=BD5CJ3"
+
+          # Send message to Microsoft Teams channel with OneDrive sharing link as URI
           curl -X POST -H 'Content-Type: application/json' -d '{
             "text": "New AAB file generated!",
             "attachments": [
               {
-                "title": "AAB File",
+                "title": "AAB_New_Build_File",
                 "text": "The AAB file has been uploaded.",
                 "color": "#0078D7",
                 "actions": [
@@ -55,7 +59,7 @@ jobs:
                     "targets": [
                       {
                         "os": "default",
-                        "uri": "https://rupyz-my.sharepoint.com/:f:/r/personal/vikramsingh_rathor_rupyz_com/Documents/Apps?csf=1&web=1&e=88KgcW"
+                        "uri": "'$AAB_URI'"
                       }
                     ]
                   }
