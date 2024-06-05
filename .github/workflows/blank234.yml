@@ -28,7 +28,7 @@ jobs:
 
       - name: Send File to Slack
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TOKEN }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         run: |
           curl -X POST \
             -F file=@/tmp/test.txt \
