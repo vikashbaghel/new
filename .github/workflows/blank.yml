@@ -2,8 +2,8 @@ name: AndroidDemoForUATOnly
 
 on:
   workflow_dispatch:
- ## push:
-   ## branches:
+  push:
+    branches:
       - master
 
 jobs:
@@ -36,11 +36,13 @@ jobs:
       - name: Build AAB for release
         run: ./gradlew bundleuatRelease
 
-      - name: Upload AAB to Slack
-        run: |
-          curl -F file=@./app/build/outputs/bundle/uatRelease/app-uat-release.aab \
-               -F channels=C0769K07NNS \
-               -F token=$SLACK_TOKEN \
-               https://slack.com/api/files.upload
+      - name: Upload to S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --acl public-read --follow-symlinks --delete
         env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          SOURCE_DIR: './app/build/outputs/bundle/uatRelease' 
+          AWS_REGION: 'ap-southeast-2' 
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}  
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
