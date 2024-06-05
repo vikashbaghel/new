@@ -1,0 +1,37 @@
+name: AndroidDemoForUATOnly
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create File
+        run: echo "Hello, world!" > test.txt
+
+      - name: Store File as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-file
+          path: test.txt
+
+      - name: Download File Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: my-file
+          path: /tmp
+
+      - name: Send File to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TOKEN }}
+        run: |
+          curl -X POST \
+            -F file=@/tmp/test.txt \
+            -F channels=C0769K07NNS \
+            -F token=$SLACK_TOKEN \
+            https://slack.com/api/files.upload
