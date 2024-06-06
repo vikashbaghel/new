@@ -14,6 +14,9 @@ jobs:
       - name: Create File
         run: echo "Hello, world!" > hello.txt
 
+      - name: Set AWS Region
+        run: echo "AWS_DEFAULT_REGION=ap-southeast-2" >> $GITHUB_ENV
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
