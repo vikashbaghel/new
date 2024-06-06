@@ -36,56 +36,27 @@ jobs:
       - name: Build AAB for release
         run: ./gradlew bundleuatRelease
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: buildfile
-          path: ./app/build/outputs/bundle/uatRelease/
 
-      - name: Send build file to Teams
+
+      - name: Upload AAB to S3
+        env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
-          curl -H "Content-Type: application/json" \
-            -d '{"text": "Build file attached.", "attachments": [{"contentType": "application/octet-stream", "contentUrl": "data:application/octet-stream;base64,'$(base64 -w 0 app-uat-release.aab)'", "name": "app-uat-release.aab"}]}' \
-            ${{ secrets.TEAMS_WEBHOOK_URL }}
+          aws s3 cp ./app/build/outputs/bundle/uatRelease/app-release.aab s3://$S3_BUCKET_NAME/builds/app-release.aab
+          echo "AAB file uploaded to S3"
 
-      - name: Send AAB to Teams
-        run: |
-          # Define OneDrive sharing link obtained from step 2
-          AAB_URI="https://rupyz-my.sharepoint.com/:f:/p/vikramsingh_rathor/EsQ3kPEzJedNkxEDFff7YwYBFFei-i0zJDltILP13A_DcA?email=vikramsingh.rathor%40rupyz.com&e=BD5CJ3"
-
-          # Send message to Microsoft Teams channel with OneDrive sharing link as URI
-          curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "New AAB file generated!",
-            "attachments": [
-              {
-                "title": "AAB_New_Build_File",
-                "text": "The AAB file has been uploaded.",
-                "color": "#0078D7",
-                "actions": [
-                  {
-                    "name": "Download",
-                    "type": "openUrl",
-                    "targets": [
-                      {
-                        "os": "default",
-                        "uri": "'$AAB_URI'"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }' ${{ secrets.TEAMS_WEBHOOK_URL }}
+      - name: Send Notification to Microsoft Teams
         env:
           TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+        run: |
+          AAB_URL="https://${S3_BUCKET_NAME}.s3.${AWS_REGION}.amazonaws.com/builds/app-release.aab"
+          curl -H 'Content-Type: application/json' -d "{
+            \"text\": \"A new Android App Bundle is available: <${AAB_URL}|Download>\"
+          }" $TEAMS_WEBHOOK_URL
 
-      - name: Upload to S3
-        uses: jakejarvis/s3-sync-action@v0.5.1
-        with:
-          args: --acl public-read --follow-symlinks
-        env:
-          SOURCE_DIR: './app/build/outputs/bundle/uatRelease' 
-          AWS_REGION: 'ap-southeast-2' 
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}  
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
