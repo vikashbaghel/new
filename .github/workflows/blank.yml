@@ -32,7 +32,7 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp hello.txt s3://mybuckethaibnade/demo/hello1.txt --acl public-read 
+          aws s3 cp hello1.txt s3://mybuckethaibnade/demo/hello1.txt --acl public-read 
           
       - name: Generate Public URL
         id: get-url
