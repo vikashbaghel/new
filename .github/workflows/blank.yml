@@ -31,12 +31,12 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp hello.txt s3://mybuckethaibnade/hello.txt --acl public-read 
+          aws s3 cp hello.txt s3://mybuckethaibnade/demo/hello.txt --acl public-read 
           
       - name: Generate Public URL
         id: get-url
         run: |
-          URL=$(aws s3 presign s3://mybuckethaibnade.s3.ap-southeast-2.amazonaws.com/hello.txt --expires-in 3600)
+          URL=$(aws s3 presign s3://mybuckethaibnade.s3.ap-southeast-2.amazonaws.com/demo/hello.txt)
           echo "::set-output name=url::$URL"
 
       - name: Post URL to Teams
