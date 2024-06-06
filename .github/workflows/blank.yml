@@ -32,7 +32,7 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp hello12.txt s3://mybuckethaibnade/demo/hello12.txt --acl public-bucket-owner-full-control
+          aws s3 cp hello12.txt s3://mybuckethaibnade/demo/hello12.txt --acl bucket-owner-full-control
           
       - name: Generate Public URL
         id: get-url
