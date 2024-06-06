@@ -42,7 +42,7 @@ jobs:
 
       - name: Post URL to Teams
         run: |
-          AAB_URL="https://${aws-s3-bucket}.s3.${aws-region}.amazonaws.com/demo/hello1.txt"
+          AAB_URL="https://${{ secrets.AWS_S3_BUCKET }}.s3.${{ secrets.AWS_REGION }}.amazonaws.com/demo/hello1.txt"
           curl -H 'Content-Type: application/json' -d "{
             \"text\": \"A new Android App Bundle is available: <${AAB_URL}|Download>\"
           }" $TEAMS_WEBHOOK_URL
