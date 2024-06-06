@@ -54,7 +54,7 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release-$version.aab s3://mybuckethaibnade/demo/app-uat-release-$version.aab
+          aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release-$version.aab s3://mybuckethaibnade/demo/
           
       - name: Generate Public URL
         id: get-url
