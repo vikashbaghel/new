@@ -35,6 +35,11 @@ jobs:
 
       - name: Build AAB for release
         run:  ./gradlew bundleuatRelease
+
+      - name: Add Timestamp to AAB file
+        run: |
+          timestamp=$(TZ=Asia/Kolkata date +"%Y%m%d%H%M%S")
+          mv  ./app/build/outputs/bundle/uatRelease/app-uat-release.aab  ./app/build/outputs/bundle/uatRelease/app-uat-release-$timestamp.aab
     
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -51,12 +56,12 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release.aab s3://mybuckethaibnade/demo/
+          aws s3 cp ./app/build/outputs/bundle/uatRelease/* s3://mybuckethaibnade/demo/
           
       - name: Generate Public URL
         id: get-url
         run: |
-          URL=$(aws s3 presign s3://mybuckethaibnade/demo/app-uat-release.aab --expires-in 3600 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
+          URL=$(aws s3 presign s3://mybuckethaibnade/demo/app-uat-release-$timestamp.aab --expires-in 3600 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
           echo "::set-output name=url::$URL"
           
       - name: Post URL to Teams
