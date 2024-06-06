@@ -37,7 +37,7 @@ jobs:
         run: |
           version=$(grep -oP 'versionName "\K[^"]+' app/build.gradle)
           ./gradlew bundleuatRelease
-          mv./app/build/outputs/bundle/uatRelease/app-uat-release.aab ./app/build/outputs/bundle/uatRelease/app-uat-release-$version.aab
+          mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab ./app/build/outputs/bundle/uatRelease/app-uat-release-$version.aab
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
