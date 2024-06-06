@@ -31,7 +31,7 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp hello.txt s3://mybuckethaibnade.s3.ap-southeast-2.amazonaws.com/hello.txt --acl public-read 
+          aws s3 cp hello.txt s3://mybuckethaibnade/hello.txt --acl public-read 
           
       - name: Generate Public URL
         id: get-url
