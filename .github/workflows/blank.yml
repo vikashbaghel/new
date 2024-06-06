@@ -28,7 +28,7 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp hello.txt s3://$S3_BUCKET_NAME/builds
+          aws s3 cp hello.txt s3://mybuckethaibnade/builds
           echo "AAB file uploaded to S3"
           
       - name: Send Notification to Microsoft Teams
