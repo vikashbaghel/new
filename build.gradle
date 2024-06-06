@@ -1,0 +1,8 @@
+android {
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.app.rupyz"
+        minSdkVersion 23
+        targetSdkVersion 33
+        versionCode 119
+        versionName "0.10.38"
