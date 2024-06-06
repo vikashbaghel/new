@@ -28,16 +28,19 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp hello.txt s3://mybuckethaibnade/
+          aws s3 cp hello.txt s3://mybuckethaibnade/hello.txt --acl public-read
           echo "AAB file uploaded to S3"
           
-      - name: Send Notification to Microsoft Teams
+      - name: Generate Public URL
+        id: get-url
+        run: |
+          URL=$(aws s3 presign s3://your-bucket-name/hello.txt --expires-in 3600)
+          echo "::set-output name=url::$URL"
+
+      - name: Post URL to Teams
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "Download the file from S3: ${{ steps.get-url.outputs.url }}"
+          }' ${{ secrets.TEAMS_WEBHOOK_URL }}
         env:
           TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
-          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-        run: |
-          AAB_URL="https://${S3_BUCKET_NAME}.s3.${AWS_REGION}.amazonaws.com/builds/hello.txt"
-          curl -H 'Content-Type: application/json' -d "{
-            \"text\": \"A new Android App Bundle is available: <${AAB_URL}|Download>\"
-          }" $TEAMS_WEBHOOK_URL
