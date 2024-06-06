@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Create File
-        run: echo "Hello, world!" > hello.txt
+        run: echo "Hello, world!" > hello1.txt
 
       - name: Set AWS Region
         run: echo "AWS_DEFAULT_REGION=ap-southeast-2" >> $GITHUB_ENV
@@ -23,6 +23,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+          aws-s3-bucket: ${{ secrets.AWS_S3_BUCKET }}
           
       - name: Install AWS CLI
         run: |
@@ -31,18 +32,19 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp hello.txt s3://mybuckethaibnade/demo/hello.txt --acl public-read 
+          aws s3 cp hello.txt s3://mybuckethaibnade/demo/hello1.txt --acl public-read 
           
       - name: Generate Public URL
         id: get-url
         run: |
-          URL=$(aws s3 presign s3://mybuckethaibnade.s3.ap-southeast-2.amazonaws.com/demo/hello.txt)
+          URL=$(aws s3 presign s3://mybuckethaibnade/demo/hello1.txt )
           echo "::set-output name=url::$URL"
 
       - name: Post URL to Teams
         run: |
-          curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the file from S3: ${{ steps.get-url.outputs.url }}"
-          }' ${{ secrets.TEAMS_WEBHOOK_URL }}
+          AAB_URL="https://${aws-s3-bucket}.s3.${aws-region}.amazonaws.com/demo/hello1.txt"
+          curl -H 'Content-Type: application/json' -d "{
+            \"text\": \"A new Android App Bundle is available: <${AAB_URL}|Download>\"
+          }" $TEAMS_WEBHOOK_URL
         env:
           TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
