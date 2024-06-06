@@ -4,43 +4,32 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Create File
+        run: echo "Hello, world!" > hello.txt
 
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'adopt'
-          java-version: '11'
-
-      - name: Cache Gradle packages
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: gradle-${{ runner.os }}-${{ hashFiles('*/.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            gradle-${{ runner.os }}-
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build AAB for release
-        run: ./gradlew bundleuatRelease
-        
-      - name: Check subcontents
-        run: ls -R
-
-      - name: Upload Aab-bundle as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Uat-app-bundle
-          path: ./app/build/outputs/bundle/uatRelease
+      - name: Upload AAB to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: |
+          aws s3 cp hello.txt s3://$S3_BUCKET_NAME/builds/hello.txt
+          echo "AAB file uploaded to S3"
+      - name: Send Notification to Microsoft Teams
+        env:
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+        run: |
+          AAB_URL="https://${S3_BUCKET_NAME}.s3.${AWS_REGION}.amazonaws.com/builds/hello.txt"
+          curl -H 'Content-Type: application/json' -d "{
+            \"text\": \"A new Android App Bundle is available: <${AAB_URL}|Download>\"
+          }" $TEAMS_WEBHOOK_URL
