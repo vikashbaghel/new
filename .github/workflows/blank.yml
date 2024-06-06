@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Create File
-        run: echo "Hello, world!" > hello1.txt
+        run: echo "Hello, world!" > hello12.txt
 
       - name: Set AWS Region
         run: echo "AWS_DEFAULT_REGION=ap-southeast-2" >> $GITHUB_ENV
@@ -32,12 +32,12 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp hello1.txt s3://mybuckethaibnade/demo/hello1.txt --acl public-read 
+          aws s3 cp hello12.txt s3://mybuckethaibnade/demo/hello12.txt --acl public-read 
           
       - name: Generate Public URL
         id: get-url
         run: |
-          URL=$(aws s3 presign s3://mybuckethaibnade/demo/hello1.txt --expires-in 3600 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
+          URL=$(aws s3 presign s3://mybuckethaibnade/demo/hello12.txt --expires-in 3600 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
           echo "::set-output name=url::$URL"
 
       - name: Post URL to Teams
