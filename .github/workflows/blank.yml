@@ -37,14 +37,13 @@ jobs:
       - name: Generate Public URL
         id: get-url
         run: |
-          URL=$(aws s3 presign s3://mybuckethaibnade/demo/hello1.txt )
+          URL=$(aws s3 presign s3://mybuckethaibnade/demo/hello1.txt --expires-in 3600 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
           echo "::set-output name=url::$URL"
 
       - name: Post URL to Teams
         run: |
-          AAB_URL="https://${{ secrets.AWS_S3_BUCKET }}.s3.${{ secrets.AWS_REGION }}.amazonaws.com/demo/hello1.txt"
-          curl -H 'Content-Type: application/json' -d "{
-            \"text\": \"A new Android App Bundle is available: <${AAB_URL}|Download>\"
-          }" $TEAMS_WEBHOOK_URL
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "Download the file from S3: ${{ steps.get-url.outputs.url }}"
+          }' ${{ secrets.TEAMS_WEBHOOK_URL }}
         env:
           TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
