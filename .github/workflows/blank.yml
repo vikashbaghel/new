@@ -52,6 +52,16 @@ jobs:
       - name: Upload File to S3
         run: |
           aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release.aab s3://mybuckethaibnade/demo/
+
+      - name: Extract Custom Variable
+        id: extract-variable
+        run: |
+          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' /app/build.gradle)
+          echo "::set-output name=custom-variable::$CUSTOM_VARIABLE"
+
+      - name: Use Custom Variable
+        run: |
+          echo "Custom Variable Value: ${{ steps.extract-variable.outputs.custom-variable }}"
           
       - name: Generate Public URL
         id: get-url
@@ -62,7 +72,7 @@ jobs:
       - name: Post URL to Teams
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the file from S3: ${{ steps.get-url.outputs.url }}"
+            "text": "Download the file version ${{ steps.extract-variable.outputs.custom-variable }} : ${{ steps.get-url.outputs.url }}"
           }' ${{ secrets.TEAMS_WEBHOOK_URL }}
         env:
           TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
