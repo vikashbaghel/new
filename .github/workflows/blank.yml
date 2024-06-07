@@ -40,6 +40,9 @@ jobs:
         run: |
           timestamp=$(TZ=Asia/Kolkata date +"%Y%m%d%H%M%S")
           mv  ./app/build/outputs/bundle/uatRelease/app-uat-release.aab  ./app/build/outputs/bundle/uatRelease/app-uat-release-$timestamp.aab
+
+      - name: Set a variable
+        run: echo "::set-env app-uat-release-$timestamp.aab=MY_VARIABLE::some_value" 
     
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -61,7 +64,7 @@ jobs:
       - name: Generate Public URL
         id: get-url
         run: |
-          URL=$(aws s3 presign s3://mybuckethaibnade/demo/app-uat-release-$timestamp.aab --expires-in 3600 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
+          URL=$(aws s3 presign s3://mybuckethaibnade/demo/$MY_VARIABLE --expires-in 3600 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
           echo "::set-output name=url::$URL"
           
       - name: Post URL to Teams
