@@ -42,7 +42,7 @@ jobs:
           mv  ./app/build/outputs/bundle/uatRelease/app-uat-release.aab  ./app/build/outputs/bundle/uatRelease/app-uat-release-$timestamp.aab
 
       - name: Set a variable
-        run: echo "::set-env app-uat-release-$timestamp.aab=MY_VARIABLE::some_value" 
+        run: echo "::set-env name=MY_VARIABLE::app-uat-release-$timestamp.aab" 
     
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
