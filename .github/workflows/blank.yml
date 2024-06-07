@@ -56,7 +56,7 @@ jobs:
       - name: Extract Custom Variable
         id: extract-variable
         run: |
-          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' /app/build.gradle)
+          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
           echo "::set-output name=custom-variable::$CUSTOM_VARIABLE"
 
       - name: Use Custom Variable
