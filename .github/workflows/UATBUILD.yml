@@ -58,7 +58,7 @@ jobs:
 
       - name: Upload File to S3
         run: |
-          aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.timestamp.outputs.timestamp }}.aab s3://mybuckethaibnade/demo/
+          aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.timestamp.outputs.timestamp }}.aab s3://apkaabproject/APK/
 
       - name: Extract Custom Variable
         id: extract-variable
@@ -73,18 +73,18 @@ jobs:
       - name: Generate Public URL
         id: get-url
         run: |
-          URL=$(aws s3 presign s3://mybuckethaibnade/demo/app-uat-release_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 36000 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
+          URL=$(aws s3 presign s3://apkaabproject/APK/app-uat-release_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 36000 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
           echo "::set-output name=url::$URL"
 
       - name: Generate Click Here Button
         id: generate_button
         run: echo "::set-output name=button_html::<a href='${{ steps.get-url.outputs.url }}'><button>Click Here</button></a>"
           
-      - name: Post URL to Teams
+      - name: Post URL to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the file version ${{ steps.extract-variable.outputs.custom-variable }} : ${{ steps.generate_button.outputs.button_html }}"
-          }' ${{ secrets.TEAMS_WEBHOOK_URL }}
+            "text": "Download the file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
         env:
-          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
