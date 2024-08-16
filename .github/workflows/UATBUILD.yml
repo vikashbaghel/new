@@ -11,6 +11,7 @@ jobs:
     name: Build AAB and APK
     #if: github.event.pull_request.merged
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         build_type: [aab, apk]
@@ -50,18 +51,18 @@ jobs:
         id: timestamp
         run: echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
 
-      - name: Extract Version Name
+      - name: Extract Custom Variable
         id: extract-variable
         run: |
-          version_name=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
-          echo "custom_variable=${version_name}" >> $GITHUB_ENV
+          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
+          echo "custom_variable=$CUSTOM_VARIABLE" >> $GITHUB_ENV
 
       - name: Rename ${{ matrix.build_type | title }} with Timestamp
         run: |
           if [ "${{ matrix.build_type }}" == "aab" ]; then
             mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab "./app/build/outputs/bundle/uatRelease/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.aab"
           else
-            mv ./app/build/outputs/apk/uat/release/uatRelease.apk "./app/build/outputs/apk/uat/release/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.apk"
+            mv ./app/build/outputs/apk/uat/release/uatRelease* "./app/build/outputs/apk/uat/release/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.apk"
           fi
 
       - name: Configure AWS Credentials
@@ -79,11 +80,34 @@ jobs:
       - name: Upload ${{ matrix.build_type | title }} to S3
         run: |
           if [ "${{ matrix.build_type }}" == "aab" ]; then
-            aws s3 cp "./app/build/outputs/bundle/uatRelease/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.aab" s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
+            aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
           else
-            aws s3 cp "./app/build/outputs/apk/uat/release/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.apk" s3://${{ secrets.AWS_S3_BUCKET }}/APK/
+            aws s3 cp ./app/build/outputs/apk/uat/release/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
           fi
 
       - name: Generate Public URL for ${{ matrix.build_type | title }}
         id: get-url
-       
+        run: |
+          if [ "${{ matrix.build_type }}" == "aab" ]; then
+            URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
+          else
+            URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
+          fi
+          echo "url=$URL" >> $GITHUB_ENV
+
+      - name: Post ${{ matrix.build_type | title }} URL to Slack
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "Download the ${{ matrix.build_type | title }} file version ${{ env.custom_variable }}: <${{ env.url }}|Click Here>"
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Post Failure Notification to Slack for ${{ matrix.build_type | title }}
+        if: ${{ failure() }}
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "Build failed for ${{ matrix.build_type | title }}! Please check the workflow for details."
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
