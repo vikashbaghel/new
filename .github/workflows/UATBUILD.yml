@@ -123,8 +123,14 @@ jobs:
         id: timestamp-apk
         run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%S')"
 
+      - name: Extract Custom Variable for APK
+        id: extract-variable-apk
+        run: |
+          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
+          echo "::set-output name=custom-variable-apk::$CUSTOM_VARIABLE"
+
       - name: Rename APK with Timestamp
-        run: mv ./app/build/outputs/apk/uat/release/uatRelease* "./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
+        run: mv ./app/build/outputs/apk/uat/release/uatRelease* "./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
     
       - name: Configure AWS Credentials for APK
         uses: aws-actions/configure-aws-credentials@v2
@@ -140,18 +146,12 @@ jobs:
 
       - name: Upload APK to S3
         run: |
-          aws s3 cp ./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
-
-      - name: Extract Custom Variable for APK
-        id: extract-variable-apk
-        run: |
-          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
-          echo "::set-output name=custom-variable-apk::$CUSTOM_VARIABLE"
+          aws s3 cp ./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
 
       - name: Generate Public URL for APK
         id: get-url-apk
         run: |
-          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-uat-release_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
+          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
           echo "::set-output name=url-apk::$URL"
           
       - name: Post APK URL to Slack
