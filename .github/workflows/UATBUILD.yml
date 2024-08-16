@@ -7,13 +7,10 @@ on:
       - master
 
 jobs:
-  build:
-    name: Build AAB and APK
+  build_aab:
+    name: Build AAB
+    #if: github.event.pull_request.merged
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        build_type: [aab, apk]
 
     steps:
       - name: Checkout code
@@ -34,35 +31,23 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('*/.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             gradle-${{ runner.os }}-
-
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build for release
-        run: |
-          if [ "${{ matrix.build_type }}" == "aab" ]; then
-            ./gradlew bundleUatRelease
-          else
-            ./gradlew assembleUatRelease
-          fi
+      - name: Build AAB for release
+        run: ./gradlew bundleuatRelease 
 
       - name: Generate Timestamp
         id: timestamp
-        run: echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+        run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%S')"
 
       - name: Extract Custom Variable
         id: extract-variable
         run: |
           CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
-          echo "custom_variable=$CUSTOM_VARIABLE" >> $GITHUB_ENV
-
-      - name: Rename Build File with Timestamp
-        run: |
-          if [ "${{ matrix.build_type }}" == "aab" ]; then
-            mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab "./app/build/outputs/bundle/uatRelease/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.aab"
-          else
-            mv ./app/build/outputs/apk/uat/release/uatRelease* "./app/build/outputs/apk/uat/release/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.apk"
-          fi
+          echo "::set-output name=custom-variable::$CUSTOM_VARIABLE"
+      - name: Rename AAB with Timestamp
+        run: mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab "./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab"
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -75,34 +60,107 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y awscli
-
-      - name: Upload Build File to S3
+      - name: Upload AAB to S3
         run: |
-          if [ "${{ matrix.build_type }}" == "aab" ]; then
-            aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
-          else
-            aws s3 cp ./app/build/outputs/apk/uat/release/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
-          fi
-
-      - name: Generate Public URL for Build File
+          aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
+      - name: Generate Public URL for AAB
         id: get-url
         run: |
-          if [ "${{ matrix.build_type }}" == "aab" ]; then
-            URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
-          else
-            URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
-          fi
-          echo "url=$URL" >> $GITHUB_ENV
-
-      - name: Post URL to Slack
+          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
+          echo "::set-output name=url::$URL"
+          
+      - name: Post AAB URL to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the ${{ matrix.build_type }} file version ${{ env.custom_variable }}: <${{ env.url }}|Click Here>"
+            "text": "Download the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-      - name: Post Failure Notification to Slack
+      - name: Post Failure Notification to Slack for AAB
         if: ${{ failure() }}
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Build failed for ${{ matrix.build_type }}! Please check the workflow for details."
+            "text": "Build failed for AAB! Please check the workflow for details."
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  build_apk:
+    name: Build APK
+    #if: github.event.pull_request.merged
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
+      - name: Cache Gradle packages
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('*/.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build APK for release
+        run:  ./gradlew assembleUatRelease
+
+      - name: Generate Timestamp for APK
+        id: timestamp-apk
+        run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%S')"
+
+      - name: Extract Custom Variable for APK
+        id: extract-variable-apk
+        run: |
+          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
+          echo "::set-output name=custom-variable-apk::$CUSTOM_VARIABLE"
+      - name: Rename APK with Timestamp
+        run: mv ./app/build/outputs/apk/uat/release/uatRelease* "./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
+
+      - name: Configure AWS Credentials for APK
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Install AWS CLI for APK
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+      - name: Upload APK to S3
+        run: |
+          aws s3 cp ./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
+      - name: Generate Public URL for APK
+        id: get-url-apk
+        run: |
+          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
+          echo "::set-output name=url-apk::$URL"
+          
+      - name: Post APK URL to Slack
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "Download the APK file version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>"
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Post Failure Notification to Slack for APK
+        if: ${{ failure() }}
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "Build failed for APK! Please check the workflow for details."
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
