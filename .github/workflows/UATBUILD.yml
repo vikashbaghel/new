@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     name: Build AAB and APK
-    #if: github.event.pull_request.merged
     runs-on: ubuntu-latest
 
     strategy:
@@ -39,7 +38,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build ${{ matrix.build_type | title }} for release
+      - name: Build for release
         run: |
           if [ "${{ matrix.build_type }}" == "aab" ]; then
             ./gradlew bundleUatRelease
@@ -57,7 +56,7 @@ jobs:
           CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
           echo "custom_variable=$CUSTOM_VARIABLE" >> $GITHUB_ENV
 
-      - name: Rename ${{ matrix.build_type | title }} with Timestamp
+      - name: Rename Build File with Timestamp
         run: |
           if [ "${{ matrix.build_type }}" == "aab" ]; then
             mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab "./app/build/outputs/bundle/uatRelease/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.aab"
@@ -77,7 +76,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y awscli
 
-      - name: Upload ${{ matrix.build_type | title }} to S3
+      - name: Upload Build File to S3
         run: |
           if [ "${{ matrix.build_type }}" == "aab" ]; then
             aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
@@ -85,7 +84,7 @@ jobs:
             aws s3 cp ./app/build/outputs/apk/uat/release/app-uat-release_${{ env.custom_variable }}_${{ env.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
           fi
 
-      - name: Generate Public URL for ${{ matrix.build_type | title }}
+      - name: Generate Public URL for Build File
         id: get-url
         run: |
           if [ "${{ matrix.build_type }}" == "aab" ]; then
@@ -95,19 +94,15 @@ jobs:
           fi
           echo "url=$URL" >> $GITHUB_ENV
 
-      - name: Post ${{ matrix.build_type | title }} URL to Slack
+      - name: Post URL to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the ${{ matrix.build_type | title }} file version ${{ env.custom_variable }}: <${{ env.url }}|Click Here>"
+            "text": "Download the ${{ matrix.build_type }} file version ${{ env.custom_variable }}: <${{ env.url }}|Click Here>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-      - name: Post Failure Notification to Slack for ${{ matrix.build_type | title }}
+      - name: Post Failure Notification to Slack
         if: ${{ failure() }}
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Build failed for ${{ matrix.build_type | title }}! Please check the workflow for details."
+            "text": "Build failed for ${{ matrix.build_type }}! Please check the workflow for details."
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
