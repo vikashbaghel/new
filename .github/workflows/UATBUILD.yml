@@ -41,8 +41,14 @@ jobs:
         id: timestamp
         run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%S')"
 
+      - name: Extract Custom Variable
+        id: extract-variable
+        run: |
+          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
+          echo "::set-output name=custom-variable::$CUSTOM_VARIABLE"
+
       - name: Rename AAB with Timestamp
-        run: mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab "./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.timestamp.outputs.timestamp }}.aab"
+        run: mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab "./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab"
     
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -58,18 +64,12 @@ jobs:
 
       - name: Upload AAB to S3
         run: |
-          aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.timestamp.outputs.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
-
-      - name: Extract Custom Variable
-        id: extract-variable
-        run: |
-          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
-          echo "::set-output name=custom-variable::$CUSTOM_VARIABLE"
+          aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
 
       - name: Generate Public URL for AAB
         id: get-url
         run: |
-          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
+          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ap-southeast-2 --endpoint-url https://s3.ap-southeast-2.amazonaws.com)
           echo "::set-output name=url::$URL"
           
       - name: Post AAB URL to Slack
