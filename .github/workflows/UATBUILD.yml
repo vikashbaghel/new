@@ -79,6 +79,8 @@ jobs:
           PR_DESCRIPTION=$(gh pr view ${{ github.event.pull_request.number }} --json body -q .body)
           ESCAPED_DESCRIPTION=$(echo "$PR_DESCRIPTION" | sed -e 's/\r//g' -e 's/\n/\\n/g')
           echo "PR_DESCRIPTION=${ESCAPED_DESCRIPTION}" >> $GITHUB_ENV
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       - name: Send PR Description to Slack
         run: |
