@@ -77,14 +77,21 @@ jobs:
         id: fetch-comment
         run: |
           # Fetch the PR comment using GitHub API (assuming comment is part of the PR event payload)
-          COMMENT_BODY=$(echo "${{ github.event.comment.body }}" | sed -e 's/\r//g' | sed -e 's/\n/\\n/g')
+          COMMENT_BODY="${{ github.event.comment.body }}"
+          # Replace newlines with escaped newlines for JSON compatibility
+          COMMENT_BODY=$(echo "$COMMENT_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g')
           echo "::set-output name=comment-body::$COMMENT_BODY"
-
+      
+      - name: Debug Comment
+        run: |
+          echo "PR Comment: ${{ steps.fetch-comment.outputs.comment-body }}"
+      
       - name: Post AAB URL to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
             "text": "${{ steps.fetch-comment.outputs.comment-body }}, Download the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
+
 
       - name: Post Failure Notification to Slack for AAB
         if: ${{ failure() }}
