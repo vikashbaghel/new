@@ -1,7 +1,6 @@
 name: Build UAT AAB APK
 
 on:
-  workflow_dispatch:
   pull_request:
     branches:
       - master
@@ -11,7 +10,7 @@ on:
 jobs:
   build_aab:
     name: Build AAB
-    #if: github.event.pull_request.merged
+    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
 
     steps:
@@ -77,20 +76,14 @@ jobs:
       - name: Fetch PR Comment
         id: fetch-comment
         run: |
+          # Fetch the PR comment using GitHub API (assuming comment is part of the PR event payload)
           COMMENT_BODY=$(echo "${{ github.event.comment.body }}" | sed -e 's/\r//g' | sed -e 's/\n/\\n/g')
           echo "::set-output name=comment-body::$COMMENT_BODY"
 
-      - name: Send PR Comment to Slack
-        run: |
-          curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "New PR comment:\n*PR #${{ github.event.issue.number }}:* _${{ github.event.issue.title }}_\n\n```${
-              { steps.fetch-comment.outputs.comment-body }}\n```"
-          }' ${{ secrets.SLACK_WEBHOOK_URL }}
-          
       - name: Post AAB URL to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
+            "text": "${{ steps.fetch-comment.outputs.comment-body }}, Download the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Post Failure Notification to Slack for AAB
@@ -104,7 +97,7 @@ jobs:
 
   build_apk:
     name: Build APK
-    #if: github.event.pull_request.merged
+    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
 
     steps:
