@@ -3,7 +3,10 @@ name: Create File and Notify Slack with PR Comment
 on:
   workflow_dispatch:
   pull_request:
-    types: [closed]
+    branches:
+      - master
+    types:
+      - closed
 
 jobs:
   fetch_comment_and_notify:
