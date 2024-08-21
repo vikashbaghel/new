@@ -71,39 +71,6 @@ jobs:
           URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
 
-      - name: Fetch PR Comments
-        run: |
-          set -x
-          
-          function prefail() {
-            echo "$1"
-            exit 1
-          }
-      
-          # Get PR number and set it as environment variable
-          PR_NUMBER=8 # Example, dynamically retrieve if needed
-          echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_ENV
-      
-          # Get PR title and set it as environment variable
-          PR_TITLE="Testing01"
-          PR_TITLE=$(echo $PR_TITLE | sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g')
-          echo "PR_TITLE=$PR_TITLE" >> $GITHUB_ENV
-      
-          # Get comments from PR and set as environment variable
-          COMMENT_BODY_HTML=$(gh api \
-            repos/:owner/:repo/issues/$PR_NUMBER/comments \
-            -H "Accept: application/vnd.github.VERSION.html+json" \
-            | jq -r ".[0].body_html")
-          
-          [ -z "$COMMENT_BODY_HTML" ] && prefail "comments(html) are blank"
-      
-          COMMENT_BODY=$(echo "$COMMENT_BODY_HTML" | sed -e 's/\r//g' | sed -e 's/\n/\\n/g')
-          [ -z "$COMMENT_BODY" ] && prefail "comments are blank"
-      
-          echo "COMMENT_BODY<<EOF" >> $GITHUB_ENV
-          echo "$COMMENT_BODY" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-
       - name: Notify via Slack
         uses: lirlia/github-comment-notifier-to-slack@v1.0.0
         with:
