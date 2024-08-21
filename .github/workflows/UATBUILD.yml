@@ -11,7 +11,6 @@ on:
 jobs:
   build_aab:
     name: Build AAB
-    #if: github.event.pull_request.merged
     runs-on: ubuntu-latest
 
     steps:
@@ -33,6 +32,7 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('*/.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             gradle-${{ runner.os }}-
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
@@ -63,29 +63,41 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y awscli
+
       - name: Upload AAB to S3
         run: |
           aws s3 cp ./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
+
       - name: Generate Public URL for AAB
         id: get-url
         run: |
           URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
-          
+
       - name: Retrieve Pull Request Comments
         id: pr-comments
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
           script: |
+            console.log("Fetching PR comments...");
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
             });
-            const prComments = comments.map(comment => comment.body).join("\n");
-            return prComments;
+            if (comments.length > 0) {
+              const prComments = comments.map(comment => comment.body).join("\n");
+              console.log("PR Comments fetched: ", prComments);
+              return prComments;
+            } else {
+              console.log("No PR comments found.");
+              return '';
+            }
           result-encoding: string
+
+      - name: Debug PR Comments
+        run: echo "PR Comments: ${{ steps.pr-comments.outputs.result }}"
 
       - name: Post AAB URL to Slack
         run: |
@@ -94,6 +106,7 @@ jobs:
           if [ -n "$COMMENT_LINES" ]; then
             MESSAGE="${MESSAGE}\nAdditional Notes from PR:\n$COMMENT_LINES"
           fi
+          echo "Final Slack message: $MESSAGE"
           curl -X POST -H 'Content-Type: application/json' -d '{
             "text": "'"$MESSAGE"'"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -104,8 +117,6 @@ jobs:
           curl -X POST -H 'Content-Type: application/json' -d '{
             "text": "Build failed for AAB! Please check the workflow for details."
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
   build_apk:
     name: Build APK
