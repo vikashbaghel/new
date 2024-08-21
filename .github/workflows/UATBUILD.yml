@@ -72,21 +72,20 @@ jobs:
         run: |
           URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
-
-      - name: Fetch PR Description
-        id: fetch-pr
-        run: |
-          gh auth login --with-token <<< "${{ github.token }}"
-          PR_DESCRIPTION=$(gh pr view ${{ github.event.pull_request.number }} --json body -q .body)
-          # Escape newlines, double quotes, and other special characters
-          ESCAPED_DESCRIPTION=$(echo "$PR_DESCRIPTION" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          echo "PR_DESCRIPTION=${ESCAPED_DESCRIPTION}" >> $GITHUB_ENV
-        env:
-          GH_TOKEN: ${{ github.token }}
       
-      - name: Send PR Description to Slack
+      - name: Post APK URL to Slack
         run: |
-          curl -X POST -H 'Content-Type: application/json' -d "$(jq -n --arg text "Pull Request Description:\n${{ env.PR_DESCRIPTION }}\nDownload the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>" '{text: $text}')" ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "Download the APK file version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>"
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Notify Slack - Deployment Success
+        uses: 8398a7/action-slack@v3
+        with:
+          status: success
+          fields: repo,message,commit,author,action,eventName,ref,workflow,took
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
