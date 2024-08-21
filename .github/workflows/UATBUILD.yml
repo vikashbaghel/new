@@ -71,7 +71,7 @@ jobs:
           URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
 
-      - name: Fetch PR Comments and Notify via Slack
+      - name: Fetch PR Comments
         run: |
           set -x
           
@@ -103,12 +103,13 @@ jobs:
           echo "COMMENT_BODY<<EOF" >> $GITHUB_ENV
           echo "$COMMENT_BODY" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-      
-          # Notify via Slack using the lirlia/github-comment-notifier-to-slack action
+
+      - name: Notify via Slack
         uses: lirlia/github-comment-notifier-to-slack@v1.0.0
         with:
           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
           slack-color: '24292f'
+
           
       - name: Post AAB URL to Slack
         run: |
