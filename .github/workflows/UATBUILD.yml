@@ -2,9 +2,11 @@ name: AndroidDemoForUATOnly
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     branches:
-      - master
+      - rupyz_uat
+    types:
+      - closed
 
 jobs:
   build_aab:
