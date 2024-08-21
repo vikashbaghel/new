@@ -73,22 +73,18 @@ jobs:
           URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
 
-      - name: Fetch PR Comment
-        id: fetch-comment
+      - name: Fetch PR Description
+        id: fetch-pr
         run: |
-          COMMENT_BODY="${{ github.event.comment.body }}"
-          echo "COMMENT_BODY=${COMMENT_BODY}" >> $GITHUB_ENV
+          PR_DESCRIPTION=$(gh pr view ${{ github.event.pull_request.number }} --json body -q .body)
+          ESCAPED_DESCRIPTION=$(echo "$PR_DESCRIPTION" | sed -e 's/\r//g' -e 's/\n/\\n/g')
+          echo "PR_DESCRIPTION=${ESCAPED_DESCRIPTION}" >> $GITHUB_ENV
 
-      - name: Debug Comment
-        run: |
-          echo "PR Comment: ${{ env.COMMENT_BODY }}"
-
-      - name: Post AAB URL to Slack
+      - name: Send PR Description to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "'"${{ env.COMMENT_BODY }}"', Download the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
+            "text": "Pull Request Description:\n'${{ env.PR_DESCRIPTION }}'\nDownload the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
-
 
       - name: Post Failure Notification to Slack for AAB
         if: ${{ failure() }}
