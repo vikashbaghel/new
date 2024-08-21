@@ -1,4 +1,5 @@
 
+
 name: Build UAT AAB APK
 
 on:
@@ -75,8 +76,8 @@ jobs:
       - name: Notify message
         uses: lirlia/github-comment-notifier-to-slack@v1.0.0
         with:
-          slack-webhook-url: ${{ secrets.MY_WEBHOOK_URL }}
-
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          
       - name: Post AAB URL to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
