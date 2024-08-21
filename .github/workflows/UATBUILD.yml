@@ -69,13 +69,31 @@ jobs:
           URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
           
+      - name: Retrieve Pull Request Comments
+        id: pr-comments
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const prComments = comments.map(comment => comment.body).join("\n");
+            return prComments;
+          result-encoding: string
+
       - name: Post AAB URL to Slack
         run: |
+          COMMENT_LINES=$(echo "${{ steps.pr-comments.outputs.result }}" | grep -oP '^.*$')
+          MESSAGE="Download the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
+          if [ -n "$COMMENT_LINES" ]; then
+            MESSAGE="${MESSAGE}\nAdditional Notes from PR:\n$COMMENT_LINES"
+          fi
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
+            "text": "'"$MESSAGE"'"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Post Failure Notification to Slack for AAB
         if: ${{ failure() }}
