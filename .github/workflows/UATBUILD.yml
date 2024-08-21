@@ -84,6 +84,11 @@ jobs:
       - name: Install GitHub CLI
         run: sudo apt-get install -y gh
 
+      - name: Set up GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.GH_TOKEN }}"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
       - name: Fetch PR Details
         run: |
           PR_TITLE=$(gh pr view ${{ github.event.pull_request.number }} --json title --jq '.title')
@@ -102,6 +107,8 @@ jobs:
           echo "PR_AUTHOR=${ESCAPED_AUTHOR}" >> $GITHUB_ENV
           echo "PR_LATEST_COMMENT=${ESCAPED_COMMENT}" >> $GITHUB_ENV
         shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Notify Slack - Deployment Success
         uses: 8398a7/action-slack@v3
