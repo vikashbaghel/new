@@ -48,6 +48,7 @@ jobs:
         run: |
           CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
           echo "::set-output name=custom-variable::$CUSTOM_VARIABLE"
+
       - name: Rename AAB with Timestamp
         run: mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab "./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab"
 
