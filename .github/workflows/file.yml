@@ -1,0 +1,40 @@
+name: Create File and Notify Slack with PR Comment
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - master
+    types:
+      - closed
+
+jobs:
+  fetch_comment_and_notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up GitHub CLI
+        uses: cli/cli-action@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Fetch Latest PR Comment
+        id: fetch-latest-comment
+        run: |
+          LATEST_COMMENT=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments[-1].body')
+          ESCAPED_COMMENT=$(echo "$LATEST_COMMENT" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+          echo "LATEST_COMMENT=${ESCAPED_COMMENT}" >> $GITHUB_ENV
+
+      - name: Write Comment to File
+        run: |
+          echo "${{ env.LATEST_COMMENT }}" > pr_comment.txt
+          cat pr_comment.txt  # Output the file content for logging
+
+      - name: Post PR Comment to Slack
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d "$(jq -n --arg comment "${{ env.LATEST_COMMENT }}" '{
+            "text": "Latest PR Comment:\n\($comment)\nThe comment has also been saved to a file in the repository."
+          }')" ${{ secrets.SLACK_WEBHOOK_URL }}

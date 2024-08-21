@@ -76,8 +76,20 @@ jobs:
       - name: Post APK URL to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the APK file version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>"
+            "text": "Download the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Report Status
+        if: always()
+        uses: ravsamhq/notify-slack-action@v1
+        with:
+          status: ${{ job.status }}
+          notify_when: 'success,failure,warning'
+          notification_title: '{workflow} has {status_message}'
+          message_format: '{emoji} <{commit_url}|${{github.event.pull_request.title}}> deployed on dev-sales.rupyz.com'
+          footer: 'Linked to Repo <{repo_url}|{repo}>'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
@@ -85,7 +97,7 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: success
-          fields: repo,message,commit,author,action,eventName,ref,workflow,took
+          fields: repo,message,commit,author,action,eventName,ref,workflow,took,
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
