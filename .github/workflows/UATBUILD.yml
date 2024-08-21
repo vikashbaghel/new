@@ -79,19 +79,13 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            console.log("Fetching PR comments...");
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
             });
-            if (comments.length > 0) {
-              const prComments = comments.map(comment => comment.body).join("\n");
-              console.log("PR Comments fetched: ", prComments);
-              return prComments;
-            } else {
-              console.log("No PR comments found.");
-              return '';
+            const prComments = comments.map(comment => comment.body).join("\n");
+            return prComments;
           result-encoding: string
 
       - name: Debug PR Comments
@@ -104,7 +98,6 @@ jobs:
           if [ -n "$COMMENT_LINES" ]; then
             MESSAGE="${MESSAGE}\nAdditional Notes from PR:\n$COMMENT_LINES"
           fi
-          echo "Final Slack message: $MESSAGE"
           curl -X POST -H 'Content-Type: application/json' -d '{
             "text": "'"$MESSAGE"'"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -115,83 +108,3 @@ jobs:
           curl -X POST -H 'Content-Type: application/json' -d '{
             "text": "Build failed for AAB! Please check the workflow for details."
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
-
-
-  build_apk:
-    name: Build APK
-    #if: github.event.pull_request.merged
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'adopt'
-          java-version: '11'
-
-      - name: Cache Gradle packages
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: gradle-${{ runner.os }}-${{ hashFiles('*/.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            gradle-${{ runner.os }}-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build APK for release
-        run:  ./gradlew assembleUatRelease
-
-      - name: Generate Timestamp for APK
-        id: timestamp-apk
-        run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%S')"
-
-      - name: Extract Custom Variable for APK
-        id: extract-variable-apk
-        run: |
-          CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
-          echo "::set-output name=custom-variable-apk::$CUSTOM_VARIABLE"
-      - name: Rename APK with Timestamp
-        run: mv ./app/build/outputs/apk/uat/release/uatRelease* "./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
-
-      - name: Configure AWS Credentials for APK
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Install AWS CLI for APK
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y awscli
-      - name: Upload APK to S3
-        run: |
-          aws s3 cp ./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
-      - name: Generate Public URL for APK
-        id: get-url-apk
-        run: |
-          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
-          echo "::set-output name=url-apk::$URL"
-          
-      - name: Post APK URL to Slack
-        run: |
-          curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the APK file version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>"
-          }' ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
-      - name: Post Failure Notification to Slack for APK
-        if: ${{ failure() }}
-        run: |
-          curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Build failed for APK! Please check the workflow for details."
-          }' ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
