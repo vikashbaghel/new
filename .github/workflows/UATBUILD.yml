@@ -36,7 +36,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build AAB for release
-        run: ./gradlew bundleuatRelease 
+        run: ./gradlew bundleuatRelease
 
       - name: Generate Timestamp
         id: timestamp
@@ -57,6 +57,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+
+
 
       - name: Install AWS CLI
         run: |
@@ -88,9 +90,6 @@ jobs:
             return prComments;
           result-encoding: string
 
-      - name: Debug PR Comments
-        run: echo "PR Comments: ${{ steps.pr-comments.outputs.result }}"
-
       - name: Post AAB URL to Slack
         run: |
           COMMENT_LINES=$(echo "${{ steps.pr-comments.outputs.result }}" | grep -oP '^.*$')
@@ -103,7 +102,7 @@ jobs:
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Post Failure Notification to Slack for AAB
-        if: ${{ failure() }}
+        if: failure()
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
             "text": "Build failed for AAB! Please check the workflow for details."
