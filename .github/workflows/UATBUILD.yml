@@ -33,6 +33,7 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('*/.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             gradle-${{ runner.os }}-
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
@@ -48,6 +49,7 @@ jobs:
         run: |
           CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
           echo "::set-output name=custom-variable::$CUSTOM_VARIABLE"
+
       - name: Rename AAB with Timestamp
         run: mv ./app/build/outputs/bundle/uatRelease/app-uat-release.aab "./app/build/outputs/bundle/uatRelease/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab"
     
@@ -72,12 +74,18 @@ jobs:
           URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
 
-      - name: Notify via Slack
-        uses: lirlia/github-comment-notifier-to-slack@v1.0.0
-        with:
-          slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
-          slack-color: '24292f'
+      - name: Fetch PR Comment
+        id: fetch-comment
+        run: |
+          COMMENT_BODY=$(echo "${{ github.event.comment.body }}" | sed -e 's/\r//g' | sed -e 's/\n/\\n/g')
+          echo "::set-output name=comment-body::$COMMENT_BODY"
 
+      - name: Send PR Comment to Slack
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "New PR comment:\n*PR #${{ github.event.issue.number }}:* _${{ github.event.issue.title }}_\n\n```${
+              { steps.fetch-comment.outputs.comment-body }}\n```"
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
           
       - name: Post AAB URL to Slack
         run: |
