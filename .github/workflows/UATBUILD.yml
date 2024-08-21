@@ -85,13 +85,11 @@ jobs:
         run: sudo apt-get install -y gh
 
       - name: Fetch PR Details
-        id: fetch-pr-details
         run: |
-          gh auth login --with-token <<< "${{ secrets.GH_TOKEN }}"
           PR_TITLE=$(gh pr view ${{ github.event.pull_request.number }} --json title --jq '.title')
           PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
           PR_AUTHOR=$(gh pr view ${{ github.event.pull_request.number }} --json author --jq '.author.login')
-          PR_LATEST_COMMENT=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments[-1].body')
+          PR_LATEST_COMMENT=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments | last | .body')
 
           # Escape the strings for Slack JSON
           ESCAPED_TITLE=$(echo "$PR_TITLE" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
@@ -103,6 +101,7 @@ jobs:
           echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
           echo "PR_AUTHOR=${ESCAPED_AUTHOR}" >> $GITHUB_ENV
           echo "PR_LATEST_COMMENT=${ESCAPED_COMMENT}" >> $GITHUB_ENV
+        shell: bash
 
       - name: Notify Slack - Deployment Success
         uses: 8398a7/action-slack@v3
