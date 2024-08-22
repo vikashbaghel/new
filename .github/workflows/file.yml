@@ -22,7 +22,7 @@ jobs:
         run: |
           PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
           ESCAPED_BODY=$(echo "$PR_BODY" | awk '{gsub(/[\r\n]/,"\\n")}1' | sed -e 's/"/\\"/g')
-          echo "PR_BODY=\"$ESCAPED_BODY\"" >> $GITHUB_ENV
+          echo "PR_BODY='$ESCAPED_BODY'" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
