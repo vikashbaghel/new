@@ -51,7 +51,7 @@ jobs:
           echo "::set-output name=custom-variable::$CUSTOM_VARIABLE"
 
       - name: List files in build directory
-        run: ls -la ./app/build/outputs/
+        run: ls -laR ./app/build/outputs/
 
       - name: Rename AAB with Timestamp
         run: mv ./app/build/outputs/bundle/ProductionRelease/app-Production-release.aab "./app/build/outputs/bundle/ProductionRelease/app-Production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab"
@@ -145,6 +145,10 @@ jobs:
         run: |
           CUSTOM_VARIABLE=$(awk -F "\"" '/versionName/ {print $2}' app/build.gradle)
           echo "::set-output name=custom-variable-apk::$CUSTOM_VARIABLE"
+
+      - name: List files in build directory
+        run: ls -laR ./app/build/outputs/
+
       - name: Rename APK with Timestamp
         run: mv ./app/build/outputs/apk/Production/release/ProductionRelease* "./app/build/outputs/apk/Production/release/app-Production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
     
