@@ -21,8 +21,8 @@ jobs:
       - name: Fetch PR Details
         run: |
           PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
-          ESCAPED_BODY=$(echo "$PR_BODY" | awk '{gsub(/[\r\n]/,"\\n")}1' | sed -e 's/"/\\"/g')
-          echo "PR_BODY='$ESCAPED_BODY'" >> $GITHUB_ENV
+          ESCAPED_BODY=$(printf "%s" "$PR_BODY" | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+          printf "PR_BODY=%s\n" "$ESCAPED_BODY" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
