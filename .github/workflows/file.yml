@@ -18,26 +18,21 @@ jobs:
       - name: Install GitHub CLI
         run: sudo apt-get install -y gh
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install -y gh
-
       - name: Fetch PR Details
         run: |
           PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
-          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
+          ESCAPED_BODY=$(echo "$PR_BODY" | awk '{gsub(/[\r\n]/,"\\n")}1' | sed -e 's/"/\\"/g')
+          echo "PR_BODY=\"$ESCAPED_BODY\"" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Post APK URL to Slack1
+      - name: Post PR Comment to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d "{
             \"text\": \"${PR_BODY}\nDownload the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>\"
           }" $SLACK_WEBHOOK_URL
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          PR_BODY: ${{ env.PR_BODY }}
-
 
       - name: Post Failure Notification to Slack for AAB
         if: ${{ failure() }}
@@ -48,9 +43,7 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-
-
       - name: Write Comment to File
         run: |
-          echo "${{ env.LATEST_COMMENT }}" > pr_comment.txt
+          echo "${PR_BODY}" > pr_comment.txt
           cat pr_comment.txt  # Output the comment to the console
