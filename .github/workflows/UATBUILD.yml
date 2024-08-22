@@ -86,28 +86,21 @@ jobs:
 
       - name: Fetch PR Details
         run: |
-          PR_TITLE=$(gh pr view 27 --json title --jq '.title')
-          PR_BODY=$(gh pr view 27 --json body --jq '.body')
-          PR_AUTHOR=$(gh pr view 27 --json author --jq '.author.login')
-          PR_LATEST_COMMENT=$(gh pr view 27 --json comments --jq '.comments | last | .body')
-          
-          # Escape the strings for Slack JSON and GitHub Environment
+          PR_TITLE=$(gh pr view ${{ github.event.pull_request.number }} --json title --jq '.title')
+          PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
+          PR_AUTHOR=$(gh pr view ${{ github.event.pull_request.number }} --json author --jq '.author.login')
+          PR_LATEST_COMMENT=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments | last | .body')
+
+          # Escape the strings for Slack JSON
           ESCAPED_TITLE=$(echo "$PR_TITLE" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          ESCAPED_AUTHOR=$(echo "$PR_AUTHOR" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          ESCAPED_COMMENT=$(echo "$PR_LATEST_COMMENT" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          
-          # Double-escape the strings to ensure they are safe for GitHub Actions
-          SAFE_ESCAPED_BODY=$(echo "$ESCAPED_BODY" | sed -e 's/%/%25/g' -e 's/\n/%0A/g' -e 's/\r/%0D/g')
-          SAFE_ESCAPED_TITLE=$(echo "$ESCAPED_TITLE" | sed -e 's/%/%25/g' -e 's/\n/%0A/g' -e 's/\r/%0D/g')
-          SAFE_ESCAPED_AUTHOR=$(echo "$ESCAPED_AUTHOR" | sed -e 's/%/%25/g' -e 's/\n/%0A/g' -e 's/\r/%0D/g')
-          SAFE_ESCAPED_COMMENT=$(echo "$ESCAPED_COMMENT" | sed -e 's/%/%25/g' -e 's/\n/%0A/g' -e 's/\r/%0D/g')
-          
-          # Set the environment variables
-          echo "PR_TITLE=${SAFE_ESCAPED_TITLE}" >> $GITHUB_ENV
-          echo "PR_BODY=${SAFE_ESCAPED_BODY}" >> $GITHUB_ENV
-          echo "PR_AUTHOR=${SAFE_ESCAPED_AUTHOR}" >> $GITHUB_ENV
-          echo "PR_LATEST_COMMENT=${SAFE_ESCAPED_COMMENT}" >> $GITHUB_ENV
+          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g')
+          ESCAPED_AUTHOR=$(echo "$PR_AUTHOR" | sed -e 's/\r//g' -e 's/\n/\\n/g')
+          ESCAPED_COMMENT=$(echo "$PR_LATEST_COMMENT" | sed -e 's/\r//g' -e 's/\n/\\n/g')
+
+          echo "PR_TITLE=${ESCAPED_TITLE}" >> $GITHUB_ENV
+          echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
+          echo "PR_AUTHOR=${ESCAPED_AUTHOR}" >> $GITHUB_ENV
+          echo "PR_LATEST_COMMENT=${ESCAPED_COMMENT}" >> $GITHUB_ENV
           
           echo "Fetched PR Details: Title: $PR_TITLE, Body: $PR_BODY, Author: $PR_AUTHOR, Latest Comment: $PR_LATEST_COMMENT"
         env:
