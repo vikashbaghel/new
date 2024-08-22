@@ -109,10 +109,11 @@ jobs:
       - name: Post APK URL to Slack1
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the AAB file version echo Using PR_BODY: $PR_BODY ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
+            "text": "Download the AAB file version ${PR_BODY}  echo Using PR_BODY: $PR_BODY  ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          PR_BODY: ${{ env.PR_BODY }}
 
 
       - name: Post Failure Notification to Slack for AAB
