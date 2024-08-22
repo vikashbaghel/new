@@ -84,11 +84,6 @@ jobs:
       - name: Install GitHub CLI
         run: sudo apt-get install -y gh
 
-      - name: Set up GitHub CLI
-        run: gh auth login --with-token <<< "${{ secrets.GH_TOKEN }}"
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
       - name: Fetch PR Details
         run: |
           PR_TITLE=$(gh pr view ${{ github.event.pull_request.number }} --json title --jq '.title')
@@ -99,7 +94,7 @@ jobs:
           # Escape the strings for Slack JSON
           ESCAPED_TITLE=$(echo "$PR_TITLE" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
           ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          ESCAPED_AUTHOR=$(echo "$PR_AUTHOR" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+          ESCAPED_AUTHOR=$(echo "$PR_AUTHOR" | sed -e 's/\r//g' -e 's/\n/\\n/g')
           ESCAPED_COMMENT=$(echo "$PR_LATEST_COMMENT" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
 
           echo "PR_TITLE=${ESCAPED_TITLE}" >> $GITHUB_ENV
