@@ -54,7 +54,7 @@ jobs:
         run: ls -laR ./app/build/outputs/
 
       - name: Rename AAB with Timestamp
-        run: mv ./app/build/outputs/bundle/ProductionRelease/app-Production-release.aab "./app/build/outputs/bundle/ProductionRelease/app-Production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab"
+        run: mv ./app/build/outputs/bundle/productionRelease/app-production-release.aab "./app/build/outputs/bundle/productionRelease/app-production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab"
     
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -69,12 +69,12 @@ jobs:
           sudo apt-get install -y awscli
       - name: Upload AAB to S3
         run: |
-          aws s3 cp ./app/build/outputs/bundle/ProductionRelease/app-Production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
+          aws s3 cp ./app/build/outputs/bundle/productionRelease/app-production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB/
 
       - name: Generate Public URL for AAB
         id: get-url
         run: |
-          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-Production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
+          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
 
       - name: Install GitHub CLI
@@ -88,7 +88,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Post APK URL to Slack1
+      - name: Post AAB URL to Slack1
         run: |
           curl -X POST -H 'Content-Type: application/json' -d "{
             \"text\": \"${PR_BODY}\nDownload the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>\"
@@ -150,7 +150,7 @@ jobs:
         run: ls -laR ./app/build/outputs/
 
       - name: Rename APK with Timestamp
-        run: mv ./app/build/outputs/apk/Production/release/ProductionRelease* "./app/build/outputs/apk/Production/release/app-Production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
+        run: mv ./app/build/outputs/apk/production/release/productionRelease* "./app/build/outputs/apk/production/release/app-production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
     
       - name: Configure AWS Credentials for APK
         uses: aws-actions/configure-aws-credentials@v2
@@ -165,17 +165,29 @@ jobs:
           sudo apt-get install -y awscli
       - name: Upload APK to S3
         run: |
-          aws s3 cp ./app/build/outputs/apk/Production/release/app-Production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
+          aws s3 cp ./app/build/outputs/apk/production/release/app-production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
+
       - name: Generate Public URL for APK
         id: get-url-apk
         run: |
-          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-Production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
+          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url-apk::$URL"
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+
+      - name: Fetch PR Details
+        run: |
+          PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
+          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+          echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           
       - name: Post APK URL to Slack
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the APK file version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>"
+            "text": "${PR_BODY}\nDownload the APK file version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
