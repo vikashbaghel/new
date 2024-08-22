@@ -28,7 +28,7 @@ jobs:
 
       - name: Post APK URL to Slack
         run: |
-          ESCAPED_BODY=$(echo "${PR_BODY}" | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+          ESCAPED_BODY=$(printf "%s" "$PR_BODY" | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/\\n/g' -e 's/"/\\"/g')
           curl -X POST -H 'Content-Type: application/json' -d "{
             \"text\": \"${ESCAPED_BODY}\\nDownload the AAB file version : <|Click Here>\"
           }" $SLACK_WEBHOOK_URL
