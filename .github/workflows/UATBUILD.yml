@@ -119,6 +119,23 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
+      - name: Notify Slack - assDeployment Success
+        uses: 8398a7/action-slack@v3
+        with:
+          status: success
+          fields: repo,message,commit,author,action,eventName,ref,workflow,took
+          custom_payload: |
+            {
+              "text": "*PR Title:* ${{ env.PR_TITLE }}\n*PR Body:* ${{ env.PR_BODY }}\n*PR Author:* ${{ env.PR_AUTHOR }}\n*Latest Comment:* ${{ env.PR_LATEST_COMMENT }}",
+              "attachments": [
+                {
+                  "text": "Download the APK file version 0.10.38: <LINK_TO_APK>\nDownload the AAB file version 0.10.38: <LINK_TO_AAB>"
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
       - name: Post Failure Notification to Slack for AAB
         if: ${{ failure() }}
         run: |
