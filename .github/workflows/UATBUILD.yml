@@ -93,15 +93,16 @@ jobs:
 
           # Escape the strings for Slack JSON
           ESCAPED_TITLE=$(echo "$PR_TITLE" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g')
           ESCAPED_AUTHOR=$(echo "$PR_AUTHOR" | sed -e 's/\r//g' -e 's/\n/\\n/g')
-          ESCAPED_COMMENT=$(echo "$PR_LATEST_COMMENT" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+          ESCAPED_COMMENT=$(echo "$PR_LATEST_COMMENT" | sed -e 's/\r//g' -e 's/\n/\\n/g')
 
           echo "PR_TITLE=${ESCAPED_TITLE}" >> $GITHUB_ENV
           echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
           echo "PR_AUTHOR=${ESCAPED_AUTHOR}" >> $GITHUB_ENV
           echo "PR_LATEST_COMMENT=${ESCAPED_COMMENT}" >> $GITHUB_ENV
-        shell: bash
+
+          echo "Fetched PR Details: Title: $PR_TITLE, Body: $PR_BODY, Author: $PR_AUTHOR, Latest Comment: $PR_LATEST_COMMENT"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -112,6 +113,7 @@ jobs:
           fields: repo,message,commit,author,action,eventName,ref,workflow,took
           custom_field: |
             *PR Title:* ${{ env.PR_TITLE }}
+            *PR Body:* ${{ env.PR_BODY }}
             *PR Author:* ${{ env.PR_AUTHOR }}
             *Latest Comment:* ${{ env.PR_LATEST_COMMENT }}
         env:
