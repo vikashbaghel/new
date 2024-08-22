@@ -90,14 +90,12 @@ jobs:
           PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
           PR_AUTHOR=$(gh pr view ${{ github.event.pull_request.number }} --json author --jq '.author.login')
           PR_LATEST_COMMENT=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments | last | .body')
-          echo "Using PR_BODY: $PR_BODY"
 
           # Escape the strings for Slack JSON
           ESCAPED_TITLE=$(echo "$PR_TITLE" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
           ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g')
           ESCAPED_AUTHOR=$(echo "$PR_AUTHOR" | sed -e 's/\r//g' -e 's/\n/\\n/g')
           ESCAPED_COMMENT=$(echo "$PR_LATEST_COMMENT" | sed -e 's/\r//g' -e 's/\n/\\n/g')
-          echo "Using PR_BODY: $PR_BODY"
 
           echo "PR_TITLE=${ESCAPED_TITLE}" >> $GITHUB_ENV
           echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
@@ -111,7 +109,7 @@ jobs:
       - name: Post APK URL to Slack1
         run: |
           curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the AAB file version echo "Using PR_BODY: $PR_BODY" ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
+            "text": "Download the AAB file version echo Using PR_BODY: $PR_BODY ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
