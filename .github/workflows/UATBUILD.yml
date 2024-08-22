@@ -72,14 +72,6 @@ jobs:
         run: |
           URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB/app-uat-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
-      
-      - name: Post APK URL to Slack
-        run: |
-          curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
-          }' ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Install GitHub CLI
         run: sudo apt-get install -y gh
@@ -92,15 +84,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Debug Variables
-        run: |
-          echo "PR_BODY: ${PR_BODY}"
-          echo "URL: ${{ steps.get-url.outputs.url }}"
-
       - name: Post APK URL to Slack1
         run: |
           curl -X POST -H 'Content-Type: application/json' -d "{
-            \"text\": \"Download the AAB file version ${PR_BODY} 0.10.38: <${{ steps.get-url.outputs.url }}|Click Here>\"
+            \"text\": \"${PR_BODY}\nDownload the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>\"
           }" $SLACK_WEBHOOK_URL
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
