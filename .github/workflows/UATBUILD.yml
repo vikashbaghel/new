@@ -86,35 +86,25 @@ jobs:
 
       - name: Fetch PR Details
         run: |
-          PR_TITLE=$(gh pr view ${{ github.event.pull_request.number }} --json title --jq '.title')
           PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
-          PR_AUTHOR=$(gh pr view ${{ github.event.pull_request.number }} --json author --jq '.author.login')
-          PR_LATEST_COMMENT=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments | last | .body')
-
-          # Escape the strings for Slack JSON
-          ESCAPED_TITLE=$(echo "$PR_TITLE" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g')
-          ESCAPED_AUTHOR=$(echo "$PR_AUTHOR" | sed -e 's/\r//g' -e 's/\n/\\n/g')
-          ESCAPED_COMMENT=$(echo "$PR_LATEST_COMMENT" | sed -e 's/\r//g' -e 's/\n/\\n/g')
-
-          echo "PR_TITLE=${ESCAPED_TITLE}" >> $GITHUB_ENV
+          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
           echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
-          echo "PR_AUTHOR=${ESCAPED_AUTHOR}" >> $GITHUB_ENV
-          echo "PR_LATEST_COMMENT=${ESCAPED_COMMENT}" >> $GITHUB_ENV
-          
-          echo "Fetched PR Details: Title: $PR_TITLE, Body: $PR_BODY, Author: $PR_AUTHOR, Latest Comment: $PR_LATEST_COMMENT"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      - name: Debug Variables
+        run: |
+          echo "PR_BODY: ${PR_BODY}"
+          echo "URL: ${{ steps.get-url.outputs.url }}"
+
       - name: Post APK URL to Slack1
         run: |
-          curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Download the AAB file version ${PR_BODY}  echo Using PR_BODY: $PR_BODY  ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>"
-          }' ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-Type: application/json' -d "{
+            \"text\": \"Download the AAB file version ${PR_BODY} 0.10.38: <${{ steps.get-url.outputs.url }}|Click Here>\"
+          }" $SLACK_WEBHOOK_URL
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           PR_BODY: ${{ env.PR_BODY }}
-
 
       - name: Post Failure Notification to Slack for AAB
         if: ${{ failure() }}
