@@ -80,16 +80,16 @@ jobs:
       - name: Fetch PR Details
         run: |
           PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
-          ESCAPED_BODY=$(printf "%s" "$PR_BODY" | sed ':a;N;$!ba;s/\n/\\n/g;s/"/\\"/g')
-          echo "ESCAPED_BODY=$ESCAPED_BODY" >> $GITHUB_ENV
+          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+          echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Post PR Body to Slack
+      - name: Post AAB URL to Slack1
         run: |
-          PAYLOAD=$(printf '{"text": "%s\\nDownload the APK file version: ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>"}' "$ESCAPED_BODY")
-          echo "$PAYLOAD"  # Output the payload for debugging
-          curl -X POST -H 'Content-Type: application/json' -d "$PAYLOAD" "$SLACK_WEBHOOK_URL"
+          curl -X POST -H 'Content-Type: application/json' -d "{
+            \"text\": \"${PR_BODY}\nDownload the APK file version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>\"
+          }" $SLACK_WEBHOOK_URL
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           PR_BODY: ${{ env.PR_BODY }}
