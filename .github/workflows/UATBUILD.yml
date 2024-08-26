@@ -87,7 +87,7 @@ jobs:
 
       - name: Post PR Body to Slack
         run: |
-          PAYLOAD=$(printf '{"text": "%s\\nDownload the AAB file version: ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>"}' "$ESCAPED_BODY")
+          PAYLOAD=$(printf '{"text": "%s\\nDownload the APK file version: ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>"}' "$ESCAPED_BODY")
           echo "$PAYLOAD"  # Output the payload for debugging
           curl -X POST -H 'Content-Type: application/json' -d "$PAYLOAD" "$SLACK_WEBHOOK_URL"
         env:
