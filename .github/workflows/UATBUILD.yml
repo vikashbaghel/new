@@ -1,4 +1,4 @@
-name: Build UAT AAB APK
+name: Build UAT APK
 
 on:
   pull_request:
