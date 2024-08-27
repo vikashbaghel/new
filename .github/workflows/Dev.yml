@@ -4,14 +4,14 @@ on:
   workflow_dispatch:
   pull_request:
     branches:
-      - master
+      - rupyz_dev
     types:
       - closed
 
 jobs:
   build_apk:
     name: Build APK
-    #if: github.event.pull_request.merged
+    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
 
     steps:
@@ -89,7 +89,7 @@ jobs:
       - name: Post APK URL to Slack1
         run: |
           curl -X POST -H 'Content-Type: application/json' -d "{
-            \"text\": \"${PR_BODY}\nDownload the APK file for UAT using version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>\"
+            \"text\": \"${PR_BODY}\nDownload the APK file for DEV using version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>\"
           }" $SLACK_WEBHOOK_URL
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
