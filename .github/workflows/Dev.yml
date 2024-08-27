@@ -1,6 +1,7 @@
 name: Build DEV APK
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - master
@@ -10,7 +11,7 @@ on:
 jobs:
   build_apk:
     name: Build APK
-    if: github.event.pull_request.merged
+    #if: github.event.pull_request.merged
     runs-on: ubuntu-latest
 
     steps:
@@ -50,7 +51,7 @@ jobs:
           echo "::set-output name=custom-variable-apk::$CUSTOM_VARIABLE"
 
       - name: Rename APK with Timestamp
-        run: mv ./app/build/outputs/apk/uat/release/uatRelease* "./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
+        run: mv ./app/build/outputs/apk/dev/release/devRelease* "./app/build/outputs/apk/dev/release/app-dev-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
     
       - name: Configure AWS Credentials for APK
         uses: aws-actions/configure-aws-credentials@v2
@@ -66,12 +67,12 @@ jobs:
 
       - name: Upload APK to S3
         run: |
-          aws s3 cp ./app/build/outputs/apk/uat/release/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
+          aws s3 cp ./app/build/outputs/apk/dev/release/app-dev-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK/
 
       - name: Generate Public URL for APK
         id: get-url-apk
         run: |
-          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-uat-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
+          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK/app-dev-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url-apk::$URL"
 
       - name: Install GitHub CLI
