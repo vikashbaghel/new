@@ -1,0 +1,49 @@
+name: Create File and Notify Slack with PR Comment
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - closed
+
+jobs:
+  fetch_comment_and_notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+
+      - name: Fetch PR Details
+        run: |
+          PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
+          ESCAPED_BODY=$(printf "%s" "$PR_BODY" | sed ':a;N;$!ba;s/\n/\\n/g;s/"/\\"/g')
+          echo "ESCAPED_BODY=$ESCAPED_BODY" >> $GITHUB_ENV
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Post PR Body to Slack
+        run: |
+          PAYLOAD=$(printf '{"text": "%s\\nDownload the AAB file version: <|Click Here>"}' "$ESCAPED_BODY")
+          echo "$PAYLOAD"  # Output the payload for debugging
+          curl -X POST -H 'Content-Type: application/json' -d "$PAYLOAD" "$SLACK_WEBHOOK_URL"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Post Failure Notification to Slack for AAB
+        if: ${{ failure() }}
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "Build failed for AAB! Please check the workflow for details."
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Write PR Comment to File
+        run: |
+          echo "${{ env.ESCAPED_BODY }}" > pr_comment.txt
+          cat pr_comment.txt  # Output the comment to the console
