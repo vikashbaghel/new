@@ -3,7 +3,7 @@ name: Build UAT APK
 on:
   pull_request:
     branches:
-      - master
+      - rupyz_uat
     types:
       - closed
 
