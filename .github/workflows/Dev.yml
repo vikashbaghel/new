@@ -1,7 +1,6 @@
 name: Build DEV APK
 
 on:
-  workflow_dispatch:
   pull_request:
     branches:
       - rupyz_dev
