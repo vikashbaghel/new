@@ -90,7 +90,7 @@ jobs:
       - name: Post AAB URL to Slack1
         run: |
           curl -X POST -H 'Content-Type: application/json' -d "{
-            \"text\": \"${PR_BODY}\nDownload the AAB file version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>\"
+            \"text\": \"${PR_BODY}\nDownload the AAB file for production using version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>\"
           }" $SLACK_WEBHOOK_URL
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -183,10 +183,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Post AAB URL to Slack1
+      - name: Post APK URL to Slack1
         run: |
           curl -X POST -H 'Content-Type: application/json' -d "{
-            \"text\": \"${PR_BODY}\nDownload the APK file version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>\"
+            \"text\": \"${PR_BODY}\nDownload the APK file for production using version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>\"
           }" $SLACK_WEBHOOK_URL
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
