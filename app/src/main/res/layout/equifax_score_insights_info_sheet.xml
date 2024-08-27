@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".ui.account.MyAccount">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btnClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/dimen_10dp"
+                android:src="@mipmap/ic_close" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Score Insights"
+            android:textColor="#312B81"
+            android:textSize="@dimen/size_18sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Key factor and their approx. weight"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Impact"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#47FFFFFF" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/score_insights_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center|top"
+                    android:visibility="gone" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp"
+                    android:weightSum="10">
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:gravity="center|left">
+                        <View
+                            android:layout_width="9dp"
+                            android:layout_height="9dp"
+                            android:background="#99D55E"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Presence of Negative a/c, defaults a/c and No overdue"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.5"
+                        android:gravity="right|center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_5dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="High"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:visibility="gone"
+                    android:background="#E6E6E6" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp"
+                    android:weightSum="10">
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:gravity="center|left">
+                        <View
+                            android:layout_width="9dp"
+                            android:layout_height="9dp"
+                            android:background="#636BE4" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="On time repayment in last 4 years"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.5"
+                        android:gravity="right|center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_5dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="High"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:visibility="gone"
+                    android:background="#E6E6E6" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp"
+                    android:weightSum="10">
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:gravity="center|left">
+                        <View
+                            android:layout_width="9dp"
+                            android:layout_height="9dp"
+                            android:background="#93D6E7" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Peak credit limit utilization"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.5"
+                        android:gravity="right|center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_5dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Low"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:visibility="gone"
+                    android:background="#E6E6E6" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp"
+                    android:weightSum="10">
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:gravity="center|left">
+                        <View
+                            android:layout_width="9dp"
+                            android:layout_height="9dp"
+                            android:background="#CC87EB" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Credit age or length of credit history"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.5"
+                        android:gravity="right|center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_5dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Medium"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:visibility="gone"
+                    android:background="#E6E6E6" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp"
+                    android:weightSum="10">
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:gravity="center|left">
+                        <View
+                            android:layout_width="9dp"
+                            android:layout_height="9dp"
+                            android:background="#968EE0" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Recently taken loans and hard loan enquiries "
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.5"
+                        android:gravity="right|center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_5dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Medium"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:visibility="gone"
+                    android:background="#E6E6E6" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp"
+                    android:weightSum="10">
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:gravity="center|left">
+                        <View
+                            android:layout_width="9dp"
+                            android:layout_height="9dp"
+                            android:background="#968EE0" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Loan portfolio mix - No. of Secured and No. of unsecured loans"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.5"
+                        android:gravity="right|center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_5dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Medium"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:visibility="gone"
+                    android:background="#E6E6E6" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp"
+                    android:weightSum="10">
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:gravity="center|left">
+                        <View
+                            android:layout_width="9dp"
+                            android:layout_height="9dp"
+                            android:background="#968EE0" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Business firmographics - Business vintage, Industry, segment &amp; size of the entity"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.5"
+                        android:gravity="right|center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_5dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Low"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:visibility="gone"
+                    android:background="#E6E6E6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:gravity="center|left">
+
+                        <View
+                            android:layout_width="9dp"
+                            android:layout_height="9dp"
+                            android:background="#968EE0" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Lender Mix- Number of loans from Pvt Bank, Public banks and NBFCs"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.5"
+                        android:gravity="right|center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_5dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Medium"
+                            android:textColor="@color/loans_color"
+                            android:textSize="@dimen/equifax_score_key_factor_text_size" />
+
+                    </LinearLayout>
+
+                 </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

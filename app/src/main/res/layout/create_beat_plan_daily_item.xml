@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dimen_6dp">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:maxLines="2"
+        android:text="@string/name_without_star"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_canceled_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10sp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:maxLines="2"
+        android:text="@string/canceled"
+        android:textColor="@color/remove_location_color"
+        android:textSize="@dimen/size_12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+        app:layout_constraintStart_toEndOf="@+id/tv_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_date" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/size_18sp"
+        android:paddingTop="@dimen/size_16sp"
+        android:paddingEnd="@dimen/size_18sp"
+        android:paddingBottom="@dimen/size_16sp"
+        android:src="@drawable/ic_icon_ionic_ios_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_beat_type"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:background="@drawable/edit_text_white_with_stroke_background"
+        android:paddingStart="@dimen/dimen_6dp"
+        android:paddingEnd="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/acv_module_name"
+        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+    <ImageView
+        android:layout_width="@dimen/size_16sp"
+        android:layout_height="@dimen/size_16sp"
+        android:src="@drawable/ic_drop_down_holo"
+        android:layout_marginEnd="@dimen/dimen_12dp"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_beat_type"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_beat_type"
+        app:layout_constraintTop_toTopOf="@+id/spinner_beat_type" />
+
+    <AutoCompleteTextView
+        android:id="@+id/acv_module_name"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="@dimen/size_10sp"
+        android:background="@drawable/edit_text_white_with_stroke_background"
+        android:drawableStart="@mipmap/ic_search"
+        android:drawablePadding="@dimen/dimen_10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/select_beat"
+        android:maxLines="1"
+        android:paddingStart="@dimen/size_16sp"
+        android:paddingEnd="46dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/beat_hint_color"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_beat_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="6"
+        app:layout_constraintStart_toEndOf="@+id/spinner_beat_type"
+        app:layout_constraintTop_toTopOf="@+id/spinner_beat_type" />
+
+    <ImageView
+        android:id="@+id/iv_drop_down"
+        android:layout_width="@dimen/size_16sp"
+        android:layout_height="@dimen/size_16sp"
+        android:layout_marginEnd="@dimen/size_12sp"
+        android:padding="@dimen/dimen_2dp"
+        android:src="@drawable/ic_drop_down_holo"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/acv_module_name"
+        app:layout_constraintEnd_toEndOf="@+id/acv_module_name"
+        app:layout_constraintTop_toTopOf="@+id/acv_module_name" />
+
+
+    <ImageView
+        android:id="@+id/iv_clear_beat_name"
+        android:layout_width="@dimen/dimen_30dp"
+        android:layout_height="@dimen/dimen_30dp"
+        android:layout_marginEnd="@dimen/size_10sp"
+        android:padding="@dimen/dimen_9dp"
+        android:src="@drawable/ic_close"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/acv_module_name"
+        app:layout_constraintEnd_toEndOf="@+id/acv_module_name"
+        app:layout_constraintTop_toTopOf="@+id/acv_module_name" />
+
+    <AutoCompleteTextView
+        android:id="@+id/et_beat_name"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="@dimen/size_10sp"
+        android:background="@drawable/edit_text_white_with_stroke_background"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/enter_location"
+        android:maxLines="1"
+        android:paddingStart="@dimen/size_16sp"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/beat_hint_color"
+        android:textSize="@dimen/size_14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_beat_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="6"
+        app:layout_constraintStart_toEndOf="@+id/spinner_beat_type"
+        app:layout_constraintTop_toTopOf="@+id/spinner_beat_type" />
+
+    <EditText
+        android:id="@+id/et_new_visit"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="@dimen/dimen_6dp"
+        android:background="@drawable/edit_text_white_with_stroke_background"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/new_visit"
+        android:inputType="number"
+        android:maxLength="4"
+        android:maxLines="1"
+        android:paddingStart="@dimen/size_16sp"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/beat_hint_color"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_beat_type"
+        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_beat_type" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_customers"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="@dimen/size_10sp"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_marginEnd="@dimen/dimen_2dp"
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:background="@drawable/white_rect_5dp_background"
+        android:elevation="@dimen/dimen_2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_new_visit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_new_visit"
+        app:layout_constraintTop_toTopOf="@+id/et_new_visit">
+
+        <ImageView
+            android:id="@+id/iv_customer_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_beat_customer_count"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_customer_count"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_customer_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_10sp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/customers"
+            android:textColor="@color/theme_purple"
+            android:textSize="@dimen/size_14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_customer_count"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/et_night_stay"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="@dimen/dimen_6dp"
+        android:layout_marginEnd="@dimen/dimen_6dp"
+        android:background="@drawable/edit_text_white_with_stroke_background"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/night_stay"
+        android:maxLines="1"
+        android:paddingStart="@dimen/size_16sp"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/beat_hint_color"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_close_night_stay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_new_visit" />
+
+    <ImageView
+        android:id="@+id/iv_close_night_stay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_10sp"
+        android:src="@drawable/ic_close_white"
+        app:layout_constraintBottom_toBottomOf="@+id/et_night_stay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_night_stay"
+        app:layout_constraintTop_toTopOf="@+id/et_night_stay" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_night_stay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="et_night_stay, iv_close_night_stay"
+        app:layout_constraintTop_toBottomOf="@+id/et_new_visit" />
+
+    <EditText
+        android:id="@+id/et_purpose"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_6dp"
+        android:layout_marginEnd="@dimen/dimen_6dp"
+        android:background="@drawable/edit_text_white_with_stroke_background"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="top"
+        android:hint="@string/purpose"
+        android:lines="3"
+        android:padding="@dimen/size_10sp"
+        android:paddingStart="@dimen/size_16sp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/beat_hint_color"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_close_purpose"
+        app:layout_constraintHorizontal_weight="6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_night_stay" />
+
+    <ImageView
+        android:id="@+id/iv_close_purpose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_10sp"
+        android:src="@drawable/ic_close_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_purpose"
+        app:layout_constraintTop_toTopOf="@+id/et_purpose" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_purpose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="et_purpose, iv_close_purpose"
+        app:layout_constraintTop_toBottomOf="@+id/et_new_visit" />
+
+    <TextView
+        android:id="@+id/tv_cancel_reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_12sp"
+        android:background="@drawable/cancel_beat_plan_date_doted_border"
+        android:fontFamily="@font/roboto_regular"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="@dimen/size_20sp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_14sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/et_purpose" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

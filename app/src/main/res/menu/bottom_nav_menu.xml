@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/bottom_nav_home" />
+
+    <item
+        android:id="@+id/navigation_activity"
+        android:icon="@drawable/ic_activity"
+        android:title="@string/bottom_nav_activity" />
+    <item
+        android:id="@+id/navigation_expenses"
+        android:icon="@drawable/ic_expenses"
+        android:title="@string/bottom_nav_expenses" />
+    <item
+        android:id="@+id/beat"
+        android:icon="@drawable/ic_beat_plan_tab"
+        android:title="@string/beat_plan" />
+</menu>

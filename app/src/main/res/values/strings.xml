@@ -1,0 +1,1843 @@
+<resources>
+    <string name="rs">\u20B9</string>
+
+    <!--    splash-->
+    <string name="ruypz_fintech_pvt_ltd">Rupyz Fintech Pvt Ltd</string>
+    <string name="check_score">Check Score</string>
+
+    <string name="missed_repayments">Missed Repayments</string>
+    <string name="orders_list">Orders List</string>
+    <string name="all_order">All Order</string>
+    <string name="clear"><u>Clear</u></string>
+    <string name="create_date">Created Date</string>
+    <string name="update_status">Update Status</string>
+
+    <!--    OverView Slides-->
+
+    <string name="overview_one_title">India’s First credit &amp; Loan management Platform for business</string>
+    <string name="overview_one_heading_one">Check business score and Analyze reports</string>
+    <string name="overview_one_heading_two">Get Alerts and Recommended actions for errors that negatively impact your score </string>
+    <string name="overview_one_heading_three">AI enabled credit profile for loan management </string>
+    <string name="overview_one_heading_four">Personalised suggestion on improving score &amp; credibility</string>
+
+    <string name="overview_two_title">Why rupyz?</string>
+    <string name="overview_two_heading_one">Data encryption and Security</string>
+    <string name="overview_two_heading_two">No Spam, No Ads</string>
+    <string name="overview_two_heading_three">No unsolicited messages and offers</string>
+    <string name="overview_two_heading_four">Only explicit app permission</string>
+
+    <string name="share_text">Check your business &amp; personal credit score on Rupyz app for free. Checking score on Rupyz will not affect your score.</string>
+
+
+    <!--Main Activity Bottom Bar Text -->
+    <string name="bottom_nav_home">Home</string>
+    <string name="bottom_nav_alert">Alert</string>
+    <string name="bottom_nav_learn">Learn</string>
+    <string name="bottom_nav_debt_profile">Loan Summary</string>
+    <string name="bottom_nav_my_network">My Network</string>
+    <string name="bottom_nav_menu">Settings</string>
+    <string name="bottom_nav_my_business">My Business</string>
+    <string name="bottom_nav_post">Post</string>
+    <string name="loan_summary">Loan Summary</string>
+    <string name="bottom_nav_more">More</string>
+
+    <!--    Home Fragment Active Facility Mix String-->
+
+    <string name="personal_loans">Personal Loans</string>
+    <string name="housing_loan">Housing Loan</string>
+
+    <string name="auto_loans">Auto Loans</string>
+
+    <string name="secured_loan">SECURED LOAN</string>
+    <string name="unsecured_loan">UNSECURED LOAN</string>
+
+
+    <!--   Equifax Home Fragment Active Facility Mix String-->
+    <string name="working_capital">Working Capital</string>
+    <string name="term_loans">Term loans</string>
+    <string name="others">Others</string>
+    <string name="forex">Forex</string>
+    <string name="non_fund_based">Non fund based</string>
+
+    <!--    Home Fragment Active score card Mix String-->
+    <string name="high_risk">High Risk</string>
+    <string name="very_high_risk">Very High Risk</string>
+    <string name="very_low_risk">Very Low Risk</string>
+    <string name="low_risk">Low Risk</string>
+    <string name="medium_risk">Medium Risk</string>
+
+
+    <!--    Home Fragment Active Default & NPA String-->
+    <string name="npa_dps">DPD</string>
+    <string name="npa_sma">SMA</string>
+    <string name="npa_loss">Loss</string>
+    <string name="npa_doubtful">Doubtful</string>
+    <string name="npa_sub_standard">Sub Standard</string>
+
+    <!--    Home Fragment Active Ownership Mix String-->
+    <string name="ownership_mix_individual">Individual</string>
+    <string name="ownership_mix_joint_guarantor">Joint/Guarantor</string>
+
+
+    <!--    Home Fragment Active Lender Mix String-->
+    <string name="equifax_nbfc">NBFC</string>
+    <string name="equifax_psu_bank">PSU Bank</string>
+    <string name="equifax_private_bank">Private Bank</string>
+    <string name="equifax_others">Others</string>
+
+    <!--    Splash Activity -->
+    <string name="splash_title">India\'s First Credit Building App For Business</string>
+    <string name="made_in_india">Made in India with </string>
+
+    <!--    Account Screens Strings -->
+    <string name="select_account_type">Select Account Type</string>
+    <string name="individual">Individual</string>
+    <string name="proprietor">Proprietorship Firm</string>
+    <string name="firm">Partnership Firm</string>
+    <string name="limited">Limited Liability Partnership(LLP)</string>
+    <string name="private_limited">Private/Public Limited</string>
+
+
+    <string name="COMPANY">COMPANY</string>
+    <string name="INDIVIDUAL">INDIVIDUAL</string>
+    <string name="PROPRIETOR">PROPRIETOR</string>
+    <string name="PARTNERSHIP_FIRM">PARTNERSHIP_FIRM</string>
+    <string name="LLP">LLP</string>
+
+    <!--    Login with mobile Number Screen strings-->
+    <string name="enter_phone_number_email">Enter Mobile Number</string>
+    <string name="linked_to_your_latest_loan_account">Linked to your latest loan/bank account</string>
+    <string name="login_with_mobile_desc"></string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="sales_mobile_number">Mobile Number <font fgcolor='#ef5350'>*</font></string>
+
+    <string name="terms">By continuing, you have to agree Rupyz</string>
+    <string name="experian_consent">You hereby consent to RUPYZ.COM being appointed as your authorised representative to receive your Credit Information on an ongoing basis until the purpose of educating you of your own credit history, providing credit management services/advisory and data analytics services to you, curating personalized credit offers and facilitating the same to you (“End Use Purpose”) is satisfied or expiry of 6 months from date the consent is collected; whichever is earlier.</string>
+    <string name="equifax_consent">You hereby consent to RUPYZ.COM being appointed as your authorised representative to receive your Credit Information from Equifax for the purpose of educating you of your own credit history, providing credit management services/advisory and data analytics services to you, curating personalized credit offers and facilitating the same to you (“End Use Purpose”).</string>
+    <string name="rupyz_terms"><u>Terms of Service</u></string>
+    <string name="experian_consent_model"><u>Experian Consent</u></string>
+    <string name="equifax_consent_model"><u>Equifax Consent</u></string>
+    <string name="experian_consent_model_text">BY EXECUTING THIS AGREEMENT / CONSENT FORM, YOU ARE EXPRESSLY AGREEING TO ACCESS THE EXPERIAN CREDIT INFORMATION REPORT AND CREDIT SCORE, AGGREGATE SCORES, INFERENCES, REFERENCES AND DETAILS (AS DEFINED BELOW)(TOGETHER REFERRED AS “CREDIT INFORMATION”). YOU HEREBY ALSO IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPYZ.COM BY USING EXPERIAN TOOLS, ALGORITHMS AND DEVICES AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN. Information Collection, Use, Confidentiality, No-Disclosure and Data Purging RUPYZ.COM shall access your Credit Information as your authorized representative and RUPYZ.COM shall use the Credit Information for limited End Use Purpose consisting of and in relation to the services proposed to be availed by you from RUPYZ.COM. We shall not aggregate, retain, store, copy, reproduce, republish, upload, post, transmit, sell or rent the Credit Information to any other person and the same cannot be copied or reproduced other than as agreed herein and in furtherance to CICRA. The Parties agree to protect and keep confidential the Credit Information both online and offline. The Credit Information shared by you, or received on by us on your behalf shall be destroyed, purged, erased promptly within 1 (one) Business Day of upon the completion of the transaction/ End Use Purpose for which the Credit Information report was procured. Governing Law and Jurisdiction The relationship between you and RUPYZ.COM shall be governed by laws of India and all claims or disputes arising there from shall be subject to the exclusive jurisdiction of the courts of Mumbai. Definitions: Capitalised terms used herein but not defined above shall have the following meanings: “Business Day” means a day (other than a public holiday) on which banks are open for general business in Mumbai. “Credit Information Report” means the credit information / scores/ aggregates / variables / inferences or reports which shall be generated by Experian; “Credit Score” means the score which shall be mentioned on the Credit Information Report which shall be computed by Experian. “CICRA” shall mean the Credit Information Companies (Regulation) Act, 2005 read with the Credit Information Companies Rules, 2006 and the Credit Information Companies Regulations, 2006, and shall include any other rules and regulations prescribed thereunder.</string>
+
+    <string name="rupyz_policy"><u>Privacy Policy</u></string>
+    <string name="whatsapp_consent">Get notifications on whatsapp</string>
+    <string name="whatsapp_consent_order">Get notifications on whatsapp for all your order details</string>
+    <string name="login_with_mobile_button_continue">Continue</string>
+
+    <!--    OTP Verification Screen String-->
+    <string name="enter_verification_code">Enter Verification Code</string>
+    <string name="sent_to">Sent to +91 </string>
+    <string name="go_back"><u>Go Back</u></string>
+    <string name="resend_otp"><u>Resend OTP</u></string>
+    <string name="otp_verify_button_continue">Continue</string>
+    <string name="resend_otp_in">Resend OTP in</string>
+    <string name="seconds">Seconds</string>
+    <string name="creating_customer">Creating Customer</string>
+
+    <!--    pan layout-->
+    <string name="enter_pan_number">Enter PAN Number</string>
+    <string name="pan">PAN<font fgcolor='#ef5350'>*</font></string>
+    <string name="pan_without_star">PAN</string>
+    <string name="next">next</string>
+
+    <string name="masked_email">Enter your Email address corresponding to</string>
+    <string name="masked_mobile">Enter your Mobile Number corresponding to</string>
+
+    <!--    GST layout-->
+    <string name="select_gst_number">GST Details</string>
+    <!--    Review organization layout-->
+    <string name="select_review">Review</string>
+    <string name="isRequiredMessage">%s is required</string>
+
+    <!--    validation message-->
+    <string name="mobile_number_validation">Valid Mobile Number Required</string>
+    <string name="terms_conditions_validation">Please accept terms and conditions</string>
+    <string name="experian_consent_validation">Please accept experian consent</string>
+    <string name="equifax_consent_validation">Please accept equifax consent</string>
+
+    <string name="overdue_message">There are no account with overdue.</string>
+    <string name="repayment_message">There are no account with missed repayment.</string>
+    <string name="default_message">There are no account with defaults &amp; negative.</string>
+
+    <!--    Score Insights Text-->
+    <string name="good">Good</string>
+    <string name="poor">Poor</string>
+    <string name="average">Average</string>
+    <string name="excellent">Excellent</string>
+
+    <string name="negative">negative</string>
+    <string name="repayment">repayment</string>
+    <string name="credit_card">credit_card</string>
+    <string name="credit_age">credit_age</string>
+    <string name="new_loan">new_loan</string>
+    <string name="secured">secured</string>
+
+
+    <string name="negative_poor">There are loan accounts with a default history in your credit report.The presence of these accounts is impacting your credit score.\n\nTo know more- Click on the Overdue, Negative a/c and Defaults a/c tile.\n\nNegative and Default accounts include-\n\n1. Loan accounts with an overdue or\n\n2. Any past or present loan a/c with a history of a default or\n\n3. Legal suit filed by the lenders\n\nPresence of these accounts negatively impact your credit score. </string>
+    <string name="negative_average">"
+There are accounts with an overdue amount in your credit report.\n\nFor better credit score- Pay your overdue now\n\nTo know more about the account with an overdue. click on overdue tile.\n\nNegative and Default accounts include-\n\n1. Loan accounts with an overdue or\n\n2. Any past or present loan a/c with a history of a default or\n\n3. Legal suit filed by the lenders\n\nPresence of these accounts negatively impact your credit score. </string>
+    <string name="negative_excellent">
+Great work-\n\nNo Negative and default are present in your credit report.\n\nNegative and Default accounts include-\n\n1. Loan accounts with an overdue or\n\n2. Any past or present loan a/c with a history of a default or\n\n3. Legal suit filed by the lenders\n\nPresence of these accounts negatively impact your credit score. </string>
+
+
+    <string name="repayment_poor">There are few missed payments in your credit report.\n\nMissed payment in the recent months substantially impact your credit score. To improve your score make sure you do not miss any payment in the future.\n\nTo know more about the accounts with missed repayments. Click on the Missed repayments tile.</string>
+
+    <string name="repayment_good">Missed payment in the recent months substantially impact your credit score. To improve your score make sure you do not miss any payment in future.\n\nTo know more about the accounts with missed repayments. Click on the Missed repayments tile.</string>
+
+    <string name="repayment_average">Missed payment in the recent months substantially impact your credit score. To improve your score make sure you do not miss any payment in future.\n\nTo know more about the accounts with missed repayments. Click on the Missed repayments tile. </string>
+
+    <string name="repayment_excellent">Congratulations\n\n100% of your repayments are on time.\n\n
+    </string>
+
+
+    <string name="credit_card_poor">Your credit card utilization is Very high. It is negatively impacting your credit score. Try to keep credit card utilization below 50% of the credit card limit.  </string>
+    <string name="credit_card_good">Your credit card utilization is fair. For a good credit score, try to keep credit card utilization below 20% of the credit card limit.</string>
+    <string name="credit_card_average">Your credit card utilization is high. To further improve your score try to keep credit card utilization below 40% of the credit card limit </string>
+    <string name="credit_card_excellent">Awesome! You spend money wisely. To maintain a good credit score, keep maintaining credit card utilization below 20% of the credit card limit. </string>
+
+
+    <string name="credit_age_poor">Credit age is the length of time that has passed since you opened your first credit account. Higher credit age is better for the credit score.\n\nTo know more- Read our blog "What causes your credit score to fall?" in learn section </string>
+    <string name="credit_age_good">Credit age is the length of time that has passed since you opened your first credit account. Higher credit age is better for the credit score\n\nTo know more- Read our blog "What causes your credit score to fall?" in learn section</string>
+    <string name="credit_age_average">Credit age is the length of time that has passed since you opened your first credit account. Higher credit age is better for the credit score\n\nTo know more- Read our blog "What causes your credit score to fall?" in learn section</string>
+    <string name="credit_age_excellent">Credit age is the length of time that has passed since you opened your first credit account. Higher credit age is better for the credit score.\n\nTo know more- Read our blog "What causes your credit score to fall?" in learn section</string>
+
+    <string name="new_loan_poor">Too many recent loans and loan enquiries negatively impact your credit score.\n\nTo know more- Read our blog "What causes your credit score to fall?" in learn section</string>
+    <string name="new_loan_average">Too many recent loans and loan enquiries negatively impact your credit score.\n\nTo know more- Read our blog "What causes your credit score to fall?" in learn section</string>
+    <string name="new_loan_excellent">Too many recent loans and loan enquiries negatively impact your credit score.\n\nTo know more- Read our blog "What causes your credit score to fall?" in learn section</string>
+
+    <string name="secured_average">"Presence of too many unsecured loans or credit cards negatively impact your credit score.\n\n
+
+For a good credit score keep fair mix of secured and unsecured loan facility. </string>
+    <string name="secured_good">Presence of too many unsecured loan or credit card negatively impact your credit score.\n\nFor a good credit score keep fair mix of secured and unsecured loan facility. </string>
+    <string name="under_maintenance">We Are Currently Under Maintenance. Please Try After Sometime.</string>
+    <string name="alert_press_again">Please press again to exit</string>
+    <string name="upcoming_events">Upcoming Events</string>
+    <string name="alerts">Alerts</string>
+    <string name="due_emi_in_next_15_days">EMIs getting due in Next 15 Days</string>
+    <string-array name="states">
+        <item>Select State</item>
+        <item>Andaman &amp; Nicobar</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chandigarh</item>
+        <item>Chhattisgarh</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Daman &amp; Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu &amp; Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Lakshadweep</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Orissa</item>
+        <item>Pondicherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttarakhand</item>
+        <item>Uttar Pradesh</item>
+        <item>West Bengal</item>
+    </string-array>
+
+    <string-array name="statesList">
+        <item>Andaman &amp; Nicobar</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chandigarh</item>
+        <item>Chhattisgarh</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Daman &amp; Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu &amp; Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Lakshadweep</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Orissa</item>
+        <item>Pondicherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttarakhand</item>
+        <item>Uttar Pradesh</item>
+        <item>West Bengal</item>
+    </string-array>
+
+
+    <string-array name="badges">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+
+    <string-array name="sort_by">
+        <item>Status</item>
+        <item>Lender Name</item>
+        <item>Type Of Loan</item>
+        <item>Outstanding</item>
+        <item>Date - Asc</item>
+        <item>Date - Desc</item>
+    </string-array>
+
+    <string-array name="attendance_status">
+        <item>Present</item>
+        <item>"Casual Leave</item>
+        <item>Half Casual Leave</item>
+        <item>Unpaid Leave</item>
+        <item>Half Unpaid Leave</item>
+    </string-array>
+
+    <string-array name="department">
+        <item>Sales</item>
+        <item>Accounts</item>
+    </string-array>
+
+    <string-array name="shipment_payment_option">
+        <item>Paid</item>
+        <item>To Be Paid</item>
+    </string-array>
+
+    <string-array name="payment_options">
+        <item>Payment on Delivery</item>
+        <item>Payment On Next Order</item>
+        <item>Full Payment in Advance</item>
+        <item>Partial Payment</item>
+        <item>Credit Days</item>
+    </string-array>
+
+    <string-array name="payment_options_for_edit">
+        <item>Full Payment in Advance</item>
+        <item>Partial Payment</item>
+    </string-array>
+
+
+    <string name="title_activity_maps">Map</string>
+    <string name="enter_loan_amount">Enter loan Amount</string>
+    <string name="enter_emi">Enter Emi</string>
+    <string name="enter_interest_rate">Enter Interest Rate</string>
+    <string name="enter_loan_tenure">Enter Loan Tenure</string>
+    <string name="emi">EMI</string>
+    <string name="interest_amount">Interest Amount</string>
+    <string name="rate_of_interest">Rate of Interest</string>
+    <string name="error_msg_other_charge">Please enter valid input for other charge</string>
+    <string name="error_msg_processing_fee">Please enter valid input for processing fee</string>
+    <string name="error_msg_insurance">Please enter valid input for insurance</string>
+    <string name="error_msg_deposit">Please enter valid input for deposit</string>
+
+    <string name="view_amortization">View Amortization</string>
+    <string name="no_internet">Slow or No Internet Detected</string>
+    <string name="maintenance_msg">We Are Currently Under Maintenance. Please Try After Sometime.</string>
+
+    <string name="interest">Interest</string>
+    <string name="principal">Principal</string>
+    <string name="other_charges">Other Charges</string>
+    <string name="effective_rate">Effective Rate</string>
+
+    <string name="all_you_need_to_about_credit_score">A “credit score” ranging from 300 to 900, represents your credibility based on your borrowings and repayment history since you first took the loan or any credit facility. 300 means low credibility and 900 means high credibility.</string>
+    <string name="credit_score_represents">A credit score represents a score from 300-900. It indicates your credibility based on the repayment behavior of your loans and credit card.</string>
+    <string name="score_ranges">The score category below is a generally accepted industry standard. Experian or any other credit bureau does not provide the information category bifurcation.</string>
+
+    <string name="error_tenure">Please Select Tenure in Month / Year</string>
+
+    <string name="equifax_credit_score_represents_heading">What is Equifax Commercial Rank (ECR) -</string>
+    <string name="equifax_credit_score_represents">It is a grade assigned to the businesses based on its credit profile, credit behavior and firmographics on a scale of 1 to 10, ECR-1 being the least risky business and ECR-10 being the most risky business. Higher the ECR, higher the probability of default associated with the business.</string>
+    <string name="please_wait">Please wait</string>
+    <string name="outstanding">Outstanding Amount</string>
+    <string name="doubtful">Doubtful</string>
+    <string name="standard">Standard</string>
+
+    <string name="credit_history_at_a_glance">Credit History at a Glance</string>
+    <string name="decode_your_credit_history">Decode your credit history</string>
+    <string name="score_insights">Score Insights</string>
+    <string name="lbl_insights">Insights</string>
+    <string name="lbl_activity">Activity</string>
+    <string name="lbl_inventory">Inventory</string>
+    <string name="key_factors_affecting_your_score">Key factors affecting your score</string>
+
+    <string name="bad">Bad</string>
+
+    <string name="COMMERCIAL">COMMERCIAL</string>
+    <string name="RETAIL">RETAIL</string>
+
+    <string name="high_impact">High Impact</string>
+    <string name="low_impact">Low Impact</string>
+    <string name="medium_impact">Medium Impact</string>
+
+    <string name="enter_gst_number">Enter GST Number</string>
+
+    <string name="equifax_negative">"Negative and Default accounts include-
+        \n 1. Loan accounts with an overdue or
+\n2. Any past or present loan a/c with a history of a default or
+\n3. Legal suit filed by the lenders
+\nPresence of these accounts negatively impact your credit score. "</string>
+    <string name="equifax_repayment">"Missed payment in the recent months substantially impact your commercial rank and credit score. To improve your commercial rank, make sure you do not miss any payment in the future.
+        \n\nTo know more about the accounts with missed repayments. Click on the Missed repayments tile."</string>
+    <string name="equifax_credit_age">"Credit age is the length of time that has passed since you opened your first credit account. Higher credit age is better for the credit score.
+        \n\nTo know more- Read our blog ""What causes your credit score to fall?"" in learn section "</string>
+    <string name="equifax_new_loan">"Too many recent loans and loan enquiries negatively impact your credit score. Avoid random applying for loan with lenders. Check your elegiblity before applying with respective lender.
+
+To know more- Read our blog ""What causes your credit score to fall?"" in learn section"</string>
+    <string name="equifax_business_vintage">Firmographic includes business vintage, Nature of business, industry and size of the organization. </string>
+    <string name="equifax_loan_count">Lender mix has low impact on overall commercial rank but too many loans from NBFCs and small finance bank adversely impact your credit rank.  </string>
+    <string name="no_defaults_npa_account">No Defaults &amp; NPA Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fetch_report"><u><b>Get Report</b></u></string>
+    <string name="fetch_report_message">Issue Resolved. Please click below and get your credit report &amp; score!</string>
+    <string name="technical_issue_message">Ops! There seems to be some technical issues. Let us fix that for you and get your credit score. We will notify your once we fix that in next 24 hours.</string>
+    <string name="update_emi_details"><u>Update EMI Details</u></string>
+    <string name="add_emi_header">Rupyz shield - Never miss your EMI! Plan cash flow in advance.</string>
+    <string name="add_emi_sub_heading"><![CDATA["Update EMI, rate of interest & and due date - get reminder on whatsapp "]]></string>
+    <string name="view_more"><u>More...</u></string>
+    <string name="view_less"><u>Less</u></string>
+    <string name="alert_msg_delete">Are You Sure Want to delete this ??</string>
+    <string name="purchaseOrderNumber">Purchase Order (PO) Number</string>
+    <string name="grow_business"><font color="#ffffff">Grow your business</font><font color="#31EEFC"> 5x.</font></string>
+    <string name="take_business_digital"><font color="#ffffff">Take your Business</font><font color="#31EEFC"> Digital</font></string>
+    <string name="establishment_date">Establishment Date</string>
+    <string name="please_confirm_below_details">Please confirm below details</string>
+    <string name="address_line_1">Address<font fgcolor='#ef5350'>*</font></string>
+
+    <string name="address_line_2">Address line 2</string>
+    <string name="pincode">Pincode<font fgcolor='#ef5350'>*</font></string>
+    <string name="saveAddressAs">Save Address as<font fgcolor='#ef5350'>*</font></string>
+    <string name="pinCodeAutoFillHint">Enter Pincode to auto fill city &amp; state</string>
+    <string name="pincode_without_star">Pincode</string>
+    <string name="state">State<font fgcolor='#ef5350'>*</font></string>
+    <string name="state_without_star">State</string>
+    <string name="city">City<font fgcolor='#ef5350'>*</font></string>
+    <string name="str_continue">Continue</string>
+    <string name="non_gst_str_skip"><u>Don\'t have GST Number</u></string>
+    <string name="please_enter_your_business_information">Please enter your Business Information</string>
+    <string name="business_details">Business Details</string>
+    <string name="business_pan">Business PAN</string>
+    <string name="business_name">Business Name <font fgcolor='#ef5350'>*</font></string>
+    <string name="business_e_mail">Business E-mail <font fgcolor='#ef5350'>*</font></string>
+    <string name="select_gst">Select GST</string>
+    <string name="please_select_gst_number_of_your_head_office_corporate_office">Please select GST Number of your head office / corporate office</string>
+    <string name="we_will_help_you_to_grow_your_business_using_online_services">B2B e-commerce : Sales Workflow Automation | Order Management | B2B e-commerce | Product Catalogue</string>
+    <string name="enter_your_mobile_number_amp_get_started"><![CDATA[Enter Mobile number associated with business]]></string>
+    <string name="choose_your_preffered_language">Choose your Preffered Language</string>
+    <string name="upload_a_photo">Upload a photo</string>
+    <string name="iamge_size_restriction">Images above 5MB will be compressed dynamically</string>
+    <string name="attachment_size_restriction">Attachments above 5MB will be compressed dynamically</string>
+    <string name="choose_from_gallery">Choose from gallery</string>
+    <string name="take_a_photo">Take a photo</string>
+
+    <!--    <string name="message2.2">We could not find the credit report linked with the mobile and PAN you have provided. Kindly check if it's correct input</string>-->
+    <!--    <string name="message">It is taking longer than expected time, If you are not  getting data in next 10 second (count down) please click on try again</string>-->
+
+
+    <string name="nav_settings">Settings</string>
+    <string name="nav_share">Share</string>
+    <string name="nav_rate">Rate</string>
+    <string name="nav_terms_condition">Terms &amp; Conditions</string>
+    <string name="nav_privacy_policy">Privacy Policy</string>
+    <string name="nav_logout">Logout</string>
+    <string name="about_us">About Us</string>
+    <string name="no_of_employees">Number of Employees</string>
+    <string name="edit_intro">Edit Intro</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="credible_business_network">Credible Business Community</string>
+    <string name="your_business_on_mobile">Your Business on mobile</string>
+    <string name="mobile_organization">Mobile - Organization<font fgcolor='#ef5350'>*</font></string>
+    <string name="email">Email<font fgcolor='#ef5350'>*</font></string>
+    <string name="email_without_star">E-mail</string>
+    <string name="mail">Mail</string>
+    <string name="first_name">First Name <font fgcolor='#ef5350'>*</font></string>
+    <string name="last_name">Last Name<font fgcolor='#ef5350'>*</font></string>
+    <string name="last_name_without_star">Last Name</string>
+    <string name="date_of_birth">Date of Birth<font fgcolor='#ef5350'>*</font></string>
+    <string name="mobile">Mobile<font fgcolor='#ef5350'>*</font></string>
+    <string name="mobile_without_star">Mobile</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="share">Share</string>
+    <string name="team_first_name">First Name<font fgcolor='#ef5350'>*</font></string>
+    <string name="team_designation">Designation<font fgcolor='#ef5350'>*</font></string>
+    <string name="introduction">Introduction<font fgcolor='#ef5350'>*</font></string>
+    <string name="specification">Specification</string>
+    <string name="expense_date">Expense Date <font fgcolor='#ef5350'>*</font></string>
+    <string name="description">Description</string>
+    <string name="achievement_description">Description<font fgcolor='#ef5350'>*</font></string>
+    <string name="add_category">Product Category <font fgcolor='#ef5350'>*</font></string>
+    <string name="name">Name <font fgcolor='#ef5350'>*</font></string>
+    <string name="name_without_star">Name</string>
+    <string name="product_name">Product Name <font fgcolor='#ef5350'>*</font></string>
+    <string name="images">Images<font fgcolor='#ef5350'>*</font></string>
+    <string name="product_image">Images<font fgcolor='#ef5350'>*</font> (upload at-least 1 image and up-to 6 image)</string>
+    <string name="linkedin_profile_link">Linkedin Profile Link (e.g. https://linkedin.com)</string>
+    <string name="project_name">Project Name <font fgcolor='#ef5350'>*</font></string>
+    <string name="date">Date <font fgcolor='#ef5350'>*</font></string>
+    <string name="date_order">Date:</string>
+    <string name="date_without_star">Date</string>
+    <string name="associated_with">Associated with<font fgcolor='#ef5350'>*</font></string>
+    <string name="achievements_description">Description<font fgcolor='#ef5350'>*</font></string>
+    <string name="content">Content<font fgcolor='#ef5350'>*</font></string>
+    <string name="organization_name">Organization Name <font fgcolor='#ef5350'>*</font></string>
+    <string name="organization_name_without_star">Organization Name</string>
+    <string name="designation">Designation<font fgcolor='#ef5350'>*</font></string>
+    <string name="user_name">User Name<font fgcolor='#ef5350'>*</font></string>
+    <string name="price_range">Price Range</string>
+    <string name="unit">Unit (e.g. kg, meter, piece) <font fgcolor='#ef5350'>*</font></string>
+    <string name="packaging_unit">Packaging Unit <font fgcolor='#ef5350'>*</font></string>
+    <string name="no_team_member_found">No Team Member Found!</string>
+    <string name="short_description_of_your_business">Short Description of Your Business*</string>
+    <string name="choose_miltiple_from_gallery">Choose multiple from gallery</string>
+
+    <string name="community_member">Community Member</string>
+    <string name="type">Type</string>
+    <string name="locations">Locations</string>
+    <string name="badge">Badge</string>
+    <string name="et_search">Search...</string>
+    <string name="et_search_order">Search customer name or order Id</string>
+    <string name="et_search_for_product">Search Products, Category, SKU</string>
+    <string name="et_search_customer">Search customer</string>
+    <string name="sold_by">Sold by</string>
+    <string name="discovery">Discovery</string>
+    <string name="connect">Connect</string>
+    <string name="see_all_business_results">See all business results</string>
+    <string name="see_all_product_results">See all product results</string>
+    <string name="organization">Organization</string>
+    <string name="product">Product</string>
+    <string name="product_de">Product Details</string>
+    <string name="products">Products</string>
+    <string name="customers">Customers</string>
+    <string name="orders">Orders</string>
+    <string name="recent_orders">Recent Orders</string>
+    <string name="recently_viewed_customers">Recently Viewed Customers</string>
+
+    <string name="read_more">View More</string>
+    <string name="show_less">View Less</string>
+    <string name="emis_getting_due_in_next_15_days">EMIs getting due in Next 15 Days</string>
+    <string name="turnover">Turnover</string>
+    <string name="calculator">Calculator</string>
+    <string name="debt_profile">Loan Summary</string>
+    <string name="report_download">Report Download</string>
+    <string name="preview_image">Preview or edit Image</string>
+    <string name="message_commercial_1_1">It seems you can generate your report by masked mobile number.</string>
+    <string name="generate"><u>Generate</u></string>
+    <string name="confirm_your_email_and_mobile_number">Confirm Your Email and Mobile Number</string>
+    <string name="confirm_your_mobile_number">Confirm your mobile number</string>
+    <string name="recent">Recent</string>
+    <string name="remove_connection">Remove Connection</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancel_request">Cancel request</string>
+    <string name="upload_max_six_images">You can upload max up-to 6 images only</string>
+    <string name="upload_max_one_doc">You can upload only 1 document</string>
+    <string name="view_all"><u>View all</u></string>
+    <string name="details"><u>Details</u></string>
+    <string name="credit_limit">Credit Limit</string>
+    <string name="sales_Outstanding">Outstanding</string>
+    <string name="list_of_orders">List of Orders</string>
+    <string name="list_of_payment">List of Payments</string>
+    <string name="staff">Staff</string>
+    <string name="list_of_staff">List of Staff</string>
+    <string name="list_of_customer">List of Customers</string>
+    <string name="checkout">Check Out</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="check_in">Check In</string>
+      <string name="record_payment">Record Payment</string>
+    <string name="new_order">New Order</string>
+    <string name="no_order">No Order</string>
+    <string name="cart">Cart</string>
+    <string name="rate">Rate :</string>
+    <string name="new_payment">New Payment</string>
+    <string name="qty">Qty :</string>
+    <string name="unit_with_colon">Unit :</string>
+    <string name="order_amount">Order Amount</string>
+    <string name="total">Total</string>
+    <string name="confirm_delivery_address">Select address</string>
+    <string name="add_new_address">Add new Address</string>
+    <string name="deliver_to_this_address">Deliver to this Address</string>
+    <string name="gst_no">GST No</string>
+    <string name="contact_person">Contact Person<font fgcolor='#ef5350'>*</font></string>
+    <string name="address_line_1_mandatory">Address<font fgcolor='#ef5350'>*</font></string>
+    <string name="city_mandatory">City<font fgcolor='#ef5350'>*</font></string>
+    <string name="city_without_star">City</string>
+    <string name="state_mandatory">State<font fgcolor='#ef5350'>*</font></string>
+    <string name="select_state_mandatory">Select State<font fgcolor='#ef5350'>*</font></string>
+    <string name="pincode_mandatory">Pincode<font fgcolor='#ef5350'>*</font></string>
+    <string name="enter_pincode_mandatory">Enter Pincode<font fgcolor='#ef5350'>*</font></string>
+
+    <string name="payment_terms">Payment Terms</string>
+    <string name="add_customer">Add Customer</string>
+    <string name="update_customer">Update Customer</string>
+    <string name="update_segment">Update Segment</string>
+
+    <string name="landmark">Landmark</string>
+    <string name="add_staff">Add Staff</string>
+    <string name="update_staff">Update Staff</string>
+    <string name="department">Department<font fgcolor='#ef5350'>*</font></string>
+    <string name="pan_optional">PAN (Optional)</string>
+    <string name="employee_id">Employee ID<font fgcolor='#ef5350'>*</font></string>
+    <string name="designation_staff">Designation</string>
+    <string name="e_mail_staff">E-mail</string>
+    <string name="address">Address</string>
+    <string name="date_of_joining">Date of Joining</string>
+    <string name="bank_account_details">Bank Account Details</string>
+    <string name="bank">Bank</string>
+    <string name="account_number">Account Number</string>
+    <string name="branch">Branch</string>
+    <string name="ifsc_code">IFSC Code</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="select_customer">Select Customer</string>
+    <string name="select_product">Select Product</string>
+    <string name="price">Price</string>
+    <string name="offer">Offer</string>
+    <string name="add_product">Add Product</string>
+    <string name="send">Send</string>
+    <string name="create_order">Create Order</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="list_of_record_payment">Record Payment</string>
+    <string name="customer">Customer</string>
+    <string name="customer_count_for_beat"><u>%s Customers</u></string>
+    <string name="staff_id">ID : %s </string>
+    <string name="retailer_count_for_beat"><u>%s %s</u></string>
+    <string name="record_payment_amount">Amount<font fgcolor='#ef5350'>*</font></string>
+    <string name="record_payment_mode_of_payment">Mode of Payment<font fgcolor='#ef5350'>*</font></string>
+    <string name="transaction_id">Transaction ID</string>
+    <string name="note_comment">Note / Comment</string>
+    <string name="note_comment_for_admin">Note / Comment For Admin</string>
+    <string name="amount">Amount</string>
+    <string name="forAdmin">Comment for Admin 💬</string>
+    <string name="amount_with_star">Amount *</string>
+    <string name="discount_with_max_value">Discount (Max 5 discount)</string>
+    <string name="discount">Discount</string>
+    <string name="gst">GST</string>
+    <string name="gst_percentage">GST (%s)</string>
+    <string name="gst_in_percentage">GST (in %) <font fgcolor='#ef5350'>*</font></string>
+    <string name="upload">Upload</string>
+
+
+    <string name="price_with_rupee_symbol">\u20B9 %s</string>
+    <string name="discount_applied_with_rupee_symbol">\u20B9 %s  Discount Applied \u0020</string>
+    <string name="offer_price_applied_with_rupee_symbol">\u20B9 %s  Offer Price Applied \u0020</string>
+    <string name="offer_price_applied">Offer Price Applied </string>
+    <string name="discount_applied_with_percentage_symbol">%s  Discount Applied \u0020</string>
+    <string name="discount_percentage">Discount (%s)</string>
+    <string name="product_quantity_string">Pkg. Size : %s \u0058 %s =  %s</string>
+    <string name="product_quantity_without_pre_text_string">%s \u0078 %s </string>
+    <string name="product_quantity_without_pre_text_string1">Qty: </string>
+    <string name="product_quantity">qty: </string>
+    <string name="rupee_symbol">\u20B9</string>
+    <string name="percentage_symbol">\%</string>
+    <string name="view_orders">View Orders</string>
+    <string name="display_price">Buyer Price <font fgcolor='#ef5350'>*</font></string>
+    <string name="mrp_price">MRP <font fgcolor='#ef5350'>*</font></string>
+    <string name="share_app">Share App</string>
+    <string name="rate_app">Rate App</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="exclusive">Exclusive</string>
+    <string name="inclusive">Inclusive</string>
+    <string name="choose_product_unit">Choose Product Unit</string>
+    <string name="order_successfully_placed">Order Successfully Placed</string>
+    <string name="staff_details">Staff Details</string>
+    <string name="total_sales">Total Sales</string>
+    <string name="amount_received">Payment Received</string>
+    <string name="recent_payments">Recent Payments</string>
+    <string name="mode_of_payment">Mode of payment</string>
+    <string name="collected_by">Collected by</string>
+    <string name="customer_details">Customer Details</string>
+    <string name="contact_person_hd">Contact Person</string>
+    <string name="last_order_date">Last Order Date</string>
+    <string name="amount_outstanding">Amount Outstanding</string>
+    <string name="id">ID</string>
+    <string name="filter_error_message">Please select any filter type</string>
+    <string name="know_more"><u>Know more</u></string>
+    <string name="business_type">Customer Type</string>
+    <string name="retailer_type">Distributor Type</string>
+    <string name="segment">Segment</string>
+    <string name="add_new_segment">Add Segment</string>
+    <string name="discount_value">Discount Value (%)<font fgcolor='#ef5350'>*</font></string>
+    <string name="discount_unit">Discount Unit <font fgcolor='#ef5350'>*</font></string>
+    <string name="order_details">Order Details</string>
+    <string name="distributor">Distributor</string>
+    <string name="retailer">Retailer</string>
+    <string name="category">Category</string>
+    <string name="list_of_retailer">List of Retailer</string>
+    <string name="product_code">Product Code <font fgcolor='#ef5350'>*</font></string>
+    <string name="please_use_this_number_for_login">Please use the entered number for next login.</string>
+    <string name="delivery_charges">Other Charges</string>
+    <string name="digitalise_your_business_grow"><![CDATA[Digitalise your business & grow 5X. Colborate with your sales, office staff & buyers with automated sale, ordering & stock management. Take control of your business with real time anlytics.]]></string>
+    <string name="enter_pan_to_autofill">Fill PAN Details to autofill the below information</string>
+    <string name="enter_gst_to_autofill">Fill GST number to autofill the below information</string>
+    <string name="no_result_found">No Result found.</string>
+    <string name="packaging_size">Packaging Size</string>
+    <string name="add">Add</string>
+    <string name="enter_discount_name">Enter discount name</string>
+    <string name="update">Update</string>
+    <string name="update_date">Updated Date</string>
+    <string name="update_at">Updated at</string>
+    <string name="payments">Payments</string>
+    <string name="report">Reports</string>
+    <string name="order_sales_overview">Order / Sales Overview</string>
+    <string name="customer_wise_sales">Customer wise sales</string>
+    <string name="sale_value">Sale Value</string>
+    <string name="order_value">Order Value</string>
+    <string name="dispatch_value">Dispatch Value</string>
+    <string name="order_perc">Order %</string>
+    <string name="sales_perc">Sales %</string>
+    <string name="staff_wise_sales">Staff wise sales</string>
+    <string name="top_products">Top Products</string>
+    <string name="top_category">Top Categories</string>
+    <string name="current">Current</string>
+    <string name="please_try_another_keyword">No result found!!</string>
+
+    <string name="download_report">Download Report</string>
+    <string name="hashtag_order"># Order</string>
+    <string name="filters">Filters</string>
+    <string name="report_filter">For which period do you need a report?</string>
+    <string name="order_by">Ordered by</string>
+    <string name="select_custom_date">Select a custom date of your choice</string>
+    <string name="start_date">Start Date</string>
+    <string name="start_date_with_star">Start Date  <font fgcolor='#ef5350'>*</font></string>
+    <string name="end_date">End Date</string>
+    <string name="proceed">Proceed</string>
+    <string name="no_data_available_for_weekly_and_monthly">Data is not available for WEEKLY and custom date</string>
+    <string name="comment">Comment</string>
+    <string name="comments">Comments</string>
+    <string name="review">Review</string>
+    <string name="buyers_price">Buyers Price</string>
+    <string name="buyers_price_colon">Buyers Price :</string>
+    <string name="apply">Apply</string>
+    <string name="add_more">Add More</string>
+    <string name="save">Save</string>
+    <string name="choseActivity">Choose Activity</string>
+    <string name="telephonicOrder">Telephonic Order</string>
+    <string name="checkIn">Check In</string>
+    <string name="edit_discount">Edit Discount</string>
+    <string name="assign_customer">Assign Customer</string>
+    <string name="new_order_activity">New Order</string>
+    <string name="create_category">Create Category</string>
+    <string name="category_name">Category Name</string>
+    <string name="assign_staff">Assign Staff</string>
+    <string name="et_search_staff">Search Staff</string>
+    <string name="fetch_now">Fetch Now</string>
+    <string name="edit_charges">Edit Charges</string>
+    <string name="exclusive_gst">exclusive GST</string>
+    <string name="inclusive_gst">inclusive GST</string>
+    <string name="payment_against_order">Payment Against Order</string>
+    <string name="skip">Skip</string>
+    <string name="payment_options">Payment Options</string>
+    <string name="address_hint">Enter Name, Number, Area, Landmark <font fgcolor='#ef5350'>*</font></string>
+    <string name="payment_options_mandatory">Payment Options <font fgcolor='#ef5350'>*</font></string>
+    <string name="payment_amount">Payment Amount</string>
+    <string name="payment_amount_mandatory">Payment Amount <font fgcolor='#ef5350'>*</font></string>
+    <string name="payment_amount_with_separator">Payment Amount : </string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="payment_mode_mandatory">Payment Mode <font fgcolor='#ef5350'>*</font></string>
+    <string name="str_mode_of_payment">Mode of Payment</string>
+    <string name="transaction_ref_no">Transaction Ref.</string>
+    <string name="remaining_payment_after">Remaining Payment After <font fgcolor='#ef5350'>*</font></string>
+    <string name="offer_price">Offer Price</string>
+    <string name="discount_slash_offer_price">Discount/Offer Price</string>
+    <string name="discount_value_not_be_greater_then_product_price">Discount value can not be greater than Product price!!</string>
+    <string name="offer_price_not_be_greater_then_product_price">Offers price can not be greater than Product price!!</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="colon">:</string>
+    <string name="rejected_reason">Rejected Reason</string>
+    <string name="reject_reason">Reject Reason</string>
+    <string name="entered_by">Entered by</string>
+    <string name="update_order_status">Update Status</string>
+    <string name="create_shipment">Create shipment</string>
+    <string name="select_all_product">Select All Product</string>
+    <string name="three">3</string>
+    <string name="two">2</string>
+    <string name="one">1</string>
+    <string name="do_you_want_to_carry_remaining_order"><font fgcolor='#ef5350'>*</font> Do you want to carry remaining order</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="shipment_details">Shipment Details</string>
+    <string name="lr_bilty_number">LR/ BILTY Number</string>
+    <string name="notes">Notes</string>
+    <string name="review_shipment">Review Shipment</string>
+    <string name="photos">Photos</string>
+    <string name="item_summery">Item Summary</string>
+    <string name="confirm">Confirm</string>
+    <string name="shipment">Shipment</string>
+    <string name="ordered">Ordered</string>
+    <string name="ordered_colon">Ordered:</string>
+    <string name="lr_receipt_photo">LR Receipt Files</string>
+    <string name="upload_image">Upload Files</string>
+    <string name="uploading_images_with_count">Uploading %s %s</string>
+    <string name="order_with_order_id">Order No: %s</string>
+    <string name="carry_remaining_quantity">Carry Remaining Order ?</string>
+    <string name="you_are_carry_remaining_order">You are carrying the remaining order</string>
+    <string name="you_are_not_carry_remaining_order">You are not carrying the remaining order</string>
+    <string name="dispatch_quantity_can_not_be_empty">Dispatch quantity can not be empty</string>
+    <string name="dispatch_history">Dispatch History</string>
+    <string name="staff_and_customer_mapping">Staff Customer mapping</string>
+    <string name="minimum_order_amount">Minimum Order Amount</string>
+    <string name="minimum_order_amount_msg">Enable to set the min. order value for your organization. Once enabled for an amount, no order will be allowed to be taken below that min. order amount</string>
+    <string name="list_of_customer_category">List of Customer Category</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="closed">Closed</string>
+    <string name="add_address">Add Address</string>
+    <string name="sales">Sales</string>
+    <string name="toast_cannot_retrieve_cropped_image">Cannot retrieve cropped image</string>
+    <string name="toast_unexpected_error">Unexpected error</string>
+    <string name="add_photo">Add Image</string>
+    <string name="upload_images">Upload Image</string>
+    <string name="select_image_for_making_as_a_display_picture">Select Image for making as a display picture</string>
+
+    <string name="inactive">Delete</string>
+    <string name="delete_customer">Delete Customer</string>
+    <string name="transfer_customer_count">Transfer %s %s</string>
+    <string name="transfer_retailer">Transfer %s</string>
+    <string name="transfer_retailer_for_parent">of %s</string>
+    <string name="mapped_placeHolder_list">Mapped %s List</string>
+    <string name="placeHolder_placeHolder_string">%s %s</string>
+    <string name="transfer_customer_message">%1$s %2$s are mapped under <b><font fgcolor='#000000'>%3$s</font></b>, Transfer them to another <b>%4$s</b> before deleting it.</string>
+    <string name="delete_order">Delete Order</string>
+    <string name="delete_customer_message">Are you sure you want to delete this Customer from your organization?</string>
+    <string name="delete_staff_message">Are you sure you want to delete this staff from your organization?</string>
+    <string name="delete_product_message">Are you sure you want to delete this product?</string>
+    <string name="delete_order_message">Are you sure you want to delete this Order?</string>
+    <string name="profile">Profile</string>
+    <string name="admin">Admin</string>
+    <string name="admin_notes">Admin Notes</string>
+    <string name="assign_role">Assign Role</string>
+    <string name="assign_role_with_star">Assign Role <font fgcolor='#ef5350'>*</font></string>
+    <string name="company_name">Company Name</string>
+    <string name="packaging_size_with_unit">(No of %s In %s)</string>
+    <string name="discount_percentage_not_be_greater_then_hundred">Discount percentage can not be greater then 100!!</string>
+    <string name="delete_product__from_cart_message">Are you sure you want to delete this item from your cart?</string>
+    <string name="delete_item">Delete Product</string>
+    <string name="delete_staff">Delete Staff</string>
+    <string name="user">User</string>
+    <string name="select_organization">Select Organization</string>
+    <string name="more">More</string>
+    <string name="add_new_organization">Add New Organization</string>
+    <string name="create_order_for_customer">Create order for <b>%s</b></string>
+    <string name="powered_by">Powered by</string>
+    <string name="all">All</string>
+    <string name="warehouse">Warehouse</string>
+    <string name="godown">Godown</string>
+    <string name="other">Other</string>
+    <string name="back">Back</string>
+    <string name="submit">Submit</string>
+    <string name="add_organization">Add Organization</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="code_sent_to">Code is sent to</string>
+    <string name="did_not_receive_code">Didn\'t receive code?</string>
+    <string name="request_again">Request again</string>
+    <string name="pan_card_number">PAN Card Number</string>
+    <string name="pan_card_number_with_star">PAN Card Number <font fgcolor='#ef5350'>*</font></string>
+    <string name="verify">Verify</string>
+    <string name="join_new_organization">Join Organization</string>
+    <string name="list_of_roles">List of Roles</string>
+    <string name="no_staff_found">No Staff Found!!</string>
+    <string name="expenses">Expenses</string>
+    <string name="activity">Activity</string>
+    <string name="all_lead_category">All Lead Category</string>
+    <string name="leads">Lead</string>
+    <string name="record_activity">Record Activity</string>
+    <string name="update_activity">Update Activity</string>
+    <string name="lead_created_by">Created By: %s</string>
+    <string name="lead_created_on">Created On: %s</string>
+    <string name="delete_lead">Delete Lead</string>
+    <string name="delete_lead_message">Are you sure you want to delete this Lead?</string>
+    <string name="enable_now">Enable Now</string>
+    <string name="gps_enabled">Please enable your GPS Location</string>
+    <string name="required_for_this_app">Required for this app</string>
+    <string name="activity_type">Activity Type</string>
+    <string name="activity_type_with_star">Activity Type <font fgcolor='#ef5350'>*</font></string>
+    <string name="lead_category">Lead Category</string>
+    <string name="business_name_without_star">Business Name</string>
+    <string name="contact_person_without_star">Contact Person</string>
+    <string name="city_no_star">City</string>
+    <string name="state_">State</string>
+    <string name="pincode_">Pincode</string>
+    <string name="follow_up_date">Follow up date</string>
+
+    <string name="lead_category_heading">Lead Category<font fgcolor='#ef5350'>*</font></string>
+    <string name="add_new_lead">Add New Lead</string>
+    <string name="search_category">Search Category</string>
+    <string name="add_new">Add New</string>
+    <string name="whatsapp_number">WhatsApp No.</string>
+    <string name="report_whatsapp_number">WhatsApp Number</string>
+    <string name="basic_details">Basic Details</string>
+    <string name="convert_to_customer">Convert to customer</string>
+    <string name="udpate_lead">Update Lead</string>
+    <string name="lead_exist">Lead Exist</string>
+    <string name="lead_already_exist">Lead has already been registered with this phone number.</string>
+    <string name="start_day">Start Day</string>
+    <string name="end_day">End Day</string>
+    <string name="lead_activity">Lead Activity</string>
+    <string name="date_and_time">Date and Time</string>
+    <string name="image_doc">Upload Photos / Docs</string>
+    <string name="delete_feedback">Delete Feedback</string>
+    <string name="delete_feedback_message">Are you sure you want to delete this Feedback?</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="title">Title</string>
+    <string name="title_with_star">Title <font fgcolor='#ef5350'>*</font></string>
+    <string name="upload_image_doc">Upload Photos / Docs</string>
+    <string name="add_expense_head">Add Expense Head</string>
+    <string name="create">Create</string>
+    <string name="update_expense_head">Update Expense Head</string>
+    <string name="re_submitted">Re-Submitted</string>
+    <string name="items_added">Items Added</string>
+    <string name="str_new">New</string>
+    <string name="expense_detail">Expense Detail</string>
+    <string name="delete_reimbursement">Delete Reimbursement</string>
+    <string name="delete_reimbursement_message">Are you sure you want to delete this Reimbursement?</string>
+    <string name="expense_capture">Expense Captured</string>
+    <string name="my_expenses">My Expenses</string>
+    <string name="approval_requests">Approval Requests</string>
+    <string name="verify_end_date">Please Verify End Date</string>
+    <string name="expense_head_without_star">Expense Head</string>
+    <string name="list_of_expense">List of Expenses</string>
+    <string name="reject">Reject</string>
+    <string name="approve">Approve</string>
+    <string name="re_submit">Re-Submit</string>
+    <string name="paid">Paid</string>
+    <string name="expense_head">Expense Head <font fgcolor='#ef5350'>*</font></string>
+    <string name="activities">Activities</string>
+    <string name="distance">Distance</string>
+    <string name="distance_in_km">Distance (Km)</string>
+    <string name="order">Order</string>
+    <string name="order_v">Order Value</string>
+    <string name="meetings">Meetings</string>
+    <string name="orders_value">Orders \nValue</string>
+    <string name="staff_meeting_customer_count">Customers(<b>%s</b>)</string>
+    <string name="staff_meeting_lead_count">Leads(<b>%s</b>)</string>
+    <string name="my_activity">My Activity</string>
+    <string name="team_activity">Team Activity</string>
+    <string name="activity_details">Activity Details</string>
+    <string name="map_view">Map View</string>
+    <string name="upload_pdf">Upload Pdf</string>
+    <string name="quantity">Quantity</string>
+    <string name="total_items">Total Items</string>
+    <string name="hierarchy_managment">Hierarchy Management</string>
+    <string name="location_tracking">Location Tracking</string>
+    <string name="location_tracking_msg">Enable to track the location of staff / users for the orders &amp; activities</string>
+    <string name="assign_manager">Assign Manager</string>
+    <string name="created_by">Created By</string>
+    <string name="order_taken_staff">Order Taken By (Staff)</string>
+    <string name="order_taken_admin">Order Taken By (Admin)</string>
+    <string name="created_at">Created at</string>
+    <string name="attendance">Attendance</string>
+    <string name="attendance_for_staff">Attendance for %s</string>
+    <string name="hello">Hello, %s</string>
+    <string name="view_attendance"><u>View Attendance</u></string>
+    <string name="duration">Duration</string>
+    <string name="weekend">Weekend</string>
+    <string name="not_available">-NA-</string>
+    <string name="duration_zero">00:00</string>
+    <string name="change_attendance">Change Attendance</string>
+    <string name="status">Status</string>
+    <string name="remark">Remarks</string>
+    <string name="request">Request</string>
+    <string name="change_attendance_str">Change your attendance on %s</string>
+    <string name="payment_collected">Payment Collected</string>
+    <string name="this_is_editable_from_web_only">This is Editable from Web Only</string>
+    <string name="price_slab">Price Slab</string>
+    <string name="price_slab_minimun_quantity">Minimum Order : %s</string>
+    <string name="customer_type">Customer Type</string>
+    <string name="add_new_goal">Add New Goal</string>
+    <string name="goals">Goals</string>
+    <string name="sales_amount">Sales Amount</string>
+    <string name="notification_channel_name">Rupyz Workspace</string>
+    <string name="channel_description">Rupyz Work Update</string>
+    <string name="notification_channel_id">" com.app.rupyz.urgent"</string>
+    <string name="mark_seen_all">Mark Seen All</string>
+    <string name="notifications">Notifications</string>
+    <string name="whats_app_emi">Whatsapp EMI</string>
+    <string name="profile_settings">Profile Settings</string>
+    <string name="active_targets">Active Targets</string>
+    <string name="targets">Targets</string>
+    <string name="achieved">Achieved</string>
+    <string name="target">Target</string>
+    <string name="percent">Percent</string>
+    <string name="collections">Collections</string>
+    <string name="collecting_data">Collecting Data…</string>
+    <string name="visits">Visits</string>
+    <string name="my_targets">My Targets</string>
+    <string name="customer_level">Customer Level</string>
+    <string name="order_placed_to">Order Placed To</string>
+    <string name="customer_level_parent">Level Parent</string>
+    <string name="order_invoice_no">Order/Invoice Number</string>
+    <string name="transporter_contact_number">Transporter Contact No.</string>
+    <string name="driver_contact_number">Driver Contact No.</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="transporter_name">Transporter Name</string>
+    <string name="vehicle_number">Vehicle Number</string>
+    <string name="broker_details_if_any">Broker Details (If any)</string>
+    <string name="broker_details">Broker Details</string>
+    <string name="freight">Freight</string>
+    <string name="payment">Payment</string>
+    <string name="pricing_group">Pricing Group</string>
+    <string name="hsn_code">HSN Code <font fgcolor='#ef5350'>*</font></string>
+    <string name="add_new_product">Add New Product</string>
+    <string name="another_new_address">Another new Address</string>
+    <string name="add_more_product">Add More Product</string>
+    <string name="add_another_address">Add another Address</string>
+    <string name="add_new_product_for_customer">Add New Product for %s</string>
+    <string name="update_order">Update Order</string>
+    <string name="end_day_message">Do You Really Want to End the Day?</string>
+    <string name="not_now">Not Now</string>
+    <string name="company_logo">Company Logo</string>
+    <string name="png_or_jpg">PNG or JPG (max 2MB)</string>
+    <string name="disable_gallery_photo">Disable Gallery Photo</string>
+    <string name="disable_check_photo">Disable check-in\ncheck-out.</string>
+    <string name="enable_check_photo">Enable check-in \ncheck-out.</string>
+    <string name="enable_check_in_msg">Enable staff to mark check-in and check-out times for seamless tracking. \n\n <font fgcolor='#ef5350'>*</font> <b> Please enable geo-fencing to ensure your staff can check-in only within a 50-meter radius of the customer\'s location.</b> </string>
+    <string name="telephonic_order_message">To bypass geo-fencing when check-in / check-out is enabled </string>
+    <string name="disable_gallery_photo_msg">Disable photos to be uploaded from mobile’s gallery. Once disabled, photos can be uploaded in the app only from the mobile camera</string>
+    <string name="analytics_calculation">Analytics Calculation</string>
+    <string name="products_targets">Product Targets</string>
+    <string name="payment_status">Payment Status</string>
+    <string name="images_without_star">Images</string>
+    <string name="add_new_admin">Add New Admin</string>
+    <string name="assign_product_category">Assign Product Category</string>
+    <string name="product_category">Product Category</string>
+    <string name="et_search_product_category">Search Product Category</string>
+    <string name="customer_category_mapping">Customer Product-Category</string>
+    <string name="customer_category_mapping_msg">Enable for mapping desired product category to set of customers. Once enabled, only mapped product category will be visible to the respective customers.</string>
+    <string name="enable_second_level_ordering">Customer Level Order</string>
+    <string name="enable_second_level_ordering_msg">Enable for sharing &amp; notification to your primary &amp; secondary level If not enabled, mapped primary level will not get order notifications &amp; actions</string>
+    <string name="fulfilled_by">Fulfilled By</string>
+    <string name="search_by_customer_name">Search By Customer Name</string>
+    <string name="select_customer_name">Select Customer Name</string>
+    <string name="upload_image_for_order">Order Attachments (max 6)</string>
+    <string name="activity_images">Activity Images</string>
+    <string name="order_images">Order Images</string>
+    <string name="delete_payment">Delete Payment</string>
+    <string name="delete_payment_message">Are you sure you want to delete this Payment?</string>
+    <string name="more_with_three_dot">more...</string>
+    <string name="auto_approved">Order Auto Approved</string>
+    <string name="auto_delivered">Auto Dispatch</string>
+    <string name="clear_filter">Clear Filter</string>
+    <string name="clear_filter_underline"><u>Clear Filter</u></string>
+    <string name="max_characters_in_description">Max 1500 Characters</string>
+    <string name="beat_route">Beat Route</string>
+    <string name="delete_beat_plan">Delete Beat Plan</string>
+    <string name="image_Setting_title">Take photo while check In</string>
+    <string name="image_make">Make photo taking mandatory</string>
+    <string name="image_Setting_title_msg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  </string>
+    <string name="delete_beat_plan_message">Are you sure you want to delete this Beat Plan?</string>
+    <string name="view">View</string>
+    <string name="pending_beat_plan">Pending Beat Plan</string>
+    <string name="daily_beat_list">Daily Beat List</string>
+    <string name="beat_plan_list">Beat Plan List</string>
+    <string name="active_beat_route">Active Beat Route</string>
+    <string name="no_active_beat_route_found">No Active Beat Route Plan Found For This Staff!!</string>
+    <string name="approve_beat_plan">Approve Beat Plan</string>
+    <string name="you_can_not_change_the_date">You can not change the date once created.</string>
+    <string name="note">Note</string>
+    <string name="visited">Visited</string>
+    <string name="customer_hash">#Customers / #New</string>
+    <string name="purpose">Purpose</string>
+    <string name="holiday">Holiday</string>
+    <string name="added_packaging_unit">Added Packaging Unit</string>
+    <string name="added_specifications">Added Specifications</string>
+    <string name="pkg_level">Pkg Level</string>
+    <string name="product_brand">Product Brand</string>
+    <string name="brand">Brand</string>
+    <string name="et_search_brand">Search Brand</string>
+    <string name="et_search_category">Search Category</string>
+
+    <string name="packaging_size_with_star">Packaging Size <font fgcolor='#ef5350'>*</font></string>
+    <string name="product_code_without_star">Product Code</string>
+    <string name="hsn_code_without_star">HSN Code</string>
+    <string name="clear_filter_under_line"><u>Clear Filter</u></string>
+    <string name="edit_lead">Edit Lead</string>
+    <string name="assign_beat">Assign Beat</string>
+    <string name="enter_notes">Enter Notes</string>
+    <string name="role_permission">Role Permission</string>
+    <string name="role_permission_msg">Enable for creating various roles &amp; permission for those roles. </string>
+    <string name="staff_customer_mapping_msg">Enable for mapping customer to staff. Once enabled, only mapped customer will be visible to the respective staff.</string>
+    <string name="analytics">Analytics</string>
+    <string name="analytics_msg">Enable to get the analytics on orders &amp; activity data If disabled, system will not be able to generate nay analytics &amp; reports</string>
+
+    <string name="notes_comments_for_admin">Notes / Comments for Admin</string>
+
+    <string name="out_of_stock">Out Of Stock</string>
+    <string name="mark_out_of_stock">Out Of Stock</string>
+    <string name="are_you_sure_for_payment_approve">Are you sure you want to \n <b> " Approve Payment "</b></string>
+    <string name="are_you_sure_for_beat_approve">Are you sure you want to \n <b> " Approve Beat Plan "</b></string>
+    <string name="approve_payment">Approve Payment</string>
+    <string name="approve_lead">Approve Lead</string>
+    <string name="reject_lead">Reject Lead</string>
+    <string name="already_a_customer">Already a Customer</string>
+    <string name="rejected">Rejected</string>
+    <string name="hierarchy_management">Hierarchy Management</string>
+    <string name="hierarchy_management_msg">Enable to create a custom hierarchy for an organization.</string>
+    <string name="staff_hierarchy_management_msg">Assign Customer to Associated Staff’s Hierarchy also, along with Staff.</string>
+    <string name="product_screenshot">Product Screenshot</string>
+    <string name="product_screenshot_msg">Enable to Block Screenshots On Products</string>
+    <string name="send_updates_on_whats_app">Send updates on Whatsapp</string>
+    <string name="storefront">Storefront</string>
+    <string name="sales_app">Sales App</string>
+    <string name="order_received">Order Received on</string>
+    <string name="slash">/</string>
+    <string name="storefront_order">Storefront Order</string>
+    <string name="storefront_order_message">This Order is placed on\nStorefront</string>
+    <string name="storefront_lead">Storefront Lead</string>
+    <string name="storefront_lead_message">This Lead was generated in\nStorefront</string>
+    <string name="set_customer_level">Set Customer Level</string>
+    <string name="level_one_text">Level 1\n(Contain Level 2)</string>
+    <string name="level_two_text">Level 2\n(Contain Level 3)</string>
+    <string name="level_three">Level 3</string>
+    <string name="primary_customer">Primary Customer</string>
+    <string name="secondary_customer">Secondary Customer</string>
+    <string name="tertiary_customer">Tertiary Customer</string>
+
+    <string name="others_charges_with_max_value">Others Charges (Max 5)</string>
+    <string name="charges_name">Charges Name</string>
+    <string name="mock_location_detected">Mock Location Detected</string>
+    <string name="mock_location_detected_message">Turn off mock location from settings and delete mock location app</string>
+    <string name="report_setting">Report Setting</string>
+    <string name="get_report">Get Report</string>
+    <string name="report_permission">Report Permission</string>
+    <string name="report_duration">Report Duration <font fgcolor='#ef5350'>*</font></string>
+    <string name="enter_number">Enter Number</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="email_id">Email Id</string>
+    <string name="check_in_msg">Do you want to check in at:</string>
+    <string name="check_out_msg">You are being logged out from </string>
+
+    <string name="sign_in">Sign In</string>
+    <string name="sent_to_91">Sent to +91</string>
+    <string name="get_whatsap">Get notifications on whatsapp</string>
+    <string name="something_went_wrong">Something Went Wrong!!</string>
+    <string name="preferences">Preferences</string>
+    <string name="profile_role">(%S)</string>
+
+    <string name="bottom_nav_activity">Activity</string>
+    <string name="bottom_nav_expenses">Expenses</string>
+    <string name="beat_plan">Beat Plan</string>
+    <string name="beat_plan_name_with_underline"><u>%s</u></string>
+
+    <string name="order_permission">You do not have permission to view the orders</string>
+    <string name="customer_permission">You do not have permission to view the customers</string>
+    <string name="staff_permission">You do not have permission to view the staffs</string>
+    <string name="create_order_permission">You do not have permission to create new order</string>
+    <string name="not_checked">you can not create new order without check in</string>
+    <string name="payment_permission">You do not have permission to view the payments</string>
+    <string name="create_payment_permission">You do not have permission to create the payments</string>
+    <string name="product_list_permission">You do not have permission to view the Products</string>
+    <string name="category_lead_permission">You do not have permission to view the Lead</string>
+    <string name="add_new_beat_plan">Create Beat Plan</string>
+    <string name="edit_beat_plan">Update Beat Plan</string>
+    <string name="beat_plan_name">Beat Plan Name <font fgcolor='#ef5350'>*</font></string>
+    <string name="end_date_with_star">End Date <font fgcolor='#ef5350'>*</font></string>
+    <string name="night_stay">Night Stay</string>
+    <string name="select_beat">Select Beat</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="new_visit">New Visit</string>
+    <string name="no_customer_found">No Customer Found!!</string>
+    <string name="my_beat_plan">My Beat Plan</string>
+    <string name="details_with_underline"><u>Details</u></string>
+    <string name="number_of_products">Number Of Products</string>
+    <string name="beat_customer">Beat Customers</string>
+    <string name="beat_details">Beat Details</string>
+    <string name="et_search_lead">Search Lead</string>
+    <string name="active">Active</string>
+    <string name="assign_customer_to_staff_hierarchy">Assign Customer to Staff Hierarchy</string>
+    <string name="auto_assign_new_customers">Auto Assign New Customers</string>
+    <string name="set_geo_location">Set Geo Location</string>
+    <string name="set_new_location"><u>Set New Location</u></string>
+    <string name="remove_underline"><u>Remove</u></string>
+
+    <string name="google_map_api_key">AIzaSyCJcktoUMiBvSF9mgfjCQ6c3-owkC9MM7E</string>
+    <string name="firestore_document_id">TYFEXoXnReKN6Sw99zZF</string>
+    <string name="firestore_collection_name">user_geo_path</string>
+    <string name="user_geo_info_table_name">user_geo_info_table</string>
+
+    <string name="profile_image">Profile Image</string>
+    <string name="profile_image_with_star">Profile Image <font fgcolor='#ef5350'>*</font></string>
+    <string name="geo_location">Geo Location</string>
+    <string name="change_location">Change Location</string>
+    <string name="cart_gst_exclusive">GST %s extra :</string>
+    <string name="cart_gst_inclusive">GST %s incl :</string>
+    <string name="with_gst">(With GST)</string>
+    <string name="more_details">More Details</string>
+    <string name="more_detail"><u>More Details</u></string>
+    <string name="no_payment_found_for_this_customer">No payment found for this customer!!</string>
+    <string name="no_activity_found_for_this_customer">No activity found for this customer!!</string>
+    <string name="dishonour_reson">Dishonour Reason</string>
+    <string name="no_activity_found">No activity found!!</string>
+    <string name="without_gst">(Without GST)</string>
+    <string name="add_a_date">Add a Date</string>
+    <string name="choose_customer">Choose Customer</string>
+    <string name="choose_dynamic_customer">Choose %s</string>
+    <string name="sort_by">Sort By</string>
+    <string name="filter">Filter</string>
+    <string name="duplicate">Duplicate</string>
+    <string name="change_date">Change Date</string>
+    <string name="enter_city">Enter City</string>
+    <string name="enter_city_mandatory">Enter City <font fgcolor='#ef5350'>*</font></string>
+    <string name="az">AZ</string>
+    <string name="reset">Reset</string>
+    <string name="pipeline">Pipeline</string>
+    <string name="planned">Planned</string>
+    <string name="new_lead">New Lead</string>
+    <string name="beat_plan_history">Beat Plan History</string>
+    <string name="history">History</string>
+    <string name="duplicate_beat_plan_date_message">Enter start date for creating duplicate beat plan.</string>
+    <string name="auto_approve_beat_plan">Auto Approve Beat Plan</string>
+    <string name="auto_approve_beat_plan_message">Enable to Auto Approve all the Beat Plan of All Staff as soon its get created.</string>
+    <string name="select_all">Select All</string>
+    <string name="recurring">Recurring</string>
+    <string name="duplicate_beat_plan">Duplicate Beat Plan</string>
+    <string name="active_beat_plan">Active Beat Plan</string>
+    <string name="team_beat_plan">Team Beat Plan</string>
+    <string name="no_order_found_for_this_customer">No Order  Found For this Customer!!</string>
+    <string name="customer_pic_not_available">Customer pic not available!!</string>
+    <string name="geo_tag_customer">Geo Tag Customer</string>
+    <string name="fetch_location">Fetch Location</string>
+    <string name="update_location">Update Location</string>
+    <string name="no_customer_selected">No Customer Selected</string>
+    <string name="no_customer_selected_message">Are you sure you don\'t want to select any customer?</string>
+    <string name="delete_date">Delete Date</string>
+    <string name="cancel_date">Cancel Date</string>
+    <string name="cancel_date_with_hyfon">Cancel Date -</string>
+    <string name="canceled">Canceled</string>
+    <string name="once_cancelled_it_cannot_be_edit_again">Once Cancelled, It cannot be Edit again.</string>
+    <string name="follow_up_date_and_time">Follow Up Date and Time</string>
+    <string name="reminders">Reminders</string>
+    <string name="reminder">Reminder</string>
+    <string name="you_dont_have_any_reminders">You don\'t have any Reminders</string>
+    <string name="delete_reminders">Delete Reminder</string>
+    <string name="delete_reminder_message">Are you sure you want to delete this  Reminder?</string>
+
+    <string name="customer_profile">Customer Profile</string>
+    <string name="edit_customer">Edit Customer</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="beat">Beat</string>
+    <string name="pan_number">PAN Number</string>
+    <string name="gst_number">GST Number</string>
+
+    <string name="location_permission_required">Location Permission</string>
+    <string name="you_need_grant_location_permission">We need this permission for the location intelligence, that helps you report activities to your organisation.</string>
+    <string name="you_need_grant_location_background_permission">We need this permission for the location intelligence, that helps you report activities to your organisation.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="you_dont_have_permission_to_update_order">You dont\'t have any permission to update the order.</string>
+    <string name="you_dont_have_permission_to_perform_this_action">You dont\'t have any permission to perform this action.</string>
+
+    <string name="select_a_unit">Select a unit</string>
+    <string name="zero">0</string>
+    <string name="add_packaging_unit">Add Packaging Unit</string>
+    <string name="adding_product">Adding Product</string>
+    <string name="updating_product">Updating Product</string>
+
+    <string name="update_address">Update Address</string>
+
+    <string name="no_location_found">No location found!!</string>
+    <string name="no_live_location_found">No live location found!!</string>
+
+    <string name="tc_meetings">TC \n(Meetings)</string>
+    <string name="lbl_tc">TC</string>
+    <string name="lbl_pc">PC</string>
+    <string name="lbl_output">Output</string>
+    <string name="lbl_last_visit">Last Visit Date</string>
+    <string name="lbl_last_order_date">Last Order Date</string>
+    <string name="lbl_last_order_value">Last Order Value</string>
+    <string name="lbl_avg_order_value_historic">Avg Order Value historic</string>
+    <string name="lbl_frequently_ordered">Frequently Ordered</string>
+    <string name="pc_order">PC \n(Orders)</string>
+    <string name="activity_map">Activity Map</string>
+    <string name="daily_sales_report">Daily Sales Report</string>
+    <string name="new_customers">New Customers</string>
+    <string name="total_call_tc">Total Call (TC)</string>
+    <string name="productive_call_pc">Productive Call (PC)</string>
+    <string name="total_order_value">Total Order Value</string>
+    <string name="total_order_value_message">* Order value &amp; category total may differ due to order level discount</string>
+    <string name="no_activity_performed">No Activity Performed</string>
+    <string name="category_summery">Category Summary</string>
+    <string name="product_summary">Product Summary</string>
+    <string name="no_data_for_this_date">Data in this \" Daily sales Report\" is not available for this date</string>
+
+    <string name="geo_fencing_msg">"This Will Resrict Staff to Perform Activity (like Taking Order,  Payment) on Customer within 50m of Customer’s geo-location. "</string>
+    <string name="live_location_message">"Enable this to track the live location of staff on Map. Tracking will done between Start of the Day to End of the Day/8PM Max."</string>
+    <string name="geo_fencing">Geo-Fencing</string>
+    <string name="live_location_trace">Live Location Trace</string>
+    <string name="live_location">Live Location</string>
+    <string name="enable_geo_fencing">Enable Geo-Fencing</string>
+    <string name="you_are_out_side_the_geo_fencing">You are currently outside the 50-meter radius of this customer’s geolocation. To take orders or perform any activities, please ensure you are at customer’s geofencing area.</string>
+    <string name="note_geo_fencing">Note: This restriction is enforced as per your company’s policy. For assistance or inquiries, please contact your manager or system administrator.</string>
+    <string name="mark_attendance_for_today">Mark Attendance for today</string>
+
+    <string name="order_quantity_with_colon">Order Quantity :</string>
+    <string name="unit_str">Unit</string>
+    <string name="order_qty_message_for_order_receive"><b><i><font fgcolor='#000000'>Total Quantity</font></i></b> <font fgcolor='#5B5B5B'> of Order will be shown once Order is Approved.</font></string>
+    <string name="beat_name_with_star">Beat Name <font fgcolor='#ef5350'>*</font></string>
+    <string name="add_town_city">Add Town/City</string>
+    <string name="select_staff">Select Staff</string>
+    <string name="create_new_beat">Create New Beat</string>
+    <string name="select_customer_level">Select Customer Level</string>
+    <string name="view_beat_plan">View Beat Plan</string>
+    <string name="create_beat_plan">Create Beat Plan</string>
+    <string name="beat_list">Beat List</string>
+    <string name="beat_customer_with_locality">%s \u00B7 %s Customers</string>
+    <string name="add_customer_for_beat_sub_title">%s \u00B7 %s</string>
+    <string name="staff_assign">Staff Assign</string>
+    <string name="staff_assigned">Staff Assigned</string>
+    <string name="no_customer_to_show">No Customers to show</string>
+    <string name="assigned_staff">Assigned Staff</string>
+    <string name="choose_retailer">Choose Retailer</string>
+    <string name="delete_beat">Delete Beat</string>
+    <string name="delete_beat_message">Are you sure you want to delete this Beat?</string>
+    <string name="no_beat_plan_found">No Beat Plan Found.</string>
+    <string name="no_beat_found">No Beat Found.</string>
+    <string name="assign_distributor">Assign Distributor</string>
+    <string name="update_beat">Update Beat</string>
+    <string name="transaction_time">Transaction Date</string>
+    <string name="select_date">Select Date</string>
+    <string name="transaction_time_with_colon">Transaction Date :</string>
+    <string name="payment_mode_with_colon">Payment Mode :</string>
+    <string name="entered_by_with_colon">Entered by :</string>
+    <string name="transaction_ref_no_with_colon">Transaction Ref. :</string>
+    <string name="payment_id">Payment Id</string>
+    <string name="please_allow_all_the_time">Please choose “Allow all the time” option</string>
+
+    <string name="leave">Leave</string>
+
+    <string name="parent">Parent</string>
+    <string name="steps">Step %s:</string>
+    <string name="go_to_setting_app">Go to Setting App</string>
+    <string name="select_app_managment">Select App Management</string>
+    <string name="select_apps">Select Apps</string>
+    <string name="select_rupyz_app">Select Rupyz App</string>
+    <string name="select_permissions">Select Permission</string>
+    <string name="select_location">Select Location</string>
+    <string name="select_allow_all_the_time">Select Allow All The Time</string>
+    <string name="proceed_with_same_number">Proceed with\nsame number</string>
+    <string name="offline_mode">Offline Mode</string>
+    <string name="offline_visit">Offline Visit</string>
+    <string name="offline_mode_message">This will allow staffs to run app without internet, but only few feature will work such as Lead, Customer, Order, Payment, Activity, etc.</string>
+    <string name="offline_mode_sub_message"><font fgcolor='#ef5350'>Geo-Fencing</font> and <font fgcolor='#ef5350'>Location Tracking</font> Will not Work in Offline Mode.</string>
+    <string name="enable_offline_mode">Enable Offline Mode</string>
+    <string name="enable_offline_mode_message">This will take some time to download data to mobile and also use mobile space. Are you sure you want to use offline mode?</string>
+    <string name="yes_enable">Yes, Enable</string>
+    <string name="downloading_data">Downloading Data</string>
+    <string name="disable_offline_mode">Disable Offline Mode</string>
+    <string name="disable_offline_mode_message">This is erase all data from mobile only. Are you sure you want to disable offline mode?</string>
+    <string name="downloading_data_for_offline"><b>Downloading Data</b> for offline mode</string>
+    <string name="one_time_process">This is only one time setup</string>
+    <string name="custom_time_remaining">%s minutes remaining</string>
+    <string name="yes_disable">Yes, Disable</string>
+    <string name="yes_cancel">Yes,\nCancel</string>
+    <string name="no_continue">No,\nContinue</string>
+    <string name="notification_message">Enable to send push location</string>
+    <string name="cancel_download">Cancel Data Download</string>
+    <string name="cancel_upload">Cancel Data Upload</string>
+    <string name="cancel_download_message">Are you sure you want to cancel, as this will exit the offline mode settings?</string>
+    <string name="cancel_upload_message">Are you sure you want to cancel, as this will not update your today\'s activity to your organization?</string>
+    <string name="custum_percentage_progress">%s \%%</string>
+    <string name="customer_address">Customer Addresses</string>
+    <string name="donwload_progress_counter">%s of %s</string>
+    <string name="you_dont_have_any_expenses">You do not have any expenses.</string>
+    <string name="dispatched_order">Dispatched Orders</string>
+    <string name="done">Done</string>
+    <string name="offline">Offline</string>
+    <string name="this_feature_isn_t_available_offline">This feature isn\'t available offline</string>
+    <string name="tap_to_retry">Tap To Retry</string>
+    <string name="make_sure_have_internet_connection">Please make sure you have active internet connection!!</string>
+    <string name="uploading_data">Uploading Data</string>
+    <string name="uploading_data_for_offline">Uploading your offline data</string>
+    <string name="this_may_take_some_time">This may take some time to upload.</string>
+    <string name="view_status">View Status</string>
+    <string name="transfer">Transfer</string>
+    <string name="select_customer_to_transfer_heading">Select %s to transfer <font fgcolor='#ef5350'>*</font></string>
+    <string name="remove">Remove</string>
+    <string name="customer_level_parent_mapping"><fort color='black'>Map %s </fort><font color='red'>*</font></string>
+    <string name="select_customer_level_parent_mapping">Select %s <font color='red'>*</font></string>
+    <string name="select_customer_level_list">Select %s </string>
+    <string name="search_with_string">Search %s </string>
+    <string name="transfer_to">Transfer to </string>
+    <string name="day_end_automatically">Day ended automatically</string>
+    <string name="distance_calculation">Distance Calculation</string>
+    <string name="distance_calculation_message"><![CDATA[Actual KMs and KMs as per the app may differ as this is not a GPS app. This may also happen due to factors like network condition & the way Google shares data with us!!]]></string>
+
+    <string name="day_started">Day Started</string>
+    <string name="day_started_with_colon">Day Started :</string>
+    <string name="day_ended">Day Ended</string>
+    <string name="day_ended_with_colon">Day Ended :</string>
+    <string name="what_is_your_day_plan">What is your day plan? \uD83E\uDD14</string>
+    <string name="how_was_your_day">how was your day? \uD83E\uDD14</string>
+    <string name="select_activity">Select Activity <font color='red'>*</font></string>
+    <string name="regular_beat">Regular Beat</string>
+    <string name="joint_activity">Joint Activity</string>
+    <string name="mark_leave">Mark Leave</string>
+    <string name="ho_visit">HO / Office Visit</string>
+    <string name="write_a_comment">Write a Comment \uD83D\uDCAC</string>
+    <string name="let_us_take_selfie">Let\'s take a selfie! \uD83E\uDD33</string>
+    <string name="selfie">Selfie</string>
+    <string name="no_more_then_6_pics">You can not upload more then 6 Selfie.</string>
+    <string name="adding_attendance">Adding Attendance</string>
+    <string name="adding_activity">Adding Activity</string>
+    <string name="updating_activity">Updating Activity</string>
+    <string name="half_day">Half day</string>
+    <string name="full_day">Full day</string>
+    <string name="distributor_visit">%s / %s Visit</string>
+    <string name="distributor_visit_label">Distributor Visit</string>
+    <string name="joint_activity_with">Joint Activity with</string>
+    <string name="on_a_leave">On a Leave</string>
+    <string name="staff_on_a_leave">On Leave Staffs</string>
+    <string name="empty_duration_for_total_time">--/--</string>
+    <string name="make_this_primary_address">Make this Primary Address</string>
+    <string name="primary">Primary</string>
+    <string name="custom_forms_mandatory_heading">%s <font fgcolor='#ef5350'>*</font></string>
+    <string name="custom_forms_heading">%s</string>
+    <string name="order_number">Order No</string>
+    <string name="transection_ref_no">Transaction Ref.No</string>
+    <string name="remaing_payment">Remaining Payment</string>
+    <string name="order_date">Order Date : %s</string>
+    <string name="remaing_payment_days">%s Days</string>
+    <string name="please_provide_all_mandatory_data">Please provide %s</string>
+    <string name="location">Location</string>
+    <string name="enter_valid_string">Please enter valid %s.</string>
+
+
+    <string-array name="beat_customer_level">
+        <item>Pending</item>
+        <item>Visited</item>
+        <item>Not Planned</item>
+    </string-array>
+
+    <string-array name="beat_type">
+        <item>Beat</item>
+        <item>Location</item>
+        <item>Leave</item>
+    </string-array>
+
+    <string-array name="mode_of_payment">
+        <item>Select Mode</item>
+        <item>Cash</item>
+        <item>Cheque / DD</item>
+        <item>Net Banking</item>
+        <item>UPI</item>
+        <item>Debit / Credit Card</item>
+        <item>Third-Party</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="customer_activity_state">
+        <item>Order Follow Up</item>
+        <item>Payment Follow Up</item>
+        <item>General Discussion</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="lead_activity_state">
+        <item>Order Follow Up</item>
+        <item>General Discussion</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="payment_status_for_view">
+        <item>All</item>
+        <item>Pending</item>
+        <item>Approved</item>
+        <item>Rejected</item>
+    </string-array>
+
+    <string-array name="payment_status">
+        <item>Pending</item>
+        <item>Approve</item>
+        <item>Reject</item>
+    </string-array>
+
+    <string-array name="order_status_for_filter">
+        <item>All</item>
+        <item>Received</item>
+        <item>Approved</item>
+        <item>Processing</item>
+        <item>Ready To Dispatch</item>
+        <item>Partial Dispatched</item>
+        <item>Dispatched</item>
+        <item>Delivered</item>
+        <item>Rejected</item>
+    </string-array>
+
+    <string-array name="all_order_status">
+        <item>Processing</item>
+        <item>Reject</item>
+        <item>Ready To Dispatch</item>
+        <item>Dispatch</item>
+        <item>Delivered</item>
+        <item>Close</item>
+    </string-array>
+
+    <string-array name="order_status">
+        <item>Received</item>
+        <item>Approve</item>
+        <item>Processing</item>
+        <item>Ready To Dispatch</item>
+        <item>Dispatch</item>
+        <item>Delivered</item>
+        <item>Rejected</item>
+    </string-array>
+
+    <string-array name="order_status_for_receive">
+        <item>Received</item>
+        <item>Approve</item>
+        <item>Reject</item>
+    </string-array>
+
+    <string-array name="order_status_for_approved">
+        <item>Approved</item>
+        <item>Processing</item>
+        <item>Ready To Dispatch</item>
+        <item>Dispatch</item>
+        <item>Reject</item>
+    </string-array>
+
+    <string-array name="order_status_for_processing">
+        <item>Processing</item>
+        <item>Ready To Dispatch</item>
+        <item>Dispatch</item>
+    </string-array>
+
+    <string-array name="order_status_for_shipped">
+        <item>Dispatched</item>
+        <item>Delivered</item>
+    </string-array>
+
+    <string-array name="order_status_for_partial_shipped">
+        <item>Partial Shipped</item>
+        <item>Delivered</item>
+        <item>Close</item>
+    </string-array>
+
+    <string-array name="order_status_for_ready_to_dispatch">
+        <item>Ready To Dispatch</item>
+        <item>Dispatch</item>
+    </string-array>
+
+    <string-array name="order_status_for_partial_shipped_with_shipped">
+        <item>Partial Dispatched</item>
+        <item>Dispatch</item>
+        <item>Delivered</item>
+        <item>Close</item>
+    </string-array>
+
+    <string-array name="order_status_for_partial_shipped_for_order_close">
+        <item>Partial Dispatched</item>
+        <item>Delivered</item>
+    </string-array>
+
+    <string-array name="order_status_for_partial_delivered">
+        <item>Partial Delivered</item>
+        <item>Delivered</item>
+        <item>Close</item>
+    </string-array>
+
+    <string-array name="payment_terms">
+        <item>Select Payment Terms</item>
+        <item>Advance</item>
+        <item>Payment On Next Order</item>
+        <item>Payment On Delivery</item>
+        <item>7 Days</item>
+        <item>10 Days</item>
+        <item>15 Days</item>
+        <item>21 Days</item>
+        <item>30 Days</item>
+        <item>45 Days</item>
+        <item>60 Days</item>
+        <item>75 Days</item>
+        <item>90 Days</item>
+    </string-array>
+
+    <string-array name="payment_terms_new">
+        <item>Advance</item>
+        <item>Payment On Next Order</item>
+        <item>Payment On Delivery</item>
+        <item>7 Days</item>
+        <item>10 Days</item>
+        <item>15 Days</item>
+        <item>21 Days</item>
+        <item>30 Days</item>
+        <item>45 Days</item>
+        <item>60 Days</item>
+        <item>75 Days</item>
+        <item>90 Days</item>
+    </string-array>
+
+    <string-array name="business_type">
+        <item>DISTRIBUTOR</item>
+        <item>RETAILER</item>
+    </string-array>
+
+    <string-array name="report_duration">
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+    </string-array>
+
+    <string-array name="discount_type">
+        <item>Rupees</item>
+        <item>Percent</item>
+    </string-array>
+    <string-array name="filter_gallery_type">
+        <item>State</item>
+        <item>City</item>
+        <item>Customer</item>
+        <item>Staff</item>
+
+    </string-array>
+
+
+    <string-array name="discount_type_symbol">
+        <item>\%</item>
+        <item>\u20B9</item>
+    </string-array>
+
+    <string-array name="discount_unit">
+        <!--        <item>ABSOLUTE</item>-->
+        <item>PERCENTAGE</item>
+    </string-array>
+
+    <string-array name="gst_list">
+        <item>0</item>
+        <item>0.25</item>
+        <item>1.5</item>
+        <item>3</item>
+        <item>5</item>
+        <item>12</item>
+        <item>18</item>
+        <item>28</item>
+        <item>40</item>
+    </string-array>
+
+    <string-array name="product_unit_list">
+        <item>Piece</item>
+        <item>Packet</item>
+        <item>Box</item>
+        <item>Jar</item>
+        <item>Tin</item>
+        <item>Set</item>
+        <item>Pair</item>
+        <item>Bundle</item>
+        <item>Dozen</item>
+        <item>Carton</item>
+        <item>Bag</item>
+        <item>Katta</item>
+        <item>Bunch</item>
+        <item>Lot</item>
+        <item>Cylinder</item>
+        <item>Sheet</item>
+        <item>Bottle</item>
+        <item>Vial</item>
+        <item>Can</item>
+        <item>Drum</item>
+        <item>Capsule</item>
+        <item>Tablet</item>
+        <item>Plate</item>
+        <item>Roll</item>
+        <item>Kg</item>
+        <item>Gm</item>
+        <item>Litre</item>
+        <item>ml</item>
+        <item>Ton</item>
+        <item>Quintal</item>
+        <item>Pound</item>
+        <item>Metre</item>
+        <item>Cm</item>
+        <item>Mm</item>
+        <item>Sq.mtr.</item>
+        <item>Feet</item>
+        <item>Inch</item>
+        <item>Sq.ft.</item>
+        <item>Km</item>
+        <item>Year</item>
+        <item>Month</item>
+        <item>Week</item>
+        <item>Day</item>
+        <item>Hour</item>
+        <item>Minute</item>
+        <item>Service</item>
+        <item>Work</item>
+    </string-array>
+
+    <string name="jointActivityWith">Joint Activity with</string>
+    <string name="no_payment_available">No Payment</string>
+    <string name="gst_taxes">GST Taxes</string>
+    <string name="variants">Variants</string>
+    <string name="set">set</string>
+    <string name="variant">Variant</string>
+    <string name="exclusive_gst_with_amount">%s \% (Exclusive)</string>
+    <string name="inclusive_gst_with_amount">%s \% (Inclusive)</string>
+    <string name="picture_gallery">Picture Gallery</string>
+    <string name="all_pictures">All Pictures</string>
+    <string name="range_today">Range - Today</string>
+    <string name="range_this_month">Range - This Month</string>
+    <string name="updated_date">Updated Date</string>
+    <string name="size">Size</string>
+    <string name="range">Range</string>
+    <string name="today">Today</string>
+    <string name="this_week">This Week</string>
+    <string name="this_month">This Month</string>
+    <string name="custom_range">Custom Range</string>
+    <string name="picture_details">Picture Details</string>
+    <string name="captured_by">Captured by</string>
+    <string name="customer_or_lead">Customer / Lead</string>
+    <string name="todo">TODO</string>
+    <string name="picture_found">Picture Found</string>
+    <string name="_32">32</string>
+    <string name="search">Search</string>
+    <string name="activity_point">Activity point -</string>
+    <string name="activity_points">Activity point</string>
+    <string name="activity_location">Activity Location</string>
+    <string name="image">Image</string>
+    <string name="something_went_wrong_try_after_sometimes">Something went wrong, try after sometimes!!</string>
+    <string name="please_enter_some_value">Please enter some value!!</string>
+    <string name="rupyz_work_group_id">RUPYZ_WORK_GROUP_ID</string>
+    <string name="packaging_size_with_unit_with_cross">%s \u0078 %s</string>
+    <string name="pkg_size_with_colon">Pkg Size:</string>
+    <string name="gstNoHint">Enter GST no. to auto fill business details &amp; address</string>
+    <string name="pinCodeHint">Enter pin code to auto fill city  &amp;  state)</string>
+    <string name="customerLevelAndType">Customer Level &amp; type </string>
+    <string name="businessDetails">Business Details</string>
+    <string name="assign">Assign</string>
+    <string name="preview">Preview</string>
+    <string name="fillMandateFields">Please fill the data correctly in the field </string>
+    <string name="start_date_required">Start Date Required!</string>
+    <string name="expense_head_required">Expense Head Required!</string>
+    <string name="end_date_can_not_be_less_then_start_date">End date can not be less then start date!!</string>
+    <string name="please_enter_start_date_first">Please enter start Date first!!</string>
+    <string name="something_went_wrong_with_location">Something went wrong with the location</string>
+    <string name="last_updated_at">Last Updated At</string>
+    <string name="inactive_product">Inactive</string>
+    <string name="scan_product_qr_code">Scan Product’s QR code</string>
+    <string name="staffs_status">Staffs Status</string>
+    <string name="teams_activity">Teams Activity</string>
+    <string name="tc">TC</string>
+    <string name="pc">PC</string>
+    <string name="km">Km</string>
+    <string name="staff_name">Staff Name</string>
+    <string name="active_staff">Active Staff</string>
+    <string name="inactive_staff">Inactive Staff</string>
+
+    <string name="order_no">Order No.:</string>
+    <string name="delivery_details">Delivery Details</string>
+    <string name="delivery_date">Expected Delivery \nDate</string>
+    <string name="delivery_date_1">Delivery Date</string>
+    <string name="delivery">Delivery</string>
+    <string name="po_number">(PO)Number:</string>
+    <string name="download_pdf">Download PDF</string>
+    <string name="taxable_value">Taxable Value:</string>
+    <string name="sgst_utgst">SGST/UTGST:</string>
+    <string name="igst">IGST:</string>
+    <string name="cgst">CGST:</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="total_discount">Total Discount:</string>
+    <string name="total_other_charges">Total Other Charges:</string>
+    <string name="packing">Packing</string>
+    <string name="total_amount">Total Amount:</string>
+    <string name="view_details_O"><u>View Details</u></string>
+    <string name="view_details">View Details</string>
+    <string name="purchase_order_po_number">Purchase Order \n(PO)Number:</string>
+    <string name="quantity_new">Quantity:</string>
+    <string name="variant_new">Variant:</string>
+    <string name="category_new">Category:</string>
+    <string name="rate_excl_gst">Rate \u20B9 Excl GST:</string>
+    <string name="net_amount">Net Amount (\u20B9)</string>
+    <string name="gst_amount">GST Amount (\u20B9)</string>
+    <string name="total_amount_pd">Total Amount (\u20B9)</string>
+    <string name="dispatch_details">Dispatch Details</string>
+    <string name="notes_for_admin">Notes For Admin</string>
+
+    <string name="telephonic_order">Telephonic Order</string>
+    <string name="take_a_photo_of_the_store_before_checking_in">Take a photo of the store before checking in</string>
+    <string name="add_activity">Add Activity</string>
+    <string name="alert">Alert!!</string>
+    <string name="you_are_not_in_the_geo_fencing_area">You are not in the geo fencing area</string>
+    <string name="ok">Ok</string>
+    <string name="checking_out">Checking Out</string>
+    <string name="check_out">Check Out</string>
+    <string name="checked_in_msg">Do you want to check out from there?</string>
+    <string name="checked_in_title">You are already checked in to</string>
+    <string name="your_order_has_been_placed_successfully">Your Order has been placed Successfully!!</string>
+    <string name="start_new_activity">Start New Activity</string>
+    <string name="choose_activity">Choose Activity</string>
+    <string name="select_distributor">Select Distributor</string>
+    <string name="select">Select</string>
+    <string name="shippingAddress">Shipping Address</string>
+    <string name="seeAllAddress">See all Addresses</string>
+    <string name="expected_delivery_date">Expected Delivery Date</string>
+    <string name="orderAttachmentHint">Attachments above 5MB will be compressed dynamically</string>
+    <string name="please_select_status">Please select status!!</string>
+    <string name="general_comments">General Comments 💬</string>
+    <string name="device_logs">Device Log</string>
+    <string name="zero_decimal">0.00</string>
+    <string name="already_checked_in">Already Checked In</string>
+    <string name="device_with_colon">Device :</string>
+    <string name="logged_in">Logged In</string>
+    <string name="logged_out">Logged Out</string>
+    <string name="internet_on">Internet On</string>
+    <string name="internet_off">Internet Off</string>
+    <string name="location_off">Location Off</string>
+    <string name="fake_location">Fake Location</string>
+    <string name="fake_location_message">Used a location-altering apps or settings.</string>
+    <string name="fake_location_detected">Fake location detected</string>
+    <string name="mobile_battery_saver_mode">Mobile battery saver mode :</string>
+    <string name="permission_changed">Permission Changed</string>
+    <string name="select_distributor_first">Please Select a distributor to fulfill the request.</string>
+    <string name="invalid_phone_number">Whatsapp Number is Invalid</string>
+    <string name="select_address">Select Address</string>
+    <string name="files">Files</string>
+    <string name="upload_files">Upload files</string>
+    <string name="please_add_distributor_for_this_client">Please add distributor for this customer</string>
+    <string name="leave_details">Leave Details</string>
+    <string name="marked_leave">Marked Leave</string>
+    <string name="days">Days</string>
+    <string name="place_to">Place to</string>
+    <string name="you_are_check_in_at">You are checked in at </string>
+    <string name="activity_added_successfully">You have performed an activity successfully</string>
+    <string name="map_level">Map Level</string>
+    <string name="super_stockist">Super Stockist</string>
+    <string name="gross_amount">Gross Amount</string>
+    <string name="checkin_activity_note">Note : You won\'t be able to check out from a customer if no activity is performed.</string>
+    <string name="remaing_payment_after">Remaining Payment After</string>
+    <string name="amount_paid">Amount Paid</string>
+    <string name="team_status">Team Status</string>
+    <string name="loadingLocation">Loading Current Location</string>
+    <string name="not_a_valid_product_code">Invalid QR code or temporary technical issue. Please try again</string>
+    <string name="got_it">Got It</string>
+    <string name="unable_to_scan_qr">Unable to scan QR</string>
+    <string name="customer_not_found">Customer Not Found!!</string>
+
+</resources>

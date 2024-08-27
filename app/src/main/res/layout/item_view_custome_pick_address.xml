@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingVertical="@dimen/dimen_10dp"
+        android:lineHeight="@dimen/size_20sp"
+        android:textColorLink="@color/color_727176"
+        android:text="Geo Address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvGeoLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_16sp"
+        android:paddingBottom="@dimen/dimen_10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/color_727176"
+        android:textSize="@dimen/size_12sp"
+        app:layout_goneMarginTop="@dimen/dimen_0dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvRemoveLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+
+
+    <TextView
+        android:id="@+id/tvRemoveLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/size_20sp"
+        android:paddingTop="@dimen/dimen_4dp"
+        android:paddingBottom="@dimen/dimen_10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/remove_underline"
+        app:layout_goneMarginTop="@dimen/dimen_0dp"
+        android:textColor="@color/sale_overview_view_all"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvGeoLocation"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGeoLocation"/>
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tvGeoLocation, tvRemoveLocation"
+        app:layout_constraintTop_toBottomOf="@+id/tvGeoLocation" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clChangeLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dimen_40dp"
+        android:background="@drawable/edit_text_grey_with_stroke_background"
+        app:layout_constraintTop_toBottomOf="@+id/tvGeoLocation">
+
+        <TextView
+            android:id="@+id/tvSetNewLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:drawablePadding="@dimen/size_10sp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:paddingTop="@dimen/dimen_8dp"
+            android:paddingBottom="@dimen/dimen_8dp"
+            android:text="@string/fetch_location"
+            android:textColor="@color/color_727176"
+            android:textSize="@dimen/size_12sp"
+            app:drawableStartCompat="@drawable/ic_location_blue"
+            app:drawableTint="@color/color_727176"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/clChangeLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:paddingBottom="@dimen/dimen_20dp"
+        android:text="ALERT : Use this only when you are at customer\'s address to capture the accurate location"
+        android:fontFamily="@font/poppins_regular"
+        android:lineHeight="@dimen/size_18sp"
+        android:textSize="@dimen/size_12sp"
+        android:textColor="@color/color_727176"
+        tools:ignore="HardcodedText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

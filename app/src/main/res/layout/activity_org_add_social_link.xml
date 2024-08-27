@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.organization.profile.activity.OrgAddTeamActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_my"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+                app:titleTextColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:shadowColor="#29000000"
+                        android:shadowDx="0"
+                        android:shadowDy="3"
+                        android:shadowRadius="2"
+                        android:text="Social Media"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_16sp" />
+
+                    <ImageView
+                        android:id="@+id/img_close"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/dimen_20dp"
+                        android:layout_weight=".2"
+                        android:padding="@dimen/dimen_5dp"
+                        android:src="@drawable/ic_close" />
+
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_layout"
+            android:layout_gravity="fill_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#E2E2E2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Facebook"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:background="@drawable/add_product_edit_text_bg"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/dimen_10dp"
+                    android:paddingRight="@dimen/dimen_10dp">
+
+                    <EditText
+                        android:id="@+id/facebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edit_text_inner_style"
+                        android:fontFamily="@font/poppins_regular"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_16sp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Twitter"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:background="@drawable/add_product_edit_text_bg"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/dimen_10dp"
+                    android:paddingRight="@dimen/dimen_10dp">
+
+                    <EditText
+                        android:id="@+id/twitter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edit_text_inner_style"
+                        android:fontFamily="@font/poppins_regular"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_16sp" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Instagram"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_12sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:background="@drawable/add_product_edit_text_bg"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/dimen_10dp"
+                    android:paddingRight="@dimen/dimen_10dp"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/instagram"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edit_text_inner_style"
+                        android:fontFamily="@font/poppins_regular"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_16sp" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Linkedin"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:background="@drawable/add_product_edit_text_bg"
+                    android:gravity="center|start"
+                    android:paddingLeft="@dimen/dimen_10dp"
+                    android:paddingRight="@dimen/dimen_10dp">
+
+                    <EditText
+                        android:id="@+id/linkedin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edit_text_inner_style"
+                        android:fontFamily="@font/poppins_regular"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_16sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_30dp"
+                    android:layout_marginTop="@dimen/dimen_40dp"
+                    android:layout_marginEnd="@dimen/dimen_30dp"
+                    android:layout_marginBottom="@dimen/dimen_20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_add_user"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dimen_40dp"
+                        android:layout_marginTop="@dimen/dimen_8dp"
+                        android:layout_marginBottom="@dimen/dimen_8dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/add_product_green_btn_gredient"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Update"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dimen_40dp"
+                        android:layout_marginTop="@dimen/dimen_8dp"
+                        android:layout_marginBottom="@dimen/dimen_8dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/add_product_gray_btn_gredient"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingStart="@dimen/dimen_40dp"
+                        android:paddingEnd="@dimen/dimen_40dp"
+                        android:text="CANCEL"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/size_12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

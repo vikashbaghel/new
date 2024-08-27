@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <layer-list>
+            <item>
+                <shape>
+                    <gradient android:angle="90" android:endColor="#ffffff" android:startColor="#ffffff" android:type="linear" />
+
+                    <stroke android:width="1.5dp" android:color="#EEEEEEEE" />
+
+                    <corners android:radius="4dp" />
+                </shape>
+            </item>
+
+            <item android:drawable="@drawable/ic_expand"
+                android:gravity="center_vertical|right"
+                android:right="10dp" />
+        </layer-list>
+
+    </item>
+
+</selector>

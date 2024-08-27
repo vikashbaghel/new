@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <gradient
+        android:endColor="@color/bottom_bar_selected_item_bg_second"
+        android:startColor="@color/bottom_bar_selected_item_bg_first"
+        android:type="linear" />
+
+    <corners android:radius="@dimen/dimen_5dp" />
+
+</shape>

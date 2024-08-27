@@ -1,0 +1,303 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base application theme. -->
+    <style name="Theme.Rupyz" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/theme_purple</item>
+        <item name="colorPrimaryVariant">@color/theme_purple</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/theme_purple</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:autofilledHighlight" tools:ignore="NewApi">@android:color/transparent
+        </item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+        <item name="android:listDivider">@color/white</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+
+    <style name="Widget" />
+
+    <style name="Widget.ProgressBar.CircularProgressBar" parent="Widget">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="cpb_progressColor">@color/circular_progress_default_progress</item>
+        <item name="cpb_hasShadow">true</item>
+        <item name="cpb_strokeWidth">40</item>
+        <item name="cpb_titleColor">@color/circular_progress_default_title</item>
+        <item name="cpb_subtitleColor">@color/circular_progress_default_subtitle</item>
+    </style>
+
+    <style name="Widget.ProgressBar.Holo.CircularProgressBar" parent="Widget.ProgressBar.CircularProgressBar">
+        <item name="cpb_hasShadow">false</item>
+        <item name="cpb_strokeWidth">15</item>
+    </style>
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="colorPrimary">@color/theme_purple</item>
+        <!--        <item name="android:textColorSecondary">@color/theme_purple</item>-->
+    </style>
+
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="CustomAlertDialogView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="CustomProgressBarHorizontal" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_bar_horizontal_style</item>
+        <item name="android:minHeight">5dip</item>
+        <item name="android:maxHeight">40dip</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+
+    <style name="CustomBottomSheetDialogNewTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomNewSheetStyle</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+    <style name="trans_bg_dialog" parent="@style/Theme.AppCompat.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="CustomBottomNewSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottomsheet_bg</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="Base.Widget.AppCompat.Spinner">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/bg_spinner</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+
+    <style name="SpinnerThemeWithBorder" >
+        <item name="android:background">@drawable/bg_spinner_border</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+
+    <style name="SpinnerThemeGreen" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/bg_spinner_green</item>
+    </style>
+
+    <style name="bigSpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/bg_spinner</item>
+    </style>
+
+    <style name="MyRadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textColor">@drawable/discount_radio_button_selector_color</item>
+        <item name="buttonTint">@drawable/discount_radio_button_selector_color</item>
+    </style>
+
+    <style name="StaffActivityProgressBarHorizontal" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/staff_tracking_progress_bar_horizontal
+        </item>
+        <item name="android:minHeight">8dip</item>
+        <item name="android:maxHeight">8dip</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent.5dpInset" parent="">
+        <item name="cornerSize">7%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize10DP" parent="">
+        <item name="cornerSize">@dimen/dimen_10dp</item>
+    </style>
+
+    <style name="CustomDialogTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomRatingBarStyle" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_rating_bar</item>
+        <item name="android:minHeight">20dp</item>
+        <item name="android:maxHeight">20dp</item>
+        <item name="android:maxWidth">20dp</item>
+        <item name="android:minWidth">20dp</item>
+    </style>
+
+    <style name="TextInputDesign"  parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item  name="boxStrokeColor">@color/text_input_box_stroke_color</item>
+        <item  name="android:strokeColor">@color/text_input_box_stroke_color</item>
+        <item  name="android:textColorHint">@color/text_input_box_stroke_color</item>
+        <item  name="hintTextColor">@color/text_input_box_stroke_color</item>
+        <item  name="colorAccent">@color/text_input_box_stroke_color</item>
+        <item  name="colorPrimary">@color/text_input_box_stroke_color</item>
+        <item  name="colorOnSurface">@color/text_input_box_stroke_color</item>
+        <item  name="helperTextTextColor">@color/text_input_box_stroke_color</item>
+        <item  name="colorOnSecondary">@color/text_input_box_stroke_color</item>
+        <item  name="boxStrokeErrorColor">@color/red</item>
+        <item  name="boxStrokeWidth">1.5dp</item>
+        <item  name="boxCornerRadiusBottomStart">4dp</item>
+        <item  name="boxCornerRadiusBottomEnd">4dp</item>
+        <item  name="boxCornerRadiusTopStart">4dp</item>
+        <item  name="boxCornerRadiusTopEnd">4dp</item>
+
+    </style>
+
+
+    <style name="ThemeOverlay_App_DatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+
+        <item name="colorPrimary">@color/theme_purple</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorAccent">@color/green</item>
+
+        <!-- Header panel -->
+        <item name="materialCalendarHeaderTitle">@style/MaterialCalendar.HeaderLayout</item>
+        <item name="materialCalendarHeaderSelection">@style/Widget.MaterialComponents.MaterialCalendar.HeaderSelection</item>
+        <item name="materialCalendarHeaderToggleButton">@style/Widget.AppTheme.MaterialCalendar.HeaderToggleButton</item>
+        <!-- Buttons -->
+        <item name="buttonBarPositiveButtonStyle">@style/TextButton.Dialog</item>
+        <item name="buttonBarNegativeButtonStyle">@style/TextButton.Dialog</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+        <item name="textInputStyle">@style/Widget.Material3.TextInputEditText.OutlinedBox</item>
+
+    </style>
+
+
+
+    <style name="Widget.AppTheme.MaterialCalendar.HeaderToggleButton" parent="Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="MaterialCalendar.HeaderLayout" parent="Widget.MaterialComponents.MaterialCalendar.HeaderTitle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/theme_purple</item>
+    </style>
+
+    <style name="TextButton.Dialog" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/theme_purple</item>
+    </style>
+
+    <style name="TextAppearanceHint" parent="TextAppearance.Design.Hint">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">@dimen/size_14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TimePicker.Clock" parent="ThemeOverlay.MaterialComponents.TimePicker">
+        <item name="colorControlActivated">@color/theme_purple</item>
+        <item name="colorAccent">@color/theme_purple</item>
+        <item name="android:textColorPrimary">@color/theme_purple</item>
+        <item name="android:textColorSecondary">@color/theme_purple</item>
+        <item name="showTitle">false</item>
+        <item name="showAnimationBehavior">outward</item>
+        <item name="showText">false</item>
+        <item name="android:headerDividersEnabled">true</item>
+        <item name="android:headerAmPmTextAppearance">@style/Widget.App.TimePicker.Clock.AmPm</item>
+    </style>
+
+    <style name="Widget.App.TimePicker.Clock.AmPm">
+        <item name="android:textColorPrimary">@color/theme_purple</item>
+        <item name="android:textColorSecondary">@color/theme_purple</item>
+
+    </style>
+
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <style name="ShapeCircle">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="Shape10DP">
+        <item name="cornerSize">@dimen/dimen_5dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="FullScreenDialogTheme" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="ThinnerChip" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipCornerRadius">20dp</item>
+        <item name="android:strokeWidth">@integer/material_motion_duration_long_1</item>
+        <item name="strokeColor">@color/grey</item>
+        <item name="chipMinHeight">24dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.BottomSheet.MaterialCardView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">25dp</item>
+        <item name="cornerSizeTopRight">25dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="MyTransparentBottomSheetDialogTheme" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:colorBackground">@color/transparent</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/dimen_5dp"
+    android:background="@drawable/team_card_style"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_10dp"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ll_main_layout"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_image"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@mipmap/ic_user_default" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/txv_user_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="#00000029"
+                    android:text="Arun Shorie (CEO)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_menu"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/ic_icon_ionic_ios_more"
+                    android:padding="@dimen/dimen_6dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toEndOf="@+id/txv_product_name"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txv_designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="CEO"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/txv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="We are Digital marketers with more than 12 years of experience."
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:id="@+id/iv_linked_in"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="@dimen/dimen_5dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_linkedin" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

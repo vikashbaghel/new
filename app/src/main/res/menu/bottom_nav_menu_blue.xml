@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@mipmap/bottom_ic_home"
+        android:title="@string/bottom_nav_home" />
+    <item
+        android:id="@+id/navigation_alert"
+        android:icon="@mipmap/bottom_ic_alert"
+        android:title="@string/bottom_nav_alert"
+        app:cnb_backgroundColor="#312B81"
+        app:cnb_iconColor="@color/white" />
+    <item
+        android:id="@+id/navigation_learn"
+        android:icon="@mipmap/bottom_ic_learn"
+        android:title="@string/bottom_nav_learn"
+        app:cnb_backgroundColor="@color/theme_purple"
+        app:cnb_iconColor="@color/white" />
+    <item
+        android:id="@+id/navigation_debt_profile"
+        android:icon="@mipmap/bottom_ic_debt_profile"
+        android:title="@string/debt_profile"
+        app:cnb_backgroundColor="@color/theme_purple"
+        app:cnb_iconColor="@color/white" />
+
+    <item
+        android:id="@+id/navigation_menu"
+        android:icon="@mipmap/bottom_ic_settings"
+        android:title="@string/bottom_nav_menu"
+        app:cnb_backgroundColor="@color/theme_purple"
+        app:cnb_iconColor="@color/white" />
+</menu>

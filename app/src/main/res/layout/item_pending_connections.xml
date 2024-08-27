@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_8dp"
+    android:layout_marginTop="@dimen/size_12sp"
+    android:layout_marginEnd="@dimen/dimen_8dp"
+    app:cardCornerRadius="@dimen/dimen_10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/size_12sp">
+
+        <ImageView
+            android:id="@+id/iv_banner"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@drawable/business_banner_background"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_14sp"
+            android:src="@drawable/ic_more_black"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_connection"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/avatar"
+            android:visibility="visible"
+            app:civ_border_color="@color/gray"
+            app:civ_border_width="@dimen/dimen_1dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_banner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_banner" />
+
+        <TextView
+            android:id="@+id/user_prefix"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:background="@drawable/white_circle_with_stroke"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_connection"
+            app:layout_constraintEnd_toEndOf="@+id/iv_connection"
+            app:layout_constraintStart_toStartOf="@+id/iv_connection"
+            app:layout_constraintTop_toTopOf="@+id/iv_connection" />
+
+        <TextView
+            android:id="@+id/tv_connection_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_24sp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/size_24sp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingStart="@dimen/size_12sp"
+            android:paddingEnd="25dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_connection" />
+
+        <ImageView
+            android:id="@+id/iv_rating"
+            android:layout_width="@dimen/size_15sp"
+            android:layout_height="@dimen/size_16sp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="@dimen/dimen_4dp"
+            android:src="@mipmap/ic_badge_iconic"
+            android:visibility="visible"
+            app:civ_border_color="@color/gray"
+            app:civ_border_width="@dimen/dimen_1dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_connection_name"
+            app:layout_constraintEnd_toEndOf="@+id/tv_connection_name" />
+
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_12sp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Bangalore"
+            android:textColor="@color/text_color_grey"
+            android:textSize="@dimen/size_12sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/iv_connection"
+            app:layout_constraintTop_toBottomOf="@+id/tv_connection_name" />
+
+        <TextView
+            android:id="@+id/tv_connection_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_24sp"
+            android:layout_marginTop="@dimen/dimen_2dp"
+            android:layout_marginEnd="@dimen/size_24sp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text="Global Leader in Financial Services"
+            android:textColor="@color/text_color_light_black"
+            android:textSize="@dimen/size_10sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_connection"
+            app:layout_constraintStart_toStartOf="@+id/iv_connection"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+        <TextView
+            android:id="@+id/tv_shared_connection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/size_20sp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="10 shared connection"
+            android:textColor="@color/text_color_grey"
+            android:textSize="@dimen/size_10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/iv_connection"
+            app:layout_constraintStart_toStartOf="@+id/iv_connection"
+            app:layout_constraintTop_toBottomOf="@+id/tv_connection_info" />
+
+        <ImageView
+            android:id="@+id/iv_shared_connection"
+            android:layout_width="@dimen/size_16sp"
+            android:layout_height="@dimen/size_18sp"
+            android:layout_marginEnd="@dimen/dimen_4dp"
+            android:src="@drawable/ic_baseline_link"
+            app:civ_border_color="@color/gray"
+            app:civ_border_width="@dimen/dimen_1dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_shared_connection"
+            app:layout_constraintEnd_toStartOf="@+id/tv_shared_connection"
+            app:layout_constraintTop_toTopOf="@+id/tv_shared_connection" />
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tv_shared_connection, iv_shared_connection" />
+
+        <TextView
+            android:id="@+id/btn_accept"
+            android:layout_width="85dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/size_12sp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/connect"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_12sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_decline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_connection_info" />
+
+        <TextView
+            android:id="@+id/btn_decline"
+            android:layout_width="85dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/size_12sp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/connect"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_12sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_accept" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="@dimen/size_10sp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/size_12sp"
+    android:background="@drawable/assign_customer_background_gray">
+
+    <TextView
+        android:id="@+id/tv_customer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:buttonTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        android:checked="false"
+        android:fontFamily="@font/poppins_regular"
+        android:paddingStart="@dimen/size_18sp"
+        android:paddingTop="@dimen/dimen_6dp"
+        android:paddingEnd="@dimen/dimen_6dp"
+        android:paddingBottom="@dimen/dimen_6dp"
+        android:text="qwadfga asdg"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_remove_customer"
+        android:layout_width="@dimen/dimen_30dp"
+        android:layout_height="@dimen/dimen_30dp"
+        android:layout_marginEnd="@dimen/size_10sp"
+        android:padding="@dimen/size_10sp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_customer_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_activity_map"
+        android:icon="@drawable/ic_location_blue"
+        android:title="@string/activity_map" />
+
+    <item
+        android:id="@+id/menu_live_location"
+        android:icon="@drawable/ic_live_location"
+        android:title="@string/live_location" />
+</menu>

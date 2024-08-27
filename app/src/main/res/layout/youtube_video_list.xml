@@ -1,0 +1,115 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="8dp"
+    android:layout_margin="@dimen/dimen_10dp"
+    android:layout_height="wrap_content">
+
+<!--    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_equifax_logo" />
+
+        <ImageView
+            android:id="@+id/icon_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_play" />
+
+        <TextView
+            android:id="@+id/txv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img_thumbnail"
+            android:padding="8dp"
+            android:fontFamily="@font/poppins_regular"
+            android:background="@drawable/video_bg"
+            android:text="This is simple title"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textview"
+            android:layout_below="@id/txv_title"
+            android:layout_alignBottom="@id/txv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_18sp"
+            android:text="ASSS" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/txv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txv_title"
+            android:padding="8dp"
+            android:text="This is simple title"
+            android:textColor="#000000" />
+
+    </RelativeLayout>-->
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/experian_logo" />
+
+        <ImageView
+            android:id="@+id/VideoPreviewPlayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_play" />
+
+        <LinearLayout
+            android:background="@drawable/video_bg"
+            android:orientation="vertical"
+            android:layout_gravity="bottom|left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:textSize="@dimen/size_14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="@dimen/dimen_8dp"
+                android:textColor="@color/white"
+                android:text="ASSS" />
+
+            <TextView
+                android:id="@+id/txv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="@dimen/dimen_2dp"
+                android:text="This is simple title"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

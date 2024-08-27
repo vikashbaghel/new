@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_10dp"
+    tools:context=".ui.overview.OverViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_card_style"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Facility Mix"
+                android:textColor="@color/facility_mix_header_color"
+                android:textSize="@dimen/size_16sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Active"
+                android:textColor="@color/green"
+                android:textSize="@dimen/size_12sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/progress_bar_height"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:id="@+id/facility_mix_forex_pro"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:background="@drawable/facility_mix_one_style"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/facility_mix_terms_loan_pro"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimen_2dp"
+                android:layout_weight="20"
+                android:background="@drawable/facility_mix_two_style"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/facility_mix_non_fund_based_pro"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimen_2dp"
+                android:layout_weight="20"
+                android:background="@drawable/facility_mix_three_style"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/facility_mix_working_capital_pro"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimen_2dp"
+                android:layout_weight="20"
+                android:background="@drawable/facility_mix_four_style"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/facility_mix_others_pro"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimen_2dp"
+                android:layout_weight="20"
+                android:background="@drawable/facility_mix_five_style"
+                android:orientation="horizontal" />
+
+        </LinearLayout>
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/forex_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="start|center">
+
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="9dp"
+                    android:background="@color/equifax_forex_circle_color" />
+
+                <TextView
+                    android:id="@+id/txt_forex"
+                    android:layout_width="19dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/forex"
+                    android:textColor="@color/facility_mix_header_color"
+                    android:textSize="@dimen/equifax_facility_mix_section_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/term_loans_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center|start">
+
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="9dp"
+                    android:background="@color/personal_loan_circle_color" />
+
+                <TextView
+                    android:id="@+id/txt_term_loans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/term_loans"
+                    android:textColor="@color/facility_mix_header_color"
+                    android:textSize="@dimen/equifax_facility_mix_section_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/non_fund_based_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center|start">
+
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="9dp"
+                    android:background="#b98cbe" />
+
+                <TextView
+                    android:id="@+id/txt_non_fund_based"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/non_fund_based"
+                    android:textColor="@color/facility_mix_header_color"
+                    android:textSize="@dimen/equifax_facility_mix_section_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/working_capital_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center|start">
+
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="9dp"
+                    android:background="#44418a" />
+
+                <TextView
+                    android:id="@+id/txt_working_capital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/working_capital"
+                    android:textColor="@color/facility_mix_header_color"
+                    android:textSize="@dimen/equifax_facility_mix_section_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/others_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+
+                android:gravity="center|start">
+
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="9dp"
+                    android:background="#1c86a0" />
+
+                <TextView
+                    android:id="@+id/txt_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/others"
+                    android:textColor="@color/facility_mix_header_color"
+                    android:textSize="@dimen/equifax_facility_mix_section_size" />
+
+            </LinearLayout>
+
+
+        </GridLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,2487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.equifax.dailog.EquiFaxMyAccountDetailSheet">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen_10dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txt_subscriber_name"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/dimen_5dp"
+                    android:layout_weight="6.5"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:text="HDFC BANK"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_16sp" />
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_weight="2.5"
+                    android:gravity="right">
+
+                    <LinearLayout
+                        android:id="@+id/status_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="@drawable/active_status_bg_style"
+                        android:gravity="right">
+
+                        <TextView
+                            android:id="@+id/txt_account_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_15dp"
+                            android:layout_marginTop="@dimen/dimen_3dp"
+                            android:layout_marginRight="@dimen/dimen_15dp"
+                            android:layout_marginBottom="@dimen/dimen_3dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Active"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_10dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_weight="1"
+                    android:gravity="right">
+
+                    <ImageButton
+                        android:id="@+id/btnClose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="@android:color/transparent"
+                        android:padding="@dimen/dimen_5dp"
+                        android:src="@mipmap/ic_close" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp">
+
+                <TextView
+                    android:id="@+id/txt_account_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Unsecured Business Loan"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_13sp" />
+
+                <TextView
+                    android:id="@+id/txt_asset_classification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_regular"
+                    android:paddingTop="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:text="-"
+                    android:textAllCaps="true"
+                    android:textColor="#ffa500"
+                    android:textSize="@dimen/size_12sp" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#c3c3c3"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                android:weightSum="9">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Account No.: "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_account_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Sanction: "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_sanction_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="₹ 50,000"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Open Date: "
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_12sp" />
+
+                    <TextView
+                        android:id="@+id/txt_sanction_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text=" 16 June 2017"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/CustomProgressBarHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10sp"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:indeterminate="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                android:weightSum="9">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Paid"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_paid_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Current Balance"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_balance_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Overdue"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_overdue_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                android:weightSum="9">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Repayment"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_repayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="₹ 50,000"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Emi Amount"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txv_emi_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Tenure"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txv_emi_tenure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                android:weightSum="9">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Interest Rate"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txv_interest_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Emi Date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txv_emi_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Drawing Power"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                android:weightSum="9">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Closed Date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_closed_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Highest Credit"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_highest_credit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:paddingEnd="@dimen/dimen_10dp"
+                            android:text="Last Payment Date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+                        <TextView
+                            android:id="@+id/txt_last_payment_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="2dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:background="#F5F5F5"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingBottom="@dimen/dimen_10dp"
+                    android:weightSum="13">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Jan"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Feb"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Mar"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Apr"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="May"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Jun"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Jul"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Aug"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Sep"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Oct"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Nov"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Dec"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/year_one_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingBottom="@dimen/dimen_10dp"
+                    android:weightSum="13">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_year_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="O/S"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_one_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_one_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_two_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_two_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_three_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_three_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_four_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_four_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_five_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_five_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_six_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_six_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_seven_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+
+                        <TextView
+                            android:id="@+id/amount_one_seven_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_eight_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_eight_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_nine_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_nine_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_ten_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_ten_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_eleven_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_eleven_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_one_twelve_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_one_twelve_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/year_two_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingBottom="@dimen/dimen_10dp"
+                    android:weightSum="13">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_year_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="O/S"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_one_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_one_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_two_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_two_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_three_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_three_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_four_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_four_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_five_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_five_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_six_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_six_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_seven_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_seven_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_eight_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_eight_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_nine_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_nine_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_ten_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_ten_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_eleven_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_two_eleven_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_two_twelve_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+
+                        <TextView
+                            android:id="@+id/amount_two_twelve_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/year_three_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingBottom="@dimen/dimen_10dp"
+                    android:weightSum="13">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_year_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="O/S"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_one_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_one_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_two_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_two_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_three_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_three_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_four_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_four_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_five_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_five_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_six_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_six_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_seven_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_seven_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_eight_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_eight_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_nine_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_nine_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_ten_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_ten_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_eleven_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_eleven_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_three_twelve_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_three_twelve_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/year_four_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingBottom="@dimen/dimen_10dp"
+                    android:weightSum="13">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_year_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="O/S"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/repayment_month_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_one_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_one_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_two_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_two_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_three_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_three_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_four_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_four_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_five_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_five_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_six_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_six_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_seven_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_seven_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_eight_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_eight_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_nine_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_nine_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_ten_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_ten_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_eleven_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_eleven_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/year_four_twelve_image_view"
+                            android:layout_width="@dimen/repayment_icon_size"
+                            android:layout_height="@dimen/repayment_icon_size" />
+
+                        <TextView
+                            android:id="@+id/amount_four_twelve_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dimen_5dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/trade_line_value_text_size" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                android:weightSum="8">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center|left"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_check" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_2dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="On time payment"
+                        android:textColor="@color/black"
+                        android:textSize="8dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="O/S"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_10sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dimen_3dp"
+                        android:layout_marginTop="@dimen/dimen_1dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/outstanding"
+                        android:textColor="@color/black"
+                        android:textSize="8sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_close_red" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_2dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Delayed"
+                        android:textColor="@color/black"
+                        android:textSize="8dp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                android:weightSum="8">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:gravity="center|left"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/txt_last_updated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Last updated by bureau on 02 July 2021"
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center|right"
+                    android:orientation="horizontal"
+                    android:paddingEnd="@dimen/dimen_15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_help" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Raise Concern"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_12sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg_style"
+    tools:context=".ui.organization.onboarding.activity.MobileNumberActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:src="@mipmap/ic_rupyz_white_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_20dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/take_business_digital"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size_22sp"
+                        android:visibility="gone" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_30dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="@drawable/walkthrough_bg_style"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_20dp">
+
+                        <TextView
+                            android:id="@+id/txt_we_will_hep"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_20dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/we_will_help_you_to_grow_your_business_using_online_services"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_16sp" />
+
+
+                        <View
+                            android:layout_width="@dimen/dimen_40dp"
+                            android:layout_height="4dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:background="@drawable/short_line_style" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_30dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/enter_your_mobile_number_amp_get_started"
+                            android:textAlignment="center"
+                            android:textColor="#31EEFC"
+                            android:textSize="@dimen/size_12sp" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:background="@drawable/edit_text_style"
+                            android:gravity="center|left"
+                            android:paddingLeft="@dimen/dimen_10dp"
+                            android:paddingRight="@dimen/dimen_10dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@mipmap/ic_india" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="+91"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/size_16sp" />
+
+                            <EditText
+                                android:id="@+id/txt_mobile_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:background="@drawable/edit_text_inner_style"
+                                android:fontFamily="@font/poppins_regular"
+                                android:foregroundTint="@color/white"
+                                android:hint="Mobile Number"
+                                android:inputType="phone"
+                                android:maxEms="10"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:minLines="1"
+                                android:textColor="@color/white"
+                                android:textColorHint="#80FFFFFF"
+                                android:textCursorDrawable="@null"
+                                android:textSize="@dimen/size_16sp" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chb_terms"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/white"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/size_12sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/terms"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/size_12sp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btn_terms"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="20dp"
+                                        android:background="@android:color/transparent"
+                                        android:fontFamily="@font/poppins_regular"
+                                        android:text="@string/rupyz_terms"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/size_12sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/dimen_2dp"
+                                        android:layout_marginRight="@dimen/dimen_2dp"
+                                        android:background="@android:color/transparent"
+                                        android:text=","
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/white" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btn_policy"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="20dp"
+                                        android:background="@android:color/transparent"
+                                        android:fontFamily="@font/poppins_regular"
+                                        android:text="@string/rupyz_policy"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/size_12sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnLogin"
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_50dp"
+                            android:layout_marginBottom="@dimen/dimen_10dp"
+                            android:background="@drawable/check_score_button_style"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/str_continue"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_30dp"
+                            android:gravity="center|left"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <CheckBox
+                                android:id="@+id/chb_whatsapp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/white"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/size_12sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:gravity="center|left"
+                                    android:text="@string/whatsapp_consent"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/size_10sp" />
+
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="@dimen/dimen_25dp"
+                                android:layout_height="@dimen/dimen_25dp"
+                                android:layout_marginLeft="@dimen/dimen_5dp"
+                                android:src="@mipmap/ic_whatsapp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

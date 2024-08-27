@@ -1,0 +1,92 @@
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/achievement_card_style"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:src="@drawable/avatar"
+            android:id="@+id/user_image"
+            android:layout_marginStart="-5dp"
+            android:layout_width="0dp"
+            android:layout_weight=".3"
+            android:layout_height="40dp"/>
+
+        <LinearLayout
+            android:layout_weight="1.7"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <!--            <LinearLayout
+                            android:weightSum="1.5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">-->
+
+            <TextView
+                android:id="@+id/txv_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:shadowColor="#00000029"
+                android:text="Ascendi"
+                android:textColor="#312B81"
+                android:textSize="@dimen/size_16sp" />
+
+            <!-- </LinearLayout>-->
+
+            <TextView
+                android:id="@+id/txv_designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:paddingStart="8dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:paddingEnd="8dp"
+                android:text="Associated with WIMD Technologies"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/txv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingStart="8dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:paddingEnd="8dp"
+                android:text="June 2019"
+                android:textColor="#10A810"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/txv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:paddingStart="8dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:paddingEnd="8dp"
+                android:text="Lorem We are Digital marketers with more than 12 years of experience. With 12 years and more than 100 grand successful projects."
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

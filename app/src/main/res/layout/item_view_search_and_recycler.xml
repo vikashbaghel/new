@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:windowSoftInputMode="adjustResize|stateAlwaysVisible"
+    android:layout_height="wrap_content">
+
+    <com.app.rupyz.custom_view.basic.EditInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:editType="DROPDOWN"
+        android:id="@+id/etValue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="true"
+        android:id="@+id/cvOptionCard"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/dimen_4dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="@dimen/dimen_4dp"
+        app:layout_constraintTop_toBottomOf="@+id/etValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etSearchField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="postalAddress"
+                android:background="@color/divider_color"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/dimen_20dp"
+                android:inputType="textFilter"
+                android:minHeight="@dimen/dimen_50dp"
+                android:paddingHorizontal="@dimen/dimen_30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="LabelFor" />
+
+            <ProgressBar
+                android:layout_width="@dimen/dimen_50dp"
+                android:layout_height="@dimen/dimen_50dp"
+                android:id="@+id/progress_bar"
+                android:visibility="gone"
+                android:progressTint="@color/theme_purple"
+                android:secondaryProgressTint="@color/theme_green"
+                android:secondaryProgressTintMode="multiply"
+                android:elevation="@dimen/dimen_5dp"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                app:layout_constraintTop_toBottomOf="@+id/etSearchField"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvItemRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/dimen_8dp"
+                android:minHeight="@dimen/dimen_50dp"
+                app:layout_constraintHeight_min="@dimen/dimen_350dp"
+                app:layout_constraintHeight_max="@dimen/dimen_350dp"
+                android:maxHeight="@dimen/dimen_350dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etSearchField"
+                tools:itemCount="26"
+                tools:listitem="@layout/item_view_drop_down_checkbox_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
