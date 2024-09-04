@@ -1,6 +1,7 @@
 name: Build Production AAB APK
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - rupyz_release
@@ -10,7 +11,7 @@ on:
 jobs:
   build_aab:
     name: Build AAB
-    if: github.event.pull_request.merged
+    #if: github.event.pull_request.merged
     runs-on: ubuntu-latest
 
     steps:
@@ -36,8 +37,15 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Write Keystore File
+        run: echo "${{ secrets.KEYSTORE_FILE }}" > my-release-key.jks
+
       - name: Build AAB for release
         run: ./gradlew bundleProductionRelease 
+        env:
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_ALIAS_PASSWORD: ${{ secrets.KEY_ALIAS_PASSWORD }}
+          KEYSTORE_FILE: my-release-key.jks
 
       - name: Generate Timestamp
         id: timestamp
@@ -73,38 +81,38 @@ jobs:
           URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/AAB-PROD/app-production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
           echo "::set-output name=url::$URL"
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install -y gh
+      # - name: Install GitHub CLI
+      #   run: sudo apt-get install -y gh
 
-      - name: Fetch PR Details
-        run: |
-          PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
-          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      # - name: Fetch PR Details
+      #   run: |
+      #     PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
+      #     ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+      #     echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Post AAB URL to Slack1
-        run: |
-          curl -X POST -H 'Content-Type: application/json' -d "{
-            \"text\": \"${PR_BODY}\nDownload the AAB file for production using version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>\"
-          }" $SLACK_WEBHOOK_URL
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          PR_BODY: ${{ env.PR_BODY }}
+      # - name: Post AAB URL to Slack1
+      #   run: |
+      #     curl -X POST -H 'Content-Type: application/json' -d "{
+      #       \"text\": \"${PR_BODY}\nDownload the AAB file for production using version ${{ steps.extract-variable.outputs.custom-variable }}: <${{ steps.get-url.outputs.url }}|Click Here>\"
+      #     }" $SLACK_WEBHOOK_URL
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #     PR_BODY: ${{ env.PR_BODY }}
 
-      - name: Post Failure Notification to Slack for AAB
-        if: ${{ failure() }}
-        run: |
-          curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Build failed for AAB! Please check the workflow for details."
-          }' ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      # - name: Post Failure Notification to Slack for AAB
+      #   if: ${{ failure() }}
+      #   run: |
+      #     curl -X POST -H 'Content-Type: application/json' -d '{
+      #       "text": "Build failed for AAB! Please check the workflow for details."
+      #     }' ${{ secrets.SLACK_WEBHOOK_URL }}
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
   build_apk:
     name: Build APK
-    if: github.event.pull_request.merged
+    #if: github.event.pull_request.merged
     runs-on: ubuntu-latest
 
     steps:
@@ -129,8 +137,15 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Write Keystore File
+        run: echo "${{ secrets.KEYSTORE_FILE }}" > my-release-key.jks
+
       - name: Build APK for release
         run:  ./gradlew assembleProductionRelease
+        env:
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_ALIAS_PASSWORD: ${{ secrets.KEY_ALIAS_PASSWORD }}
+          KEYSTORE_FILE: my-release-key.jks
 
       - name: Generate Timestamp for APK
         id: timestamp-apk
@@ -160,37 +175,37 @@ jobs:
         run: |
           aws s3 cp ./app/build/outputs/apk/production/release/app-production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK-PROD/
 
-      - name: Generate Public URL for APK
-        id: get-url-apk
-        run: |
-          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK-PROD/app-production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
-          echo "::set-output name=url-apk::$URL"
+      # - name: Generate Public URL for APK
+      #   id: get-url-apk
+      #   run: |
+      #     URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/APK-PROD/app-production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk --expires-in 432000 --region ${{ secrets.AWS_REGION }} --endpoint-url https://s3.${{ secrets.AWS_REGION }}.amazonaws.com)
+      #     echo "::set-output name=url-apk::$URL"
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install -y gh
+      # - name: Install GitHub CLI
+      #   run: sudo apt-get install -y gh
 
-      - name: Fetch PR Details
-        run: |
-          PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
-          ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
-          echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      # - name: Fetch PR Details
+      #   run: |
+      #     PR_BODY=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
+      #     ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
+      #     echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Post APK URL to Slack1
-        run: |
-          curl -X POST -H 'Content-Type: application/json' -d "{
-            \"text\": \"${PR_BODY}\nDownload the APK file for production using version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>\"
-          }" $SLACK_WEBHOOK_URL
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          PR_BODY: ${{ env.PR_BODY }}
+      # - name: Post APK URL to Slack1
+      #   run: |
+      #     curl -X POST -H 'Content-Type: application/json' -d "{
+      #       \"text\": \"${PR_BODY}\nDownload the APK file for production using version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>\"
+      #     }" $SLACK_WEBHOOK_URL
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #     PR_BODY: ${{ env.PR_BODY }}
 
-      - name: Post Failure Notification to Slack for APK
-        if: ${{ failure() }}
-        run: |
-          curl -X POST -H 'Content-Type: application/json' -d '{
-            "text": "Build failed for APK! Please check the workflow for details."
-          }' ${{ secrets.SLACK_WEBHOOK_URL }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      # - name: Post Failure Notification to Slack for APK
+      #   if: ${{ failure() }}
+      #   run: |
+      #     curl -X POST -H 'Content-Type: application/json' -d '{
+      #       "text": "Build failed for APK! Please check the workflow for details."
+      #     }' ${{ secrets.SLACK_WEBHOOK_URL }}
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
