@@ -1,7 +1,7 @@
 name: Build Production AAB APK
 
 on:
-  push:
+  pull:
     branches:
       - main
 
@@ -42,7 +42,7 @@ jobs:
 
       - name: Build signed AAB for production
         run: |
-          ./gradlew assembleProductionRelease \
+          ./gradlew bundleProductionRelease \
             -Pandroid.injected.signing.store.file=/home/runner/work/new/new/keystore.jks \
             -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
