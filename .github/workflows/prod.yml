@@ -42,11 +42,11 @@ jobs:
 
       - name: Build signed AAB for production
         run: |
-          ./gradlew bundleProductionRelease \
-            -Pandroid.injected.signing.store.file=/home/runner/work/new/new/keystore.jks \
-            -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
-            -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
-            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }} 
+          ./gradlew bundleProductionRelease
+            #-Pandroid.injected.signing.store.file=/home/runner/work/new/new/keystore.jks \
+            #-Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
+            #-Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
+            #-Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }} 
 
       - name: Generate Timestamp
         id: timestamp
@@ -153,10 +153,7 @@ jobs:
             -Pandroid.injected.signing.store.file=/home/runner/work/new/new/keystore.jks \
             -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
-            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }} \
-            --info \
-            --stacktrace \
-            --debug
+            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
 
       - name: Generate Timestamp for APK
         id: timestamp-apk
