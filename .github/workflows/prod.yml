@@ -38,6 +38,9 @@ jobs:
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
 
+      - name: Find keystore.jks in all directories
+        run: find $(pwd) -name 'keystore.jks'
+
       - name: Build AAB for release
         run: ./gradlew bundleProductionRelease \
           -Pandroid.injected.signing.store.file=keystore.jks \
