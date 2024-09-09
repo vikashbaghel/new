@@ -64,7 +64,7 @@ jobs:
       - name: List Build Output Directory
         run: |
           echo "Listing directory before moving the file:"
-          ls -R ./app/build/outputs/bundle
+          ls -R ./app/build
 
       - name: Rename AAB with Timestamp
         run: mv ./app/build/outputs/bundle/productionRelease/app-production-release.aab "./app/build/outputs/bundle/productionRelease/app-production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab"
@@ -179,8 +179,8 @@ jobs:
       - name: List Build Output Directory
         run: |
           echo "Listing directory before moving the file:"
-          ls -R ./app/build/outputs/bundle
-
+          ls -R ./app/build
+          
       - name: Rename APK with Timestamp
         run: mv ./app/build/outputs/apk/production/release/productionRelease* "./app/build/outputs/apk/production/release/app-production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk"
     
