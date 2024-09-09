@@ -41,12 +41,14 @@ jobs:
       - name: Find keystore.jks in all directories
         run: find $(pwd) -name 'keystore.jks'
 
-      - name: Build AAB for release
-        run: ./gradlew bundleProductionRelease \
+      - name: Build signed APK for production
+        run: ./gradlew assembleProductionRelease \
           -Pandroid.injected.signing.store.file=/home/runner/work/new/new/keystore.jks \
           -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
           -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
-          -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
+          -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }} \
+          --info
+
 
       - name: Generate Timestamp
         id: timestamp
