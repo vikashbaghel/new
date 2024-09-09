@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.overview.OverViewActivity">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_user"
+        android:layout_width="@dimen/dimen_40dp"
+        android:layout_height="@dimen/dimen_40dp"
+        android:layout_marginStart="@dimen/size_16sp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginBottom="@dimen/dimen_10dp"
+        android:background="@drawable/profile_name_bg_style"
+        android:elevation="@dimen/dimen_2dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+    <TextView
+        android:id="@+id/user_prefix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:elevation="@dimen/size_10sp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:paddingTop="@dimen/dimen_3dp"
+        android:text="M"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+        app:layout_constraintEnd_toEndOf="@+id/iv_user"
+        app:layout_constraintStart_toStartOf="@+id/iv_user"
+        app:layout_constraintTop_toTopOf="@+id/iv_user" />
+
+    <ImageView
+        android:id="@+id/iv_burger_menu"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:elevation="@dimen/size_10sp"
+        android:scaleType="fitXY"
+        android:src="@drawable/navigation_burger_menu"
+        android:translationX="@dimen/size_16sp"
+        android:translationY="@dimen/size_22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+        app:layout_constraintEnd_toEndOf="@+id/iv_user" />
+
+    <TextView
+        android:id="@+id/toolbar_company_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_16sp"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_marginEnd="@dimen/dimen_8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:shadowColor="@color/analytics_view_drop_shadow_color"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_18sp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_reminder"
+        app:layout_constraintStart_toEndOf="@+id/iv_user"
+        app:layout_constraintTop_toTopOf="@+id/iv_user" />
+
+    <ImageView
+        android:id="@+id/iv_company_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:elevation="@dimen/size_10sp"
+        android:minWidth="@dimen/dimen_50dp"
+        android:minHeight="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+        app:layout_constraintStart_toEndOf="@+id/iv_user"
+        app:layout_constraintTop_toTopOf="@+id/iv_user" />
+
+    <ImageView
+        android:id="@+id/iv_reminder"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:padding="@dimen/dimen_6dp"
+        android:src="@drawable/ic_calendar_clock"
+        android:translationX="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_reminder_count"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="@dimen/size_12sp" />
+
+    <TextView
+        android:id="@+id/tv_reminder_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/payment_approved_background"
+        android:backgroundTint="@color/payment_rejected_text_color"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:paddingStart="@dimen/dimen_6dp"
+        android:paddingTop="@dimen/dimen_2dp"
+        android:paddingEnd="@dimen/dimen_6dp"
+        android:text="12"
+        android:textColor="@color/white"
+        android:textSize="9dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/iv_notification"
+        app:layout_constraintTop_toTopOf="@+id/iv_notification" />
+
+
+    <ImageView
+        android:id="@+id/iv_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_8dp"
+        android:src="@drawable/ic_bell"
+        android:translationX="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_notification_count"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="@dimen/dimen_30dp" />
+
+    <TextView
+        android:id="@+id/tv_notification_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/dimen_10dp"
+        android:background="@drawable/payment_approved_background"
+        android:backgroundTint="@color/payment_rejected_text_color"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:paddingStart="@dimen/dimen_6dp"
+        android:paddingTop="@dimen/dimen_2dp"
+        android:paddingEnd="@dimen/dimen_6dp"
+        android:text="12"
+        android:textColor="@color/white"
+        android:textSize="9dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_notification" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

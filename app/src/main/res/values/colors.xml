@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="theme_green">#3EB643</color>
+    <color name="theme_purple">#312B81</color>
+    <color name="light_purple">#BD312B81</color>
+    <color name="activity_blue">#383838</color>
+    <color name="yellow">#F4D700</color>
+    <color name="green">#52B200</color>
+    <color name="light_green">#66bb6a</color>
+    <color name="light_red">#ef5350</color>
+    <color name="light_yellow">#F9A825</color>
+    <color name="toast_warning_color">#F8E6CA</color>
+    <color name="red">#D90021</color>
+    <color name="toogle_color">#6B679F</color>
+    <color name="toogle_unselected_color">#ffffff</color>
+    <color name="toogle_unselected_text_color">#8E8E8E</color>
+    <color name="calculator_input_text_color">#000000</color>
+    <color name="calculator_level_text_color">#000000</color>
+    <color name="text_color_light_black">#4A4A4A</color>
+    <color name="text_color_light_gray">#747474</color>
+    <color name="white_70_transparent">#B3FFFFFF</color>
+    <color name="out_of_stock_red">#E10000</color>
+
+    <color name="theme_color">#312B81</color>
+    <color name="text_color_blue">#0886D2</color>
+
+    <!--    Bottom Navigation Color-->
+
+    <color name="bottom_bar_selected_item_bg_first">#312B81</color>
+    <color name="bottom_bar_selected_item_bg_second">#BD312B81</color>
+
+    <!--        Splash Activity Background Gradient Color-->
+    <color name="splash_bg_first">#312B81</color>
+    <color name="splash_bg_second">#221F46</color>
+
+    <!--        Walkthrough Activity Colors -->
+    <color name="check_score_bg_first">#3EB643</color>
+    <color name="check_score_bg_second">#0A9B11</color>
+    <color name="button_disable_color">#e0e0e0</color>
+
+    <!--    Home Fragment Color Code-->
+    <color name="rating_color">#119016</color>
+    <color name="credit_age_color">#6B679F</color>
+    <color name="loans_color">#141414</color>
+
+    <color name="active_circle_color">#D19DF4</color>
+    <color name="closed_circle_color">#2C4AA2</color>
+
+    <color name="working_capital_circle_color">#AB0DB8DB</color>
+    <color name="other_loan_circle_color">#7be4a3</color>
+    <color name="personal_loan_circle_color">#fec288</color>
+    <color name="private_bank_circle_color">#b2aef9</color>
+    <color name="psu_bank_circle_color">#b98cbe</color>
+    <color name="nbfc_circle_color">#fec288</color>
+
+    <!--    EquiFax Facility Mix -->
+    <color name="equifax_forex_circle_color">#AB0DB8DB</color>
+
+
+    <!--    my account colors-->
+    <color name="tab_selected_color">#312B81</color>
+    <color name="tab_un_selected_color">#6A6A6A</color>
+
+    <color name="gray">#cccccc</color>
+
+
+    <color name="unselected_radio_button">#ffffff</color>
+
+    <!--    Home Page Colors-->
+    <color name="home_header_color">#312B81</color>
+    <color name="emi_header_color">#151515</color>
+    <color name="upcoming_header_color">#151515</color>
+    <color name="alerts_header_color">#151515</color>
+    <color name="score_insight_key_factor_color">#6B679F</color>
+    <color name="score_insight_color">#141414</color>
+    <color name="lendership_text_color">#141414</color>
+    <color name="negative_account_text_color">#141414</color>
+    <color name="default_account_text_color">#141414</color>
+    <color name="overdue_header_text_color">#141414</color>
+    <color name="missed_payment_text_color">#141414</color>
+    <color name="repayment_header_color">#141414</color>
+    <color name="credit_history_header_color">#141414</color>
+    <color name="credit_history_decode_history_color">#6B679F</color>
+    <color name="facility_mix_header_color">#141414</color>
+
+    <!--    set the navigation view icon color-->
+    <color name="navigation_header_bg_color">#FFFFFF</color>
+    <color name="text_color_grey">#757575</color>
+    <color name="separator_color">#F3F3F3</color>
+    <color name="business_banner_bg">#CCD5FF</color>
+
+    <!--Sales text color-->
+    <color name="sales_text_color_light_black">#464646</color>
+    <color name="sales_text_color_dark_black">#070707</color>
+    <color name="sales_text_color_rupees_blue">#312B81</color>
+    <color name="sales_text_color_location">#0886D2</color>
+    <color name="sales_text_color_dark_gray">#5B5B5B</color>
+    <color name="sales_heading_blue">#363636</color>
+    <color name="know_more_blue">#0460FF</color>
+    <color name="sale_overview_heading">#26084F</color>
+    <color name="sale_overview_view_all">#FF0000</color>
+
+    <color name="chart_grid_color">#707070</color>
+    <color name="product_category_color">#707070</color>
+    <color name="filter_heading_color">#707070</color>
+
+    <color name="payment_customer_name_text_color">#108ED9</color>
+
+    <color name="payment_approved_text_color">#297B00</color>
+    <color name="payment_rejected_text_color">#FF0000</color>
+    <color name="filter_proceed_green">#2DAD33</color>
+    <color name="analytics_view_drop_shadow_color">#29000000</color>
+    <color name="cart_item">#FFF4EF</color>
+    <color name="cart_item_text">#FD7B35</color>
+    <color name="cart_item_discounted_price">#7B7B7B</color>
+
+    <color name="delete_discount_red">#EC3636</color>
+
+    <color name="order_gray">#CBCBCB</color>
+    <color name="ordered_unit_background">#E8E8E8</color>
+
+    <color name="ordered_divider">#DFDFDF</color>
+    <color name="discount_applied_yellow">#EB8D00</color>
+
+    <color name="order_status_green">#6EA81A</color>
+    <color name="nav_header_view">#E9E8F5</color>
+
+    <color name="nav_location">#0886D2</color>
+    <color name="color_received_bg">#F0F8FE</color>
+
+    <color name="light_gray">#EEEEEE</color>
+    <color name="order_date_color">#717171</color>
+
+    <color name="theme_light_purple">#9390BC</color>
+    <color name="expense_divider">#E6E6E6</color>
+    <color name="expense_dark_gray">#656565</color>
+    <color name="expense_reject_red">#EE2A3E</color>
+    <color name="expense_gray">#B7B7B7</color>
+
+    <color name="light_divider_gray_color">#E2E2E2</color>
+    <color name="lead_add_blue">#3A3486</color>
+    <color name="business_details_blue">#1783EF</color>
+    <color name="lead_location_gray">#898989</color>
+
+    <color name="black_semi_transparent">#30000000</color>
+    <color name="black_95_semi_transparent">#95000000</color>
+    <color name="notification_title">#161213</color>
+    <color name="notification_time">#808080</color>
+
+    <color name="notification_mark_seen_all">#1677FF</color>
+    <color name="beat_hint_color">#717171</color>
+    <color name="leve_divider_color">#E4E4E4</color>
+    <color name="divider_color">#EEEEEE</color>
+    <color name="leve_text_color">#727176</color>
+    <color name="product_specification_text_color">#616161</color>
+    <color name="drop_down_drawable_tint">#A5A5A5</color>
+    <color name="pending_text_color">#F09F41</color>
+    <color name="closed_text_color">#666666</color>
+    <color name="customer_text_status">#A1A1A1</color>
+    <color name="lead_action_text">#C3C3C3</color>
+    <color name="otp_in_active_color">#37318480</color>
+    <color name="circular_progress_default_progress">#6AC56E</color>
+    <color name="circular_progress_default_background">#E6E5F9</color>
+    <color name="circular_progress_default_title">#000000</color>
+    <color name="circular_progress_default_subtitle">#D1D1D1</color>
+    <color name="profile_divider_color">#F6F0F1</color>
+    <color name="achieve_green">#309F35</color>
+    <color name="set_new_location_color">#001A72</color>
+    <color name="remove_location_color">#F00</color>
+    <color name="customer_level_one_background">#FDE3C9</color>
+    <color name="customer_level_one_text_color">#53120E</color>
+    <color name="customer_level_two_background">#DFF3CE</color>
+    <color name="customer_level_two_text_color">#112F0D</color>
+    <color name="customer_level_three_background">#D1F2FB</color>
+    <color name="customer_level_three_text_color">#090B5B</color>
+    <color name="parent_customer_name_color">#777</color>
+    <color name="C26921_color">#C26921</color>
+    <color name="color_555">#555</color>
+    <color name="holiday_beat_color">#9390BC</color>
+    <color name="color_888">#888</color>
+    <color name="color_817EB1">#817EB1</color>
+    <color name="color_555555">#555555</color>
+    <color name="google_map_route_line_color">#322E80</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_656565">#656565</color>
+    <color name="color_727176">#727176</color>
+    <color name="color_6B679F">#6B679F</color>
+    <color name="color_F4F4F4">#F4F4F4</color>
+    <color name="color_DDDDDD">#DDDDDD</color>
+    <color name="color_322E80">#322E80</color>
+    <color name="color_f4f4f4">#f4f4f4</color>
+    <color name="color_CEDEF0">#CEDEF0</color>
+    <color name="color_CCF0CC">#CCF0CC</color>
+    <color name="color_D6D6D6">#D6D6D6</color>
+    <color name="color_F0DDCE">#F0DDCE</color>
+    <color name="color_C8C8C8">#C8C8C8</color>
+    <color name="color_FDE3C9">#FDE3C9</color>
+    <color name="color_312B81">#312B81</color>
+
+    <color name="color_approve">#297B00</color>
+    <color name="color_received">#1091F4</color>
+    <color name="color_reject">#FF0009</color>
+    <color name="color_processing">#EF9834</color>
+    <color name="google_map_day_started">#118C11</color>
+    <color name="google_map_day_ended">#EB0101</color>
+    <color name="google_map_activity">#C26921</color>
+    <color name="google_map_feedback">#1D7873</color>
+    <color name="google_map_order">#216BC2</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#727176</color>
+
+</resources>

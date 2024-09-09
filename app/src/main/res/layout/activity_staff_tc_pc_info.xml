@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_bg">
+
+    <ImageView
+        android:id="@+id/img_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:padding="@dimen/size_12sp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_12sp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_semibold"
+        android:lines="1"
+        android:shadowColor="@color/analytics_view_drop_shadow_color"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/active"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintStart_toEndOf="@+id/img_close"
+        app:layout_constraintTop_toTopOf="@+id/img_close"
+        app:layout_goneMarginEnd="@dimen/dimen_20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_activity_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_4dp"
+        android:layout_marginEnd="@dimen/size_12sp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TC"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/img_close"
+        app:layout_constraintStart_toEndOf="@+id/img_close"
+        app:layout_constraintTop_toBottomOf="@+id/tv_toolbar_title" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="@dimen/dimen_8dp"
+        android:layout_height="@dimen/dimen_2dp"
+        android:layout_marginStart="@dimen/dimen_4dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_activity_type"
+        app:layout_constraintStart_toEndOf="@+id/tv_activity_type"
+        app:layout_constraintTop_toTopOf="@+id/tv_activity_type" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_toolbar_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_4dp"
+        android:layout_marginTop="@dimen/dimen_4dp"
+        android:layout_marginEnd="@dimen/size_12sp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="1 march 2024"
+        android:textColor="@color/leve_text_color"
+        android:textSize="@dimen/size_12sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/img_close"
+        app:layout_constraintStart_toEndOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_toolbar_title" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_2dp"
+        android:layout_marginTop="@dimen/size_12sp"
+        android:layout_marginEnd="@dimen/dimen_2dp"
+        android:background="@color/white"
+        app:layout_collapseMode="pin"
+        app:layout_constraintTop_toBottomOf="@+id/tv_toolbar_sub_title">
+
+        <ImageView
+            android:id="@+id/iv_decrement_month"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="@dimen/dimen_2dp"
+            android:padding="@dimen/size_12sp"
+            android:rotation="180"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+            app:layout_constraintEnd_toStartOf="@+id/tv_date"
+            app:layout_constraintTop_toTopOf="@+id/tv_date"
+            app:tint="@color/theme_purple" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="@dimen/size_12sp"
+            android:textColor="@color/theme_purple"
+            android:textSize="@dimen/size_15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_increment_month"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="@dimen/dimen_2dp"
+            android:padding="@dimen/size_12sp"
+            android:src="@drawable/ic_right_arrow"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+            app:layout_constraintStart_toEndOf="@+id/tv_date"
+            app:layout_constraintTop_toTopOf="@+id/tv_date"
+            app:tint="@color/theme_purple" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_staff_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_date" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_empty_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_date">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_error_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="@dimen/dimen_20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="@string/no_result_found"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_14sp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_empty_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_empty_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/searching_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_error_message" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_connection"
+        android:layout_width="@dimen/dimen_40dp"
+        android:layout_height="@dimen/dimen_40dp"
+        android:layout_marginTop="@dimen/dimen_12dp"
+        android:layout_marginBottom="@dimen/dimen_12dp"
+        android:src="@drawable/avatar"
+        app:civ_border_color="@color/gray"
+        app:civ_border_width="@dimen/dimen_1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_connection_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_12sp"
+        android:layout_marginEnd="@dimen/dimen_8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_15sp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_more"
+        app:layout_constraintStart_toEndOf="@+id/iv_connection"
+        app:layout_constraintTop_toTopOf="@+id/iv_connection" />
+
+    <TextView
+        android:id="@+id/tv_connection_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_12sp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_connection"
+        app:layout_constraintStart_toEndOf="@+id/iv_connection"
+        app:layout_constraintTop_toBottomOf="@+id/tv_connection_name" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_icon_ionic_ios_more"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.overview.OverViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:layout_weight="5"
+            android:background="@drawable/home_card_style">
+
+            <LinearLayout
+                android:id="@+id/negative_root_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Negative A/C"
+                            android:textColor="#141414"
+                            android:textSize="@dimen/size_10sp" />
+
+                        <LinearLayout
+                            android:id="@+id/negative_award"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="@dimen/dimen_20dp"
+                                android:layout_height="@dimen/dimen_20dp"
+                                android:src="@mipmap/ic_gold_medal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Ace"
+                                android:textColor="@color/green"
+                                android:textSize="@dimen/size_12sp" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/negative_progress_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/progress_bar_height"
+                        android:layout_marginLeft="@dimen/dimen_2dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/negative_account_red_style" />
+
+                    <TextView
+                        android:id="@+id/txt_negative_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="₹ 0"
+                        android:textColor="#141414"
+                        android:textSize="@dimen/size_16sp" />
+
+                    <TextView
+                        android:id="@+id/txt_negative_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="0 - Accounts"
+                        android:textColor="#141414"
+                        android:textSize="@dimen/size_12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_negative_account_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/dimen_5dp"
+                android:src="@drawable/ic_arrow_right" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:layout_weight="5"
+            android:background="@drawable/home_card_style">
+
+            <LinearLayout
+                android:id="@+id/npa_root_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Defaults &amp; NPA"
+                            android:textColor="#141414"
+                            android:textSize="@dimen/size_10sp" />
+
+                        <LinearLayout
+                            android:id="@+id/npa_award"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="@dimen/dimen_20dp"
+                                android:layout_height="@dimen/dimen_20dp"
+                                android:src="@mipmap/ic_gold_medal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="Ace"
+                                android:textColor="@color/green"
+                                android:textSize="@dimen/size_12sp" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/progress_bar_height"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginBottom="@dimen/dimen_10dp"
+                        android:background="@drawable/facility_mix_main_style"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                        <LinearLayout
+                            android:id="@+id/npa_dps_pro"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight="20"
+                            android:background="@drawable/facility_mix_one_style"
+                            android:orientation="horizontal" />
+
+                        <LinearLayout
+                            android:id="@+id/npa_sma_pro"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dimen_2dp"
+                            android:layout_weight="20"
+                            android:background="@drawable/facility_mix_two_style"
+                            android:orientation="horizontal" />
+
+                        <LinearLayout
+                            android:id="@+id/npa_loss_pro"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dimen_2dp"
+                            android:layout_weight="10"
+                            android:background="@drawable/facility_mix_three_style"
+                            android:orientation="horizontal" />
+
+                        <LinearLayout
+                            android:id="@+id/npa_doubtful_pro"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dimen_2dp"
+                            android:layout_weight="10"
+                            android:background="@drawable/facility_mix_four_style"
+                            android:orientation="horizontal" />
+
+                        <LinearLayout
+                            android:id="@+id/npa_sub_standard_pro"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dimen_2dp"
+                            android:layout_weight="20"
+                            android:background="@drawable/facility_mix_five_style"
+                            android:orientation="horizontal" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:columnCount="2">
+
+                            <LinearLayout
+                                android:id="@+id/npa_dpd_layout"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_columnWeight="1"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center|start">
+
+                                <View
+                                    android:layout_width="7dp"
+                                    android:layout_height="9dp"
+                                    android:background="@color/working_capital_circle_color" />
+
+                                <TextView
+                                    android:id="@+id/txt_npa_dpd"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dimen_5dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textColor="#141414"
+                                    android:textSize="@dimen/size_12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/npa_loss_layout"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_columnWeight="1"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center|start">
+
+                                <View
+                                    android:layout_width="7dp"
+                                    android:layout_height="9dp"
+                                    android:background="#fec288" />
+
+                                <TextView
+                                    android:id="@+id/txt_npa_loss"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dimen_5dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textColor="#141414"
+                                    android:textSize="@dimen/size_12sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/npa_sma_layout"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_columnWeight="1"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center|start">
+
+                                <View
+                                    android:layout_width="7dp"
+                                    android:layout_height="9dp"
+                                    android:background="#b98cbe" />
+
+                                <TextView
+                                    android:id="@+id/txt_npa_sma"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dimen_5dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textColor="#141414"
+                                    android:textSize="@dimen/size_12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/npa_doubtful_layout"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_columnWeight="1"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center|start">
+
+                                <View
+                                    android:layout_width="7dp"
+                                    android:layout_height="9dp"
+                                    android:background="#44418a" />
+
+                                <TextView
+                                    android:id="@+id/txt_npa_doubtful"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dimen_5dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textColor="#141414"
+                                    android:textSize="@dimen/size_12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/npa_sub_standard_layout"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_columnWeight="1"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center|start">
+
+                                <View
+                                    android:layout_width="7dp"
+                                    android:layout_height="9dp"
+                                    android:background="#1c86a0" />
+
+                                <TextView
+                                    android:id="@+id/txt_npa_sub_standard"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dimen_5dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textColor="#141414"
+                                    android:textSize="@dimen/size_12sp" />
+
+                            </LinearLayout>
+
+                        </GridLayout>
+
+                        <TextView
+                            android:id="@+id/txt_npa_message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="No Defaults &amp; NPA"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/size_12sp"
+                            android:visibility="gone" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ImageButton
+
+                android:id="@+id/btn_npa_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/dimen_5dp"
+                android:src="@drawable/ic_arrow_right" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

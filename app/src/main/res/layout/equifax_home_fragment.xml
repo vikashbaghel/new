@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.equifax.EquiFaxMainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_1dp"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/dashboard_user_profile_layout"
+                        layout="@layout/equifax_home_user_profile_layout"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/null_profile_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/dashboard_risk_layout_null"
+                            layout="@layout/risk_layout_null" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/score_not_found_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/score_not_found"
+                            layout="@layout/score_not_found" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fill_profile_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:id="@+id/score_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <include
+                                android:id="@+id/dashboard_risk_layout"
+                                layout="@layout/equifax_risk_layout_score" />
+
+                            <include
+                                android:id="@+id/layout_commercial_report"
+                                layout="@layout/layout_commercial_report_download"
+                                android:visibility="gone" />
+
+                            <include
+                                android:id="@+id/featured_option_layout"
+                                layout="@layout/featured_option_layout" />
+
+
+                            <include
+                                android:id="@+id/dashboard_risk_layout_individual"
+                                layout="@layout/risk_layout_score" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_emi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dimen_5dp"
+                            android:weightSum="2">
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.8"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/emis_getting_due_in_next_15_days"
+                                android:textColor="@color/emi_header_color"
+                                android:textSize="@dimen/size_16sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".2"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="3/3"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/size_16sp"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_add_emi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:background="@drawable/home_card_style"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dimen_5dp"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".9"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:padding="@dimen/dimen_5dp"
+                                    android:text="@string/add_emi_header"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:padding="@dimen/dimen_5dp"
+                                    android:text="@string/add_emi_sub_heading"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".1"
+                                android:src="@drawable/ic_arrow_right" />
+
+                        </LinearLayout>
+
+                        <!-- <androidx.recyclerview.widget.RecyclerView
+                             android:id="@+id/recycler_view_emi"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="@dimen/dimen_10dp"
+                             android:layout_marginEnd="@dimen/dimen_10dp"
+                             android:background="@drawable/home_card_style"
+                             android:nestedScrollingEnabled="true"
+                             android:padding="@dimen/dimen_20dp"
+                             android:paddingBottom="@dimen/dimen_15dp"
+                             android:visibility="gone" />-->
+
+                        <LinearLayout
+                            android:id="@+id/ll_view_emi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:background="@drawable/home_card_style"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_20dp"
+                            android:visibility="gone">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler_view_emi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:listitem="@layout/emi_reminder_item" />
+
+                            <TextView
+                                android:id="@+id/txv_view_all_emi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="@dimen/dimen_5dp"
+                                android:layout_weight=".2"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="end"
+                                android:paddingEnd="@dimen/dimen_10dp"
+                                android:text="@string/view_more"
+                                android:textColor="#312B81"
+                                android:textSize="@dimen/size_12sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txv_upcoming"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:padding="@dimen/dimen_5dp"
+                            android:text="Upcoming Events"
+                            android:textColor="@color/upcoming_header_color"
+                            android:textSize="@dimen/size_16sp"
+                            android:visibility="gone" />
+
+                        <!--                        <LinearLayout
+                                                    android:visibility="gone"
+                                                    android:id="@+id/ll_view_compliance"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:padding="@dimen/dimen_20dp"
+                                                    android:background="@drawable/home_card_style"
+                                                    android:layout_marginStart="@dimen/dimen_10dp"
+                                                    android:layout_marginEnd="@dimen/dimen_10dp"
+                                                    android:orientation="vertical">
+
+                                                <androidx.recyclerview.widget.RecyclerView
+                                                    android:id="@+id/recycler_view_complaince"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="@dimen/dimen_10dp"
+                                                    android:layout_marginEnd="@dimen/dimen_10dp"
+                                                    android:background="@drawable/home_card_style"
+                                                    android:nestedScrollingEnabled="false"
+                                                    android:padding="@dimen/dimen_20dp"
+                                                    android:paddingTop="@dimen/dimen_10dp"
+                                                    android:paddingBottom="@dimen/dimen_10dp"
+                                                    android:visibility="gone" />
+
+                                                    <TextView
+                                                        android:id="@+id/txv_view_all_compliance"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight=".2"
+                                                        android:fontFamily="@font/poppins_medium"
+                                                        android:text="View All"
+                                                        android:gravity="end"
+                                                        android:layout_marginTop="@dimen/dimen_5dp"
+                                                        android:layout_gravity="end"
+                                                        android:textColor="#151515"
+                                                        android:textSize="@dimen/size_12sp" />
+
+                                                </LinearLayout>-->
+
+                        <LinearLayout
+                            android:id="@+id/ll_view_compliance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:background="@drawable/home_card_style"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_20dp"
+                            android:visibility="gone">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler_view_compliance"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:nestedScrollingEnabled="false"
+                                tools:listitem="@layout/compliance_calendar_item" />
+
+                            <TextView
+                                android:id="@+id/txv_view_all_compliance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="@dimen/dimen_5dp"
+                                android:layout_weight=".2"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="end"
+                                android:text="@string/view_more"
+                                android:textColor="#312B81"
+                                android:textSize="@dimen/size_12sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:padding="@dimen/dimen_5dp"
+                            android:text="Alerts"
+                            android:textColor="@color/alerts_header_color"
+                            android:textSize="@dimen/size_16sp"
+                            android:visibility="gone" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_microblog"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:nestedScrollingEnabled="false"
+                            tools:listitem="@layout/micro_blog_item" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,96 @@
+package com.app.rupyz.model_kt
+
+import com.google.gson.annotations.SerializedName
+
+data class NewUpdateCustomerInfoModel (
+    @SerializedName("data"         ) var data       : Data?    = Data(),
+    @SerializedName("message"      ) var message    : String?  = null,
+    @SerializedName("error"        ) var error      : Boolean? = null,
+    @SerializedName("errorCode"    ) var errorCode  : Int? = null
+){
+    data class Data (
+
+        @SerializedName("last_order_date"               ) var lastOrderDate              : String?                   = null,
+        @SerializedName("last_order_id"                 ) var lastOrderId                : String?                   = null,
+        @SerializedName("id"                            ) var id                         : Int?                      = null,
+        @SerializedName("logo_image_url"                ) var logoImageUrl               : String?                   = null,
+        @SerializedName("distributor_name"              ) var distributorName            : String?                   = null,
+        @SerializedName("pricing_group_name"            ) var pricingGroupName           : String?                   = null,
+        @SerializedName("customer_level_name"           ) var customerLevelName          : String?                   = null,
+        @SerializedName("customer_parent_name"          ) var customerParentName         : String?                   = null,
+        @SerializedName("geo_location_lat"              ) var geoLocationLat             : Double?                      = null,
+        @SerializedName("geo_location_long"             ) var geoLocationLong            : Double?                      = null,
+        @SerializedName("map_location_lat"              ) var mapLocationLat             : Double?                      = null,
+        @SerializedName("map_location_long"             ) var mapLocationLong            : Double?                      = null,
+        @SerializedName("beat_list"                     ) var beatList                   : ArrayList<String>         = arrayListOf(),
+        @SerializedName("custom_form_data"              ) var customFormData             : ArrayList<CustomFormData> = arrayListOf(),
+        @SerializedName("name"                          ) var name                       : String?                   = null,
+        @SerializedName("pan_id"                        ) var panId                      : String?                   = null,
+        @SerializedName("gstin"                         ) var gstin                      : String?                   = null,
+        @SerializedName("customer_code"                 ) var customerCode               : String?                   = null,
+        @SerializedName("contact_person_name"           ) var contactPersonName          : String?                   = null,
+        @SerializedName("email"                         ) var email                      : String?                   = null,
+        @SerializedName("mobile"                        ) var mobile                     : String?                   = null,
+        @SerializedName("payment_term"                  ) var paymentTerm                : String?                   = null,
+        @SerializedName("credit_limit"                  ) var creditLimit                : Int?                      = null,
+        @SerializedName("outstanding_amount"            ) var outstandingAmount          : Double?                   = null,
+        @SerializedName("total_payment_amount_received" ) var totalPaymentAmountReceived : Double?                   = null,
+        @SerializedName("total_amount_sales"            ) var totalAmountSales           : Double?                   = null,
+        @SerializedName("customer_type"                 ) var customerType               : String?                   = null,
+        @SerializedName("customer_level"                ) var customerLevel              : String?                   = null,
+        @SerializedName("level_3_customer_count"        ) var level3CustomerCount        : Int?                      = null,
+        @SerializedName("level_2_customer_count"        ) var level2CustomerCount        : Int?                      = null,
+        @SerializedName("segment_name"                  ) var segmentName                : String?                   = null,
+        @SerializedName("segment_discount_value"        ) var segmentDiscountValue       : Int?                      = null,
+        @SerializedName("geo_location"                  ) var geoLocation                : String?                   = null,
+        @SerializedName("map_location"                  ) var mapLocation                : String?                   = null,
+        @SerializedName("geo_address"                   ) var geoAddress                 : String?                   = null,
+        @SerializedName("whatsapp_opt"                  ) var whatsappOpt                : Boolean?                  = null,
+        @SerializedName("customer_consent"              ) var customerConsent            : Boolean?                  = null,
+        @SerializedName("is_active"                     ) var isActive                   : Boolean?                  = null,
+        @SerializedName("source"                        ) var source                     : String?                   = null,
+        @SerializedName("allow_all_staff"               ) var allowAllStaff              : Boolean?                  = null,
+        @SerializedName("allow_all_beats"               ) var allowAllBeats              : Boolean?                  = null,
+        @SerializedName("allow_all_pro_cat"             ) var allowAllProCat             : Boolean?                  = null,
+        @SerializedName("state"                         ) var state                      : String?                   = null,
+        @SerializedName("city"                          ) var city                       : String?                   = null,
+        @SerializedName("address_line_1"                ) var addressLine1               : String?                   = null,
+        @SerializedName("address_line_2"                ) var addressLine2               : String?                   = null,
+        @SerializedName("pincode"                       ) var pincode                    : String?                   = null,
+        @SerializedName("on_elasticsearch"              ) var onElasticsearch            : Boolean?                  = null,
+        @SerializedName("elasticsearch_update_at"       ) var elasticsearchUpdateAt      : String?                   = null,
+        @SerializedName("created_at"                    ) var createdAt                  : String?                   = null,
+        @SerializedName("updated_at"                    ) var updatedAt                  : String?                   = null,
+        @SerializedName("organization"                  ) var organization               : Int?                      = null,
+        @SerializedName("user"                          ) var user                       : Int?                      = null,
+        @SerializedName("lead"                          ) var lead                       : String?                   = null,
+        @SerializedName("logo_image"                    ) var logoImage                  : Int?                      = null,
+        @SerializedName("customer_parent"               ) var customerParent             : Int?                      = null,
+        @SerializedName("distributor"                   ) var distributor                : String?                   = null,
+        @SerializedName("pricing_group"                 ) var pricingGroup               : Int?                      = null,
+        @SerializedName("created_by"                    ) var createdBy                  : Int?                      = null,
+        @SerializedName("parents_count"                 ) var parentsCount               : Int?                      = null,
+        @SerializedName("updated_by"                    ) var updatedBy                  : String?                   = null,
+        @SerializedName("beats"                         ) var beats                      : ArrayList<Int>            = arrayListOf(),
+        @SerializedName("product_category"              ) var productCategory            : ArrayList<String>         = arrayListOf()
+
+    ){
+        data class CustomFormData (
+
+            @SerializedName("name"              ) var name              : String?  = null,
+            @SerializedName("type"              ) var type              : String?  = null,
+            @SerializedName("label"             ) var label             : String?  = null,
+            @SerializedName("value"             ) var value             : String?  = null,
+            @SerializedName("is_custom"         ) var isCustom          : Boolean? = null,
+            @SerializedName("isRequired"        ) var isRequired        : Boolean? = null,
+            @SerializedName("sub_module_id"     ) var subModuleId       : String?  = null,
+            @SerializedName("sub_module_type"   ) var subModuleType     : String?  = null,
+            @SerializedName("geo_address"       ) var geoAddressValue   : String? = null,
+            @SerializedName("geo_location_long" ) var geoLocationLong   : Double? = null,
+            @SerializedName("geo_location_lat"  ) var geoLocationLat    : Double? = null,
+            @SerializedName("data_type"         ) var dataType          : String? = null,
+            @SerializedName("img_urls"          ) var imgUrls           : ArrayList<String>? = null,
+        )
+    }
+
+}

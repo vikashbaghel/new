@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_border_linear_gradient"
+    android:padding="@dimen/size_16sp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_product"
+        android:layout_width="@dimen/dimen_60dp"
+        android:layout_height="@dimen/dimen_60dp"
+        android:background="@color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent.5dpInset" />
+
+    <TextView
+        android:id="@+id/tv_sets_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:lines="1"
+        android:text="product Name"
+        android:textColor="@color/theme_purple"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_sets_price"
+        app:layout_constraintStart_toEndOf="@+id/iv_product"
+        app:layout_constraintTop_toTopOf="@+id/iv_product"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+
+    <TextView
+        android:id="@+id/tv_sets_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_10sp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="12000 /"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_sets_unit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_sets_unit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/set"
+        android:textColor="@color/leve_text_color"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_gst"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/gst"
+        android:textColor="@color/remove_location_color"
+        android:textSize="@dimen/size_10sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_sets_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sets_price" />
+
+
+    <TextView
+        android:id="@+id/tv_product_mrp_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_15sp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="12000 /"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_product"
+        app:layout_constraintStart_toEndOf="@+id/iv_product" />
+
+    <TextView
+        android:id="@+id/tv_product_mrp_unit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10sp"
+        android:layout_marginEnd="@dimen/size_15sp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/set"
+        android:textColor="@color/leve_text_color"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_product_mrp_price"
+        app:layout_constraintStart_toEndOf="@+id/tv_product_mrp_price"
+        app:layout_constraintTop_toTopOf="@+id/tv_product_mrp_price" />
+
+
+    <TextView
+        android:id="@+id/hd_qty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/qty"
+        android:layout_marginEnd="@dimen/dimen_4dp"
+        android:textColor="@color/product_category_color"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_product_mrp_price"
+        app:layout_constraintEnd_toStartOf="@+id/tv_qty"
+        app:layout_constraintTop_toTopOf="@+id/tv_product_mrp_price" />
+
+    <TextView
+        android:id="@+id/tv_qty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hd_qty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hd_qty" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,130 @@
+{
+  "project_info": {
+    "project_number": "975445624764",
+    "firebase_url": "https://rupyz-9a4b7-default-rtdb.firebaseio.com",
+    "project_id": "rupyz-9a4b7",
+    "storage_bucket": "rupyz-9a4b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975445624764:android:7939782dc55dfd28accdb9",
+        "android_client_info": {
+          "package_name": "com.app.rupyz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975445624764-09nva20b9rg42i25abaldlfitlqcmn7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.rupyz",
+            "certificate_hash": "2797e695a72d20a10cb20abf8e2211d8c3253be0"
+          }
+        },
+        {
+          "client_id": "975445624764-fh8v073dmopkunmqr8rbh1khfqsrn2l4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoz0oaweCxKBI9-r4nyiZV3yuLeMFb26Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975445624764-fh8v073dmopkunmqr8rbh1khfqsrn2l4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975445624764-q9826eujtoj7uf250cgurenrcqgnii7n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.rupyz",
+                "app_store_id": "1606869184"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975445624764:android:0d6b773b681813d3accdb9",
+        "android_client_info": {
+          "package_name": "com.app.rupyz.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975445624764-fh8v073dmopkunmqr8rbh1khfqsrn2l4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoz0oaweCxKBI9-r4nyiZV3yuLeMFb26Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975445624764-fh8v073dmopkunmqr8rbh1khfqsrn2l4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975445624764-q9826eujtoj7uf250cgurenrcqgnii7n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.rupyz",
+                "app_store_id": "1606869184"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975445624764:android:bf972886732c3c55accdb9",
+        "android_client_info": {
+          "package_name": "com.app.rupyz.uat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975445624764-fh8v073dmopkunmqr8rbh1khfqsrn2l4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoz0oaweCxKBI9-r4nyiZV3yuLeMFb26Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975445624764-fh8v073dmopkunmqr8rbh1khfqsrn2l4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975445624764-q9826eujtoj7uf250cgurenrcqgnii7n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.rupyz",
+                "app_store_id": "1606869184"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

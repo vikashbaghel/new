@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.overview.OverViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:background="@drawable/walkthrough_bg_style"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Select Authorized Account"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_18sp" />
+
+        <View
+            android:layout_width="@dimen/dimen_40dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@drawable/short_line_style" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="@dimen/account_type_button_width_size"
+            android:layout_height="@dimen/account_type_button_height_size"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@drawable/account_type_button_style"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Dhavak Radia"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_12sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="@dimen/account_type_button_width_size"
+            android:layout_height="@dimen/account_type_button_height_size"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@drawable/account_type_button_style"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Sumeet Singh"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_12sp" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_next"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_50dp"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/check_score_button_style"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/next"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_16sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

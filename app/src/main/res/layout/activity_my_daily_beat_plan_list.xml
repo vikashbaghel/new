@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_bg"
+    tools:context=".sales.beatplan.MyDailyBeatPlanListActivity">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_12sp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_12sp"
+        android:text="@string/my_beat_plan"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+        app:layout_constraintStart_toEndOf="@+id/iv_back"
+        app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+    <TextView
+        android:id="@+id/tv_toolbar_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_12sp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/sales_text_color_light_black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+        app:layout_constraintStart_toEndOf="@+id/iv_back"
+        app:layout_constraintTop_toBottomOf="@+id/tv_toolbar_title" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/payment_approved_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        app:layout_goneMarginEnd="@dimen/size_20sp"
+        android:paddingStart="@dimen/size_16sp"
+        android:paddingTop="@dimen/dimen_3dp"
+        android:paddingEnd="@dimen/size_16sp"
+        android:paddingBottom="@dimen/dimen_3dp"
+        android:textColor="@color/payment_approved_text_color"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tv_status_sub_title"
+        app:layout_constraintEnd_toStartOf="@+id/tv_beat_details"
+        app:layout_constraintTop_toTopOf="@+id/tv_toolbar_title" />
+
+    <TextView
+        android:id="@+id/tv_status_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/active_beat_plan"
+        android:layout_marginTop="@dimen/dimen_2dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/sales_text_color_light_black"
+        android:textSize="@dimen/size_10sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/tv_beat_details"
+        app:layout_constraintTop_toBottomOf="@+id/tv_status" />
+
+
+    <TextView
+        android:id="@+id/tv_beat_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingStart="12dp"
+        android:paddingTop="@dimen/size_10sp"
+        android:paddingEnd="@dimen/size_12sp"
+        android:paddingBottom="@dimen/size_10sp"
+        android:text="@string/view_all"
+        android:textColor="@color/text_color_blue"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_toolbar_sub_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_toolbar_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_beat_plan_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dimen_6dp"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/size_12sp"
+        android:paddingEnd="@dimen/size_12sp"
+        android:paddingBottom="@dimen/size_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_toolbar_sub_title" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

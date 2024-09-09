@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="13dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/white_border_linear_rounded_gradient">
+
+    <TextView
+        android:id="@+id/tv_staff_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/size_16sp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/theme_purple"
+        android:textSize="@dimen/size_16sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_expense_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_expense_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/dimen_4dp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/sales_heading_blue"
+        android:textSize="@dimen/size_15sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_expense_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_staff_name" />
+
+    <TextView
+        android:id="@+id/tv_expense_status"
+        android:layout_width="@dimen/dimen_100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_16sp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:background="@drawable/expense_tracker_green_background"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:paddingStart="@dimen/dimen_15dp"
+        android:paddingTop="@dimen/dimen_5dp"
+        android:paddingEnd="@dimen/dimen_15dp"
+        android:paddingBottom="@dimen/dimen_5dp"
+        android:text="Submitted"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_12sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_expense_re_submitted"
+        android:layout_width="@dimen/dimen_100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_6dp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/re_submitted"
+        android:textColor="@color/know_more_blue"
+        android:textSize="@dimen/size_10sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_expense_status"/>
+
+    <TextView
+        android:id="@+id/tv_expense_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="26dp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="date"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_expense_name" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="26dp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Author name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_10sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_expense_date" />
+
+
+    <TextView
+        android:id="@+id/hd_item_added"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="26dp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/items_added"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+    <TextView
+        android:id="@+id/tv_items_added"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="@dimen/size_16sp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hd_item_added" />
+
+    <TextView
+        android:id="@+id/hd_expense_captured"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="26dp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/expense_capture"
+        android:textColor="@color/black"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/hd_item_added"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+    <TextView
+        android:id="@+id/tv_expense_captured"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="26dp"
+        android:drawablePadding="@dimen/dimen_9dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:layout_constraintStart_toStartOf="@+id/hd_expense_captured"
+        app:layout_constraintTop_toBottomOf="@+id/hd_expense_captured" />
+
+
+    <TextView
+        android:id="@+id/tv_rejected_reason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_14sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/payement_rejected_comment_bg"
+        android:fontFamily="@font/poppins_regular"
+        android:padding="@dimen/dimen_12dp"
+        android:textColor="@color/sale_overview_view_all"
+        android:textSize="10sp"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/dimen_20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_expense_captured" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

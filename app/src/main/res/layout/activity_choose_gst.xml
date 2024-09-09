@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg_style">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_my"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+                app:titleTextColor="@color/white">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_arrow_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_30dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Business Details"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_16sp" />
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:src="@mipmap/ic_rupyz_white_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_20dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/grow_business"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_30dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:layout_marginBottom="@dimen/dimen_20dp"
+                        android:background="@drawable/walkthrough_bg_style"
+                        android:gravity="center|top"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/select_gst"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="of Head-office state/ GST associated with your bank loan"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_10sp"
+                            android:visibility="gone" />
+
+                        <View
+                            android:layout_width="@dimen/dimen_40dp"
+                            android:layout_height="4dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:background="@drawable/short_line_style" />
+
+                        <TextView
+                            android:id="@+id/txt_org_legal_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:shadowColor="#29000000"
+                            android:shadowDx="0"
+                            android:shadowDy="3"
+                            android:shadowRadius="90"
+                            android:text="@string/please_select_gst_number_of_your_head_office_corporate_office"
+                            android:textAlignment="center"
+                            android:textColor="#31EEFC"
+                            android:textSize="@dimen/size_14sp" />
+
+                        <LinearLayout
+                            android:id="@+id/gst_number_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:layout_marginBottom="@dimen/dimen_10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/gst_message"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="Select GST Number"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/size_12sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:background="@drawable/edit_text_style"
+                                android:gravity="center|start"
+                                android:paddingLeft="@dimen/dimen_10dp"
+                                android:paddingRight="@dimen/dimen_10dp">
+
+
+                                <EditText
+                                    android:id="@+id/txt_gst_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="@dimen/dimen_10dp"
+                                    android:background="@drawable/edit_text_inner_style"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/enter_gst_number"
+                                    android:inputType="textCapCharacters"
+                                    android:maxEms="10"
+                                    android:maxLines="1"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="#80FFFFFF"
+                                    android:textSize="@dimen/size_16sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="@dimen/dimen_20dp"
+                            android:visibility="gone" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_next"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:layout_marginBottom="@dimen/dimen_10dp"
+                            android:background="@drawable/check_score_button_style"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/str_continue"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_16sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_skip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/non_gst_str_skip"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

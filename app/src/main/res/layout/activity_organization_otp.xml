@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_bg"
+    tools:context=".sales.login.OtpActivityKt">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:src="@mipmap/ic_rupyz_logo_header"
+        app:layout_constraintBottom_toTopOf="@+id/cl_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cl_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20dp"
+        android:layout_marginEnd="@dimen/dimen_20dp"
+        android:layout_marginBottom="@dimen/dimen_50dp"
+        android:elevation="@dimen/dimen_10dp"
+        app:cardCornerRadius="@dimen/dimen_10dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/white_border_linear_rounded_gradient"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/hd_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/enter_verification_code"
+                android:textColor="@color/theme_purple"
+                android:textSize="@dimen/size_20sp"
+                android:layout_marginTop="@dimen/size_12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_sent_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/sent_to_91"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_13sp"
+                app:layout_constraintStart_toStartOf="@+id/txt_otp_one"
+                app:layout_constraintTop_toBottomOf="@+id/hd_hint" />
+
+            <TextView
+                android:id="@+id/txt_mobile_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_sent_to"
+                app:layout_constraintStart_toEndOf="@+id/tv_sent_to"
+                app:layout_constraintTop_toTopOf="@+id/tv_sent_to" />
+
+
+            <in.aabhasjindal.otptextview.OtpTextView
+                android:id="@+id/txt_otp_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_12sp"
+                android:textColor="@color/theme_purple"
+                app:bar_active_color="@color/theme_purple"
+                app:bar_enabled="true"
+                app:bar_height="3dp"
+                app:bar_inactive_color="@color/otp_in_active_color"
+                app:height="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sent_to"
+                app:length="4"
+                app:otp_text_size="@dimen/size_24sp"
+                app:width="60dp" />
+
+
+            <LinearLayout
+                android:id="@+id/counter_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_otp_one">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/resend_otp_in"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_16sp" />
+
+                <TextView
+                    android:id="@+id/txt_counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_5dp"
+                    android:layout_marginEnd="@dimen/dimen_5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="30"
+                    android:textColor="@color/theme_purple"
+                    android:textSize="@dimen/size_16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/seconds"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_16sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_5dp"
+                android:layout_marginEnd="@dimen/dimen_5dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/resend_otp"
+                android:textColor="@color/theme_purple"
+                android:textSize="@dimen/size_16sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/counter_layout"
+                app:layout_constraintEnd_toEndOf="@+id/counter_layout"
+                app:layout_constraintStart_toStartOf="@+id/counter_layout"
+                app:layout_constraintTop_toTopOf="@+id/counter_layout" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_continue"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@drawable/btn_gredient"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/str_continue"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/txt_otp_one"
+                app:layout_constraintStart_toStartOf="@+id/txt_otp_one"
+                app:layout_constraintTop_toBottomOf="@+id/counter_layout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGoBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/dimen_10dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toStartOf="@+id/cl_main"
+        app:layout_constraintEnd_toEndOf="@+id/cl_main"
+        android:text="@string/go_back"
+        android:textSize="@dimen/size_14sp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/cl_main" />
+</androidx.constraintlayout.widget.ConstraintLayout>
