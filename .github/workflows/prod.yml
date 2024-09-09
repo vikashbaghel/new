@@ -46,10 +46,7 @@ jobs:
             -Pandroid.injected.signing.store.file=/home/runner/work/new/new/keystore.jks \
             -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
-            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }} \
-            --info \
-            --stacktrace \
-            --debug
+            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }} 
 
       - name: Generate Timestamp
         id: timestamp
@@ -211,4 +208,17 @@ jobs:
       - name: Post APK URL to Slack1
         run: |
           curl -X POST -H 'Content-Type: application/json' -d "{
-            \"text\": \"${PR_BODY}\nDownload
+            \"text\": \"${PR_BODY}\nDownload the APK file for production using version ${{ steps.extract-variable-apk.outputs.custom-variable-apk }}: <${{ steps.get-url-apk.outputs.url-apk }}|Click Here>\"
+          }" $SLACK_WEBHOOK_URL
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          PR_BODY: ${{ env.PR_BODY }}
+
+      - name: Post Failure Notification to Slack for APK
+        if: ${{ failure() }}
+        run: |
+          curl -X POST -H 'Content-Type: application/json' -d '{
+            "text": "Build failed for APK! Please check the workflow for details."
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
