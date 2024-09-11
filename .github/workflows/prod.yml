@@ -37,9 +37,6 @@ jobs:
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
 
-      - name: Find keystore.jks in all directories
-        run: find $(pwd) -name 'keystore.jks'
-
       - name: Build signed AAB for production
         run: |
           ./gradlew bundleProductionRelease \
@@ -75,8 +72,7 @@ jobs:
 
       - name: Upload AAB to S3
         run: |
-          aws s3 cp ./app/build/outputs/bundle/productionRelease/app-production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB-PROD/ \
-            --debug
+          aws s3 cp ./app/build/outputs/bundle/productionRelease/app-production-release_${{ steps.extract-variable.outputs.custom-variable }}_${{ steps.timestamp.outputs.timestamp }}.aab s3://${{ secrets.AWS_S3_BUCKET }}/AAB-PROD/
 
       - name: Generate Public URL for AAB
         id: get-url
@@ -144,19 +140,13 @@ jobs:
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
 
-      - name: Find keystore.jks in all directories
-        run: find $(pwd) -name 'keystore.jks'
-
       - name: Build APK for release
         run: |
           ./gradlew assembleProductionRelease \
             -Pandroid.injected.signing.store.file=/home/runner/work/new/new/keystore.jks \
             -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
-            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }} \
-            --info \
-            --stacktrace \
-            --debug
+            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
 
       - name: Generate Timestamp for APK
         id: timestamp-apk
@@ -185,8 +175,7 @@ jobs:
 
       - name: Upload APK to S3
         run: |
-          aws s3 cp ./app/build/outputs/apk/production/release/app-production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK-PROD/ \
-            --debug
+          aws s3 cp ./app/build/outputs/apk/production/release/app-production-release_${{ steps.extract-variable-apk.outputs.custom-variable-apk }}_${{ steps.timestamp-apk.outputs.timestamp }}.apk s3://${{ secrets.AWS_S3_BUCKET }}/APK-PROD/
 
       - name: Generate Public URL for APK
         id: get-url-apk
