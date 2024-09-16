@@ -1,4 +1,4 @@
-name: Build Production AAB APK
+name: Build Production AAB APK ji
 
 on:
   pull_request:
@@ -36,6 +36,8 @@ jobs:
       - name: Decode Keystore from Base64
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
+
+
 
       - name: Build signed AAB for production
         run: |
@@ -89,7 +91,8 @@ jobs:
           ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
           echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
 
       - name: Post AAB URL to Slack1
         run: |
@@ -192,7 +195,7 @@ jobs:
           ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
           echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Post APK URL to Slack1
         run: |
