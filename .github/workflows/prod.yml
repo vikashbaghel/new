@@ -89,7 +89,7 @@ jobs:
           ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
           echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Post AAB URL to Slack1
         run: |
@@ -192,7 +192,7 @@ jobs:
           ESCAPED_BODY=$(echo "$PR_BODY" | sed -e 's/\r//g' -e 's/\n/\\n/g' -e 's/"/\\"/g')
           echo "PR_BODY=${ESCAPED_BODY}" >> $GITHUB_ENV
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Post APK URL to Slack1
         run: |
