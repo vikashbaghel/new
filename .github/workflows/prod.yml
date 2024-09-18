@@ -35,14 +35,14 @@ jobs:
 
       - name: Decode Keystore from Base64
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > /home/runner/work/keystore.jks
 
 
 
       - name: Build signed AAB for production
         run: |
           ./gradlew bundleProductionRelease \
-            -Pandroid.injected.signing.store.file=/home/runner/work/new/new/keystore.jks \
+            -Pandroid.injected.signing.store.file=/home/runner/work/keystore.jks \
             -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
             -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }} 
@@ -141,12 +141,12 @@ jobs:
 
       - name: Decode Keystore from Base64
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > /home/runner/work/keystore.jks
 
       - name: Build APK for release
         run: |
           ./gradlew assembleProductionRelease \
-            -Pandroid.injected.signing.store.file=/home/runner/work/new/new/keystore.jks \
+            -Pandroid.injected.signing.store.file=/home/runner/work/keystore.jks \
             -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
             -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
